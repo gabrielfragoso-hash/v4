@@ -10,7 +10,6 @@ import {
   Clock,
   Circle,
   Lock,
-  Zap,
   MapPin,
   TrendingUp,
   ChevronRight,
@@ -25,38 +24,42 @@ const STATUS_MAP: Record<string, "done" | "in_progress" | "pending" | "blocked">
   blocked: "blocked",
 };
 
-const stageColors: Record<string, string> = {
-  s0: "#64748b",
-  s1: "#7c3aed",
-  s2: "#2563eb",
-  s3: "#059669",
-  s4: "#ea580c",
-  s5: "#e11d48",
+// Stage accent colors — all use V4 red family with muted variants
+const stageAccent: Record<string, { color: string; bg: string; border: string }> = {
+  s0: { color: "#e40a14", bg: "rgba(228,10,20,0.06)", border: "rgba(228,10,20,0.25)" },
+  s1: { color: "#e40a14", bg: "rgba(228,10,20,0.06)", border: "rgba(228,10,20,0.25)" },
+  s2: { color: "#e40a14", bg: "rgba(228,10,20,0.06)", border: "rgba(228,10,20,0.25)" },
+  s3: { color: "#e40a14", bg: "rgba(228,10,20,0.06)", border: "rgba(228,10,20,0.25)" },
+  s4: { color: "#e40a14", bg: "rgba(228,10,20,0.06)", border: "rgba(228,10,20,0.25)" },
+  s5: { color: "#e40a14", bg: "rgba(228,10,20,0.06)", border: "rgba(228,10,20,0.25)" },
 };
 
 function StatusIcon({ status }: { status: string }) {
   switch (status) {
     case "done":
-      return <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />;
+      return <CheckCircle2 size={13} style={{ color: "#4ade80", flexShrink: 0 }} />;
     case "in_progress":
-      return <Clock size={14} className="text-amber-500 shrink-0" />;
+      return <Clock size={13} style={{ color: "#facc15", flexShrink: 0 }} />;
     case "blocked":
-      return <Lock size={14} className="text-slate-300 shrink-0" />;
+      return <Lock size={13} style={{ color: "#3a3a3a", flexShrink: 0 }} />;
     default:
-      return <Circle size={14} className="text-slate-300 shrink-0" />;
+      return <Circle size={13} style={{ color: "#3a3a3a", flexShrink: 0 }} />;
   }
 }
 
 function StatusBadge({ status }: { status: string }) {
-  const map: Record<string, { label: string; className: string }> = {
-    done: { label: "Concluído", className: "bg-emerald-50 text-emerald-700" },
-    in_progress: { label: "Em andamento", className: "bg-amber-50 text-amber-700" },
-    pending: { label: "Pendente", className: "bg-slate-50 text-slate-500" },
-    blocked: { label: "Bloqueada", className: "bg-slate-50 text-slate-400" },
+  const map: Record<string, { label: string; color: string; bg: string }> = {
+    done: { label: "Concluído", color: "#4ade80", bg: "rgba(74,222,128,0.1)" },
+    in_progress: { label: "Em andamento", color: "#facc15", bg: "rgba(250,204,21,0.1)" },
+    pending: { label: "Pendente", color: "#4a4a4a", bg: "transparent" },
+    blocked: { label: "Bloqueada", color: "#3a3a3a", bg: "transparent" },
   };
   const s = map[status] ?? map.pending;
   return (
-    <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded-full ${s.className}`}>
+    <span
+      className="text-[10px] font-semibold px-2 py-0.5 rounded"
+      style={{ color: s.color, background: s.bg }}
+    >
       {s.label}
     </span>
   );
@@ -84,11 +87,10 @@ export default async function ClientePage({
   const rawSkills = (progress.skills as Record<string, Record<string, unknown>>) ?? {};
   const history = (data.history as Array<Record<string, unknown>>) ?? [];
 
-  // Map client.json statuses to workflow statuses
   const statuses: Record<string, "done" | "in_progress" | "pending" | "blocked"> = {};
-  for (const [id, val] of Object.entries(rawSkills)) {
+  for (const [skillId, val] of Object.entries(rawSkills)) {
     const raw = (val.status as string) ?? "pending";
-    statuses[id] = STATUS_MAP[raw] ?? "pending";
+    statuses[skillId] = STATUS_MAP[raw] ?? "pending";
   }
 
   const allSkills = STAGES.flatMap((s) => s.skills);
@@ -102,94 +104,130 @@ export default async function ClientePage({
   const revenue = (fin.faturamento_medio_mensal as string) ?? "—";
   const ticket = (fin.ticket_medio as string) ?? "—";
   const currentWeek = (progress.current_week as number) ?? 1;
-
   const lastHistory = history[history.length - 1];
 
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen" style={{ background: "var(--color-bg)" }}>
       {/* Header */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
+      <header
+        className="sticky top-0 z-10"
+        style={{
+          background: "var(--color-surface)",
+          borderBottom: "1px solid var(--color-border)",
+        }}
+      >
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-3">
-          <Link
-            href="/"
-            className="text-slate-400 hover:text-slate-700 transition-colors"
-          >
+          <Link href="/" className="transition-colors" style={{ color: "var(--color-text-muted)" }}>
             <ArrowLeft size={16} />
           </Link>
-          <div className="w-6 h-6 bg-violet-600 rounded-md flex items-center justify-center">
-            <Zap size={11} className="text-white" />
+          <div
+            className="w-6 h-6 flex items-center justify-center font-black text-[10px]"
+            style={{
+              background: "var(--color-primary)",
+              color: "#fff",
+              clipPath: "polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%)",
+            }}
+          >
+            V4
           </div>
-          <span className="font-semibold text-slate-800 text-sm truncate">{name}</span>
-          <span className="ml-auto text-xs bg-violet-50 text-violet-600 px-2 py-0.5 rounded-full font-medium shrink-0">
+          <span className="font-bold text-sm truncate" style={{ color: "var(--color-text)" }}>
+            {name}
+          </span>
+          <span
+            className="ml-auto text-[10px] font-bold px-2 py-0.5 rounded shrink-0"
+            style={{
+              background: "rgba(228,10,20,0.15)",
+              color: "var(--color-primary)",
+              border: "1px solid rgba(228,10,20,0.3)",
+            }}
+          >
             Semana {currentWeek}
           </span>
         </div>
       </header>
 
-      <div className="max-w-3xl mx-auto px-4 py-6 space-y-6">
-        {/* Client card */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-5">
+      <div className="max-w-3xl mx-auto px-4 py-6 space-y-4">
+        {/* Client overview card */}
+        <div
+          className="rounded-xl p-5"
+          style={{
+            background: "var(--color-surface)",
+            border: "1px solid var(--color-border)",
+          }}
+        >
           <div className="flex items-start gap-5">
-            {/* Ring */}
             <div className="relative flex items-center justify-center shrink-0">
-              <ProgressRing pct={globalPct} size={72} />
-              <span className="absolute text-base font-bold text-violet-700">{globalPct}%</span>
+              <ProgressRing pct={globalPct} size={72} stroke={5} />
+              <span
+                className="absolute text-base font-black"
+                style={{ color: "var(--color-primary)" }}
+              >
+                {globalPct}%
+              </span>
             </div>
 
             <div className="flex-1 min-w-0">
-              <h1 className="text-lg font-bold text-slate-800 truncate">{name}</h1>
+              <h1 className="text-lg font-black truncate" style={{ color: "var(--color-text)" }}>
+                {name}
+              </h1>
               <div className="flex flex-wrap gap-3 mt-1">
                 {location !== "—" && (
-                  <span className="flex items-center gap-1 text-xs text-slate-500">
+                  <span className="flex items-center gap-1 text-xs" style={{ color: "var(--color-text-muted)" }}>
                     <MapPin size={11} /> {location.split("/")[0].trim()}
                   </span>
                 )}
                 {revenue !== "—" && (
-                  <span className="flex items-center gap-1 text-xs text-slate-500">
+                  <span className="flex items-center gap-1 text-xs" style={{ color: "var(--color-text-muted)" }}>
                     <TrendingUp size={11} /> {revenue}/mês
                   </span>
                 )}
                 {ticket !== "—" && (
-                  <span className="text-xs text-slate-500">ticket {ticket}</span>
+                  <span className="text-xs" style={{ color: "var(--color-text-muted)" }}>
+                    ticket {ticket}
+                  </span>
                 )}
               </div>
               <div className="flex gap-4 mt-3">
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 size={13} className="text-emerald-500" />
-                  <span className="text-xs text-slate-600">{doneSkills} concluídas</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <Clock size={13} className="text-amber-500" />
-                  <span className="text-xs text-slate-600">{inProgress} em andamento</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <Circle size={13} className="text-slate-300" />
-                  <span className="text-xs text-slate-600">
-                    {totalSkills - doneSkills - inProgress} restantes
-                  </span>
-                </div>
+                <span className="flex items-center gap-1.5 text-xs" style={{ color: "var(--color-text-muted)" }}>
+                  <CheckCircle2 size={12} style={{ color: "#4ade80" }} />
+                  {doneSkills} concluídas
+                </span>
+                <span className="flex items-center gap-1.5 text-xs" style={{ color: "var(--color-text-muted)" }}>
+                  <Clock size={12} style={{ color: "#facc15" }} />
+                  {inProgress} em andamento
+                </span>
+                <span className="flex items-center gap-1.5 text-xs" style={{ color: "var(--color-text-muted)" }}>
+                  <Circle size={12} style={{ color: "#3a3a3a" }} />
+                  {totalSkills - doneSkills - inProgress} restantes
+                </span>
               </div>
             </div>
           </div>
 
-          {/* Stage mini rings */}
-          <div className="grid grid-cols-6 gap-2 mt-5">
+          {/* Stage rings */}
+          <div
+            className="grid grid-cols-6 gap-2 mt-5 pt-4"
+            style={{ borderTop: "1px solid var(--color-border)" }}
+          >
             {STAGES.map((stage) => {
               const done = stage.skills.filter((s) => statuses[s.id] === "done").length;
               const total = stage.skills.length;
               const pct = total > 0 ? (done / total) * 100 : 0;
+              const color = pct === 100 ? "#4ade80" : pct > 0 ? "#e40a14" : "#2a2a2a";
               return (
                 <div key={stage.id} className="text-center">
                   <div className="relative flex items-center justify-center mx-auto w-9 h-9">
-                    <ProgressRing pct={pct} size={36} stroke={4} color={stageColors[stage.id]} />
+                    <ProgressRing pct={pct} size={36} stroke={3} color={color} />
                     <span
-                      className="absolute text-[9px] font-bold"
-                      style={{ color: stageColors[stage.id] }}
+                      className="absolute text-[8px] font-black"
+                      style={{ color }}
                     >
                       {Math.round(pct)}%
                     </span>
                   </div>
-                  <p className="text-[10px] text-slate-500 mt-1 leading-tight">{stage.week}</p>
+                  <p className="text-[9px] mt-1 font-medium" style={{ color: "var(--color-text-muted)" }}>
+                    {stage.week}
+                  </p>
                 </div>
               );
             })}
@@ -198,12 +236,23 @@ export default async function ClientePage({
 
         {/* Last activity */}
         {lastHistory && (
-          <div className="bg-violet-50 border border-violet-100 rounded-xl px-4 py-3 flex items-start gap-2">
-            <Clock size={13} className="text-violet-400 mt-0.5 shrink-0" />
+          <div
+            className="rounded-xl px-4 py-3 flex items-start gap-2"
+            style={{
+              background: "rgba(228,10,20,0.07)",
+              border: "1px solid rgba(228,10,20,0.2)",
+            }}
+          >
+            <Clock size={12} style={{ color: "var(--color-primary)", marginTop: 2, flexShrink: 0 }} />
             <div className="min-w-0">
-              <p className="text-xs font-medium text-violet-700">Última atividade</p>
-              <p className="text-xs text-violet-600 mt-0.5 truncate">
-                {lastHistory.skill as string} · {lastHistory.decision as string}
+              <p className="text-[10px] font-bold uppercase tracking-wider" style={{ color: "var(--color-primary)" }}>
+                Última atividade
+              </p>
+              <p className="text-xs mt-0.5 truncate" style={{ color: "var(--color-text-muted)" }}>
+                <span className="font-semibold" style={{ color: "var(--color-text)" }}>
+                  {lastHistory.skill as string}
+                </span>{" "}
+                · {lastHistory.decision as string}
               </p>
             </div>
           </div>
@@ -215,77 +264,105 @@ export default async function ClientePage({
             const done = stage.skills.filter((s) => statuses[s.id] === "done").length;
             const total = stage.skills.length;
             const pct = total > 0 ? Math.round((done / total) * 100) : 0;
-            const isActive = stage.skills.some(
-              (s) => statuses[s.id] === "in_progress" || statuses[s.id] === "pending"
-            );
+            const accent = stageAccent[stage.id];
+            const isActive = pct > 0 && pct < 100;
+            const isDone = pct === 100;
 
             return (
               <div
                 key={stage.id}
-                className={`bg-white rounded-2xl border overflow-hidden ${
-                  isActive && pct < 100 ? stage.border : "border-slate-200"
-                }`}
+                className="rounded-xl overflow-hidden"
+                style={{
+                  background: "var(--color-surface)",
+                  border: `1px solid ${isActive ? accent.border : "var(--color-border)"}`,
+                  boxShadow: isActive ? "0 0 20px rgba(228,10,20,0.08)" : "none",
+                }}
               >
                 {/* Stage header */}
-                <div className={`px-4 py-3 flex items-center gap-3 ${pct > 0 && pct < 100 ? stage.bg : ""}`}>
-                  <div className="relative w-7 h-7 shrink-0">
-                    <ProgressRing pct={pct} size={28} stroke={3} color={stageColors[stage.id]} />
+                <div
+                  className="px-4 py-3 flex items-center gap-3"
+                  style={{ background: isActive ? accent.bg : "transparent" }}
+                >
+                  <div className="relative w-8 h-8 flex items-center justify-center shrink-0">
+                    <ProgressRing
+                      pct={pct}
+                      size={32}
+                      stroke={3}
+                      color={isDone ? "#4ade80" : "#e40a14"}
+                    />
                     <span
-                      className="absolute inset-0 flex items-center justify-center text-[8px] font-bold"
-                      style={{ color: stageColors[stage.id] }}
+                      className="absolute text-[8px] font-black"
+                      style={{ color: isDone ? "#4ade80" : isActive ? "#e40a14" : "#3a3a3a" }}
                     >
                       {pct}%
                     </span>
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-semibold text-slate-500">{stage.week}</span>
-                      <ChevronRight size={12} className="text-slate-300" />
-                      <span className="text-sm font-semibold text-slate-800 truncate">{stage.title}</span>
+                      <span className="text-[10px] font-semibold uppercase tracking-wider" style={{ color: "var(--color-text-muted)" }}>
+                        {stage.week}
+                      </span>
+                      <ChevronRight size={10} style={{ color: "var(--color-border)" }} />
+                      <span className="text-sm font-bold truncate" style={{ color: "var(--color-text)" }}>
+                        {stage.title}
+                      </span>
                     </div>
-                    <p className="text-[11px] text-slate-500 truncate mt-0.5">{stage.objective}</p>
+                    <p className="text-[11px] truncate mt-0.5" style={{ color: "var(--color-text-muted)" }}>
+                      {stage.objective}
+                    </p>
                   </div>
-                  <span className="text-xs text-slate-400 shrink-0">{done}/{total}</span>
+                  <span className="text-xs font-bold shrink-0" style={{ color: "var(--color-text-muted)" }}>
+                    {done}/{total}
+                  </span>
                 </div>
 
                 {/* Skills */}
-                <div className="divide-y divide-slate-50">
-                  {stage.skills.map((skill) => {
+                <div>
+                  {stage.skills.map((skill, i) => {
                     const status = statuses[skill.id] ?? "pending";
                     const rawEntry = rawSkills[skill.id];
                     const version = rawEntry?.version as number | undefined;
                     const completedAt = rawEntry?.completed_at as string | undefined;
+                    const isDoneSkill = status === "done";
+                    const isBlockedSkill = status === "blocked";
 
                     return (
                       <div
                         key={skill.id}
-                        className={`px-4 py-2.5 flex items-center gap-3 ${
-                          status === "done"
-                            ? "opacity-70"
-                            : status === "blocked"
-                            ? "opacity-40"
-                            : ""
-                        }`}
+                        className="px-4 py-2.5 flex items-center gap-3"
+                        style={{
+                          borderTop: i === 0 ? "1px solid var(--color-border)" : "1px solid rgba(255,255,255,0.03)",
+                          opacity: isBlockedSkill ? 0.35 : 1,
+                        }}
                       >
                         <StatusIcon status={status} />
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2">
                             <span
-                              className={`text-sm font-medium truncate ${
-                                status === "done" ? "text-slate-500 line-through decoration-1" : "text-slate-700"
-                              }`}
+                              className="text-sm font-semibold truncate"
+                              style={{
+                                color: isDoneSkill ? "var(--color-text-muted)" : "var(--color-text)",
+                                textDecoration: isDoneSkill ? "line-through" : "none",
+                                textDecorationColor: "#3a3a3a",
+                              }}
                             >
                               {skill.name}
                             </span>
                             {version && (
-                              <span className="text-[10px] text-slate-400">v{version}</span>
+                              <span className="text-[10px]" style={{ color: "#3a3a3a" }}>
+                                v{version}
+                              </span>
                             )}
                           </div>
-                          <p className="text-[11px] text-slate-400 truncate">{skill.description}</p>
+                          <p className="text-[11px] truncate" style={{ color: "#4a4a4a" }}>
+                            {skill.description}
+                          </p>
                         </div>
                         <div className="flex items-center gap-2 shrink-0">
-                          {completedAt && status === "done" && (
-                            <span className="text-[10px] text-slate-400 hidden sm:block">{completedAt}</span>
+                          {completedAt && isDoneSkill && (
+                            <span className="text-[10px] hidden sm:block" style={{ color: "#3a3a3a" }}>
+                              {completedAt}
+                            </span>
                           )}
                           <StatusBadge status={status} />
                         </div>
@@ -298,7 +375,8 @@ export default async function ClientePage({
           })}
         </div>
 
-        <p className="text-center text-xs text-slate-400 pb-4">
+        <p className="text-center text-[10px] pb-4 font-medium uppercase tracking-widest"
+          style={{ color: "#2a2a2a" }}>
           {slug} · V4 Estruturação IA
         </p>
       </div>
