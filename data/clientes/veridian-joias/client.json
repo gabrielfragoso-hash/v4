@@ -1,0 +1,298 @@
+{
+  "meta": {
+    "name": "Veridian Jóias",
+    "slug": "veridian-joias",
+    "razao_social": "M M D Fornecedora de Bens e Serviços Ltda.",
+    "cnpj": "50.528.117/0001-10",
+    "workspace_id": null,
+    "created_at": "2026-05-29",
+    "founded_at": "2026-02-27",
+    "modulo_vendas": false
+  },
+  "briefing": {
+    "identification": {
+      "name": "Veridian Jóias",
+      "contact_name": "Jessica Machado",
+      "contact_role": "Sócia — Comercial e Administrativo",
+      "team": [
+        {"name": "Jessica Machado", "role": "Sócia — Comercial, Vendas e Administrativo (ponto de contato principal)"},
+        {"name": "Michelle Monteiro Dantas", "role": "Sócia Administrativa"},
+        {"name": "Pedro Machado", "role": "Sócio — Produção e Confecção (marido da Jessica, 4 anos na área)"},
+        {"name": "Cotrin", "role": "Sócio (mencionado, papel não detalhado)"},
+        {"name": "Luiz Henrique", "role": "Filho da Michelle — suporte geral / possivelmente jurídico"}
+      ],
+      "jessica_background": "10+ anos no ramo de joalheria. Entrou como vendedora na Arte In Ouro em 2018, virou gerente, depois sócia. Saiu em 2025 para fundar a Veridian com Michelle e Cotrin. Conhece profundamente o principal concorrente por dentro.",
+      "segment": "Joias exclusivas e personalizadas",
+      "annual_revenue_est": "~R$ 1.262.889/ano (projeção baseada em média de R$ 105.240/mês)",
+      "monthly_revenue_avg": "R$ 105.240,75 (média meses 03 e 04/2026)",
+      "years_in_market": "3 meses (fundada 27/02/2026)",
+      "moment": "Crescimento e consolidação — marca nova, números fortes para 3 meses, precisa escalar reconhecimento de marca",
+      "location_matrix": "Praça Porto Rocha, 184 — Lojas 08, 09, 10 — Centro de Cabo Frio / RJ",
+      "location_filial": "Rodovia Amaral Peixoto, 5041 — Rio das Ostras / RJ (em obra, ainda sem equipe)",
+      "website": "https://www.veridianjoias.com.br/",
+      "instagram": "@veridianjoias",
+      "whatsapp": "+55 22 98817-1080",
+      "facebook": "Veridian Joias",
+      "gmb": true
+    },
+    "financials": {
+      "ticket_medio": "R$ 807,85",
+      "faturamento_medio_mensal": "R$ 105.240,75",
+      "venda_2meses": "R$ 206.668,50",
+      "margem_contribuicao_valor": "R$ 49.374,81",
+      "margem_contribuicao_pct": "23,9%",
+      "meta_margem": "30% (referência do segmento — Gabriel Fragoso / V4)",
+      "custos_variaveis": {
+        "materia_prima_avg": "55% — varia por categoria de produto",
+        "imposto_simples": "~10% sobre faturamento",
+        "taxa_maquina_max": "10% (Amex 12x) — varia por cartão/parcelas, antecipação D+1",
+        "premiacao": "~1% (variável, pode chegar a 1,7%)"
+      },
+      "cac": "Não calculado — próxima prioridade",
+      "obs_margem": "Gabriel destacou que taxa + imposto são os principais vilões da margem. Meta é chegar a 30%."
+    },
+    "product": {
+      "main_product": "Joias com design exclusivo e atemporal — alianças são o produto estratégico principal",
+      "strategic_product": "Alianças de compromisso e casamento — sempre-demanda, personalização, sem dependência de estoque pronto, alta margem percebida",
+      "full_portfolio": [
+        "Joias em ouro 18K (único teor trabalhado atualmente)",
+        "Joias em prata",
+        "Alianças personalizadas em ouro e prata (confecção própria — prazo 3-7 dias, urgência no dia)",
+        "Relógios (marcas nacionais e internacionais)",
+        "Perfumes",
+        "Canetas Crown",
+        "Personalizações: garrafas, placas e outros",
+        "Serviços: reparo e manutenção de joias e relógios, troca de baterias, soldas"
+      ],
+      "modelo_estoque": "Misto — pronta entrega (maior volume) + sob demanda/confecção (maior ticket e margem estratégica)",
+      "production": {
+        "has_own_production": true,
+        "location": "Oficina na matriz em Cabo Frio",
+        "capacity": "Suporta produção de 7-8 lojas — planejada para expansão",
+        "lead_time": "3 a 7 dias padrão; urgência possível no mesmo dia na matriz",
+        "integration": "Sistema integrado entre lojas permite consulta e transferência de estoque"
+      },
+      "future_considerations": "Possível entrada em alianças de ouro 10K para segmento de menor renda (em análise — Julio deve fazer estudo de viabilidade)",
+      "billing_model": "Venda única",
+      "slogan": "Joias que contam sua história. Design exclusivo e brilho que transcende."
+    },
+    "icp": {
+      "publico_1": "Mulheres jovens e adultas (25-45 anos) — feminino, renda média-alta, profissionais liberais/empreendedoras/executivas. Interessadas em moda, design, arte, marcas com propósito. Valorizam exclusividade, história da peça e investimento em si mesmas. DECISORAS DE COMPRA PRIMÁRIAS — iniciam a jornada, às vezes trazem o casal.",
+      "publico_2": "Casais buscando alianças e joias de compromisso (28-50 anos) — ambos os sexos, renda média-alta. Vêm juntos à loja para escolher. Buscam design diferenciado, fugir do tradicional, exclusividade.",
+      "publico_3": "Presenteadores (30-60+ anos) — predominantemente homens em datas sazonais (Dia dos Namorados, Natal). Buscam presentes de alto valor agregado para namoradas/esposas. Motivados por ocasiões específicas, não compra regular.",
+      "decision_maker_insight": "Mulher inicia a jornada. Casal finaliza juntos. Homem sozinho é sazonal (datas comemorativas). Marketing deve focar emocionalmente na mulher e no casal, não no preço.",
+      "problems_before": [
+        "Dificuldade em encontrar o presente ideal — memorável, de bom gosto, que surpreenda",
+        "Busca por joias que expressem individualidade e contem histórias (além do adorno puro)",
+        "Desconfiança em comprar em marca nova vs. marcas estabelecidas"
+      ],
+      "results_after": [
+        "Elevação da autoestima e confiança — sentir-se mais elegante, especial e único",
+        "Perpetuação de memórias e sentimentos — a joia como elo tangível com momentos importantes"
+      ],
+      "objections": [
+        "Preço — valor percebido como barreira, especialmente vs. concorrentes que usam ouro mais barato (10K)",
+        "Confiança — loja com poucos meses de inauguração vs. marcas estabelecidas",
+        "Falta de conhecimento da marca — muitos locais ainda não sabem que a Veridian existe no centro de Cabo Frio"
+      ],
+      "churn_reasons": "Não mapeado ainda (empresa com 3 meses)"
+    },
+    "competition": {
+      "competitors": [
+        {
+          "name": "Arte In Ouro",
+          "type": "direto — PRINCIPAL",
+          "intel": "Jessica trabalhou lá de 2018 a 2025 — saiu como sócia. Conhece a operação por dentro.",
+          "strength": "9 lojas na região, 10+ anos de mercado, forte em marketing e divulgação, produção própria artesanal, parcelamento 10x sem juros",
+          "price_strategy": "Usa ouro 10K APENAS para alianças para baixar preço e capturar segmento de baixa renda — não usa 10K em joias/pingentes/cordões",
+          "weakness": "Posicionamento de volume, não de exclusividade; ouro de menor teor como estratégia de preço acessível"
+        },
+        {
+          "name": "Agatha Joalheria",
+          "type": "direto",
+          "strength": "Concorrente regional",
+          "weakness": "A detalhar"
+        },
+        {
+          "name": "Mirella Joias",
+          "type": "direto",
+          "strength": "Concorrente regional",
+          "weakness": "A detalhar"
+        },
+        {
+          "name": "Tardelli Joias",
+          "type": "direto",
+          "strength": "Concorrente regional",
+          "weakness": "A detalhar"
+        },
+        {
+          "name": "Vivara",
+          "type": "direto",
+          "strength": "Grande marca nacional com loja na cidade — reconhecimento de marca",
+          "weakness": "Preço premium, produto mais genérico, sem personalização"
+        },
+        {
+          "name": "O Boticário / Cacau Show",
+          "type": "indireto",
+          "strength": "Marcas conhecidas como presentes — menor barreira de confiança",
+          "weakness": "Sem valor emocional duradouro como joias; produto descartável vs. joia atemporal"
+        }
+      ],
+      "key_differentiator_vs_arteinouro": "Veridian: apenas ouro 18K, posicionamento de exclusividade e significado. Arte In Ouro: volume, acessibilidade, ouro 10K para alianças baratas.",
+      "real_differential": "Design exclusivo com produção própria + apenas ouro 18K (qualidade superior) + foco em histórias e significado emocional + experiência de compra personalizada + Jessica tem 10 anos de expertise do mercado local (conhece o concorrente principal por dentro)",
+      "why_choose_us": "Design exclusivo (produção própria), apenas ouro 18K (sem mistura de liga), foco em histórias e significado, qualidade e acabamento superior, experiência personalizada",
+      "why_choose_competitor": "Preço mais baixo (ouro 10K), marca mais conhecida e estabelecida, promoções/descontos agressivos",
+      "sales_argument_vs_price": "Arte In Ouro usa ouro 10K nas alianças baratas — mais liga, menos ouro. Veridian só usa ouro 18K. Vendedoras já sabem argumentar sobre isso."
+    },
+    "brand": {
+      "puv": "Veridian Joias: Design exclusivo que eterniza sua história. Joias que transcendem o tempo, transformando momentos em memórias preciosas com brilho e sofisticação.",
+      "adjectives": ["Exclusivo", "Sofisticado", "Atemporal", "Significativo", "Autêntico"],
+      "voice_tone": "sofisticado, emocional, exclusivo — foco no desejo e no significado, não em preço/performance",
+      "admired_brands": "A mapear",
+      "current_colors": "A verificar com materiais gráficos (Jessica vai enviar)",
+      "has_logo": true,
+      "restrictions": "A mapear",
+      "brand_materials_status": "Pendente — Jessica comprometeu-se a enviar manual da marca e materiais gráficos"
+    },
+    "digital_situation": {
+      "paid_traffic": true,
+      "paid_traffic_detail": "Iniciou com R$ 1.000 na inauguração + R$ 1.000 recentemente (em execução). Já gerou 6 leads no primeiro dia da nova campanha.",
+      "paid_traffic_manager": "Agência externa (não identificada) — cria conteúdo e gerencia tráfego",
+      "platforms_active": ["instagram", "facebook", "whatsapp"],
+      "ad_campaigns_running": [
+        "Campanha para seguidores",
+        "Campanha para não seguidores (com localização da loja)",
+        "Campanha Dia dos Namorados — carrossel de produtos com preços"
+      ],
+      "google_ads": "Apenas endereço cadastrado — zero investimento em anúncios",
+      "monthly_investment_ads": "~R$ 1.000/mês (em escalada)",
+      "influencer": "Uma influencer em parceria fechada — grava conteúdo semanalmente",
+      "content_team": "Agência cria conteúdo (fotos, vídeos), influencer semanal, vendedoras também fazem vídeos/stories",
+      "offline_marketing": "2 telões em rotas principais de Cabo Frio; locutor + panfletagem em datas especiais (Dia das Mães gerou resultados mensuráveis via pesquisa na loja)",
+      "crm": null,
+      "crm_urgency": "URGENTE — sem CRM, sem gestão de leads. Leads chegam pelo WhatsApp sem rastreamento. Orçamentos enviados sem follow-up estruturado.",
+      "whatsapp_response": "Vendedoras se revezam entre balcão e WhatsApp. Tempo de resposta não medido. Risco real de perda de leads quando balcão está cheio.",
+      "email_marketing": null,
+      "website_type": "Landing page (veridianjoias.com.br)",
+      "lead_sources": "Instagram + WhatsApp + loja física + offline (telão, locutor, panfleto)",
+      "brand_awareness_problem": "Muitos moradores locais de Cabo Frio não sabem que a loja existe, apesar de estar no centro. Exemplo: taxista que passou 10x/dia pela frente não conhecia.",
+      "strategy_recommendation": "Geolocalização (pin de mapa) — anúncios segmentados por raio de 10-14km da loja para atingir potenciais compradores locais.",
+      "biggest_pain": "Sem CRM + sem funil de vendas digital + sem métricas + baixo reconhecimento de marca local"
+    },
+    "accesses": {
+      "meta_business": true,
+      "google_ads": true,
+      "google_analytics": false,
+      "google_search_console": false,
+      "instagram_admin": true,
+      "website_admin": true,
+      "crm": false,
+      "gmb": true,
+      "whatsapp_business": true
+    },
+    "seasonality": {
+      "peak_months": ["Maio (Dia das Mães)", "Junho (Dia dos Namorados)", "Novembro (Black Friday)", "Dezembro (Natal)"],
+      "low_months": "Demais meses do ano",
+      "seasonal_buyer_profile": "Homens compram principalmente em datas comemorativas. Alianças são demanda constante (casamentos/noivados não têm sazonalidade forte)."
+    },
+    "objectives": {
+      "main_goal": "Aumentar vendas em 45%, construir presença digital robusta, tornar a Veridian referência em joalheria na região e expandir alcance nacional",
+      "v4_project_scope": "45 dias: diagnóstico de marketing (semana 2), diagnóstico comercial (semana 3), planejamento marketing+vendas (semana 4), criativos + manual da marca (semana 5)",
+      "justifications": [
+        "Sem presença digital robusta — apenas Instagram",
+        "Marca nova sem reconhecimento local (muitos habitantes de Cabo Frio não sabem que existe)",
+        "Sem funil de vendas digital eficaz",
+        "Sem métricas e sem CRM",
+        "Gestão de leads no WhatsApp sem processo"
+      ]
+    },
+    "swot": {
+      "strengths": [
+        "Autenticidade e confiabilidade — apenas ouro 18K",
+        "Design exclusivo/personalizado com produção própria",
+        "Jessica: 10+ anos de experiência no ramo, ex-sócia da Arte In Ouro (conhece o principal concorrente por dentro)",
+        "Localização estratégica em polo turístico — centro de Cabo Frio + expansão para Rio das Ostras",
+        "Capacidade produtiva para 7-8 lojas — sem gargalo imediato",
+        "Resultados fortes em 3 meses (R$ 105k/mês de faturamento)"
+      ],
+      "weaknesses": [
+        "Marca relativamente nova (3 meses) — baixo reconhecimento local",
+        "Dependência do Instagram como único canal de divulgação digital",
+        "Sem CRM — gestão de leads no WhatsApp sem processo",
+        "Vendedoras acumulam atendimento físico + digital — risco de perda de leads",
+        "Sem playbook de vendas — processo dependente das pessoas"
+      ],
+      "opportunities": [
+        "Demanda crescente por joias personalizadas e com significado (mercado +8-18%/ano)",
+        "Geolocalização digital: atingir os 200k habitantes de Cabo Frio que ainda não conhecem a marca",
+        "Alianças como mercado sempre-ativo (casamentos não têm sazonalidade)",
+        "Expansão digital para todo o Brasil",
+        "Parcerias com influenciadores e eventos"
+      ],
+      "threats": [
+        "Arte In Ouro: 9 lojas, 10+ anos, forte em marketing, usa ouro 10K como âncora de preço",
+        "Vivara e outras marcas nacionais com maior reconhecimento",
+        "Flutuação de preços de metais preciosos — ouro em alta histórica",
+        "Concorrência indireta de presenteáveis (Boticário, Cacau Show)"
+      ]
+    },
+    "team": {
+      "sales_team": "2 vendedoras loja física (Cabo Frio) + 1 supervisora de vendas",
+      "online_support": "Equipe se reveza entre atendimento físico e WhatsApp/Instagram — gargalo identificado",
+      "total_people_matrix": 3,
+      "expansion": "Filial Rio das Ostras em obra — equipe ainda não contratada",
+      "training_gap": "Sem playbook de vendas formal. Vendedoras têm experiência de mercado mas sem processo padronizado. Risco de perda de capacidade com turnover."
+    },
+    "sales_module": null,
+    "pending_actions": [
+      {"owner": "Jessica", "action": "Enviar materiais gráficos e documentos da marca na pasta compartilhada"},
+      {"owner": "Jessica", "action": "Levantar volume de vendas e margem por categoria de produto"},
+      {"owner": "Jessica/equipe", "action": "Monitorar tempo médio de resposta no WhatsApp"},
+      {"owner": "Júlio (V4)", "action": "Análise de viabilidade de alianças em ouro 10K"},
+      {"owner": "Gabriel (V4)", "action": "Verificar link da pasta compartilhada no WhatsApp do grupo"}
+    ]
+  },
+  "research": {
+    "fetched_at": "2026-05-29",
+    "site": "https://www.veridianjoias.com.br/",
+    "instagram": "@veridianjoias",
+    "hero": "Transforme momentos em símbolos eternos de afeto",
+    "locations": ["Cabo Frio / RJ — centro", "Rio das Ostras / RJ — em obra"],
+    "whatsapp": "+55 22 98817-1080"
+  },
+  "connectors": {
+    "fetched_at": null,
+    "integrations": null
+  },
+  "progress": {
+    "current_week": 1,
+    "skills": {
+      "ee-novo-cliente": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-29", "completed_at": "2026-05-29"},
+      "ee-onboarding": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-29", "completed_at": "2026-05-29"},
+      "ee-s1-diagnostico-maturidade": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-29", "completed_at": "2026-05-29"},
+      "ee-s1-swot": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-29", "completed_at": "2026-05-29"},
+      "ee-s1-persona-icp": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-29", "completed_at": "2026-05-29"},
+      "ee-s1-auditoria-comunicacao": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-29", "completed_at": "2026-05-29"},
+      "ee-s2-pesquisa-mercado": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-posicionamento": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-diagnostico-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-diagnostico-criativos": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-diagnostico-cro": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-identidade-visual": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-brandbook": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-landing-page": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-copy-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-criativos-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-crm-setup": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-forecast-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-gmb-otimizacao": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null}
+    }
+  },
+  "history": [
+    {"ts": "2026-05-29T00:00:00Z", "skill": "ee-novo-cliente", "checkpoint": 0, "decision": "Cliente cadastrado. Briefing completo via kickoff V4 + transcrição da reunião GC/KickOff de 27/05/2026 + pesquisa automática."},
+    {"ts": "2026-05-29T01:00:00Z", "skill": "ee-s1-diagnostico-maturidade", "checkpoint": 1, "decision": "Score geral 16/100 (Crítico). Gaps críticos: CRM inexistente e Pixel sem conversão. Aprovado pelo operador sem ajustes."},
+    {"ts": "2026-05-29T02:00:00Z", "skill": "ee-s1-persona-icp", "checkpoint": 1, "decision": "ICP primário: Marina, 28-42 anos, decisora emocional. Mensagem-chave aprovada: opção B (emocional). 2 ICPs secundários mapeados. Aprovado sem ajustes."},
+    {"ts": "2026-05-29T03:00:00Z", "skill": "ee-s1-swot", "checkpoint": 1, "decision": "6 Forças, 5 Fraquezas, 5 Oportunidades, 5 Ameaças. Janela estratégica: território emocional/exclusividade vago. Risco principal: escalar mídia sem CRM/pixel. Estratégia 90 dias definida. Aprovado sem ajustes."},
+    {"ts": "2026-05-29T04:00:00Z", "skill": "ee-s1-auditoria-comunicacao", "checkpoint": 1, "decision": "Score médio 19/100. Top 3 problemas: mensagem-chave inconsistente em todos os canais, pixel+CRM inexistentes (balde furado), GMB invisível para buscas locais. 5 quick wins mapeados. Aprovado sem ajustes."}
+  ]
+}

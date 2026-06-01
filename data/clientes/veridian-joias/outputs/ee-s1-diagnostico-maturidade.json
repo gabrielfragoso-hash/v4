@@ -1,0 +1,80 @@
+{
+  "summary": "Veridian Jóias — score geral 16/100 (Crítico). 19 pontos abaixo da média do setor de joias. Crescendo pela força da loja física, não pelo digital. Gaps críticos: CRM inexistente (leads perdidos no WhatsApp) e Pixel sem eventos de conversão (agência otimizando às cegas). Prioridade imediata: CRM + Pixel antes de escalar mídia.",
+  "meta": {
+    "client": "Veridian Jóias",
+    "slug": "veridian-joias",
+    "skill": "ee-s1-diagnostico-maturidade",
+    "version": 1,
+    "generated_at": "2026-05-29",
+    "data_sources": ["client.json (briefing)", "Kickoff V4 — 29/05/2026", "Transcrição GC+KickOff — 27/05/2026"],
+    "v4mos": "sem integração — scores estimados via briefing"
+  },
+  "scores": {
+    "midia_paga":  {"score": 20, "classification": "Crítico", "estimated": true, "highlight": "R$1k/mês sem pixel de conversão nem ROAS calculado"},
+    "criativos":   {"score": 32, "classification": "Baixo",   "estimated": true, "highlight": "Tem agência + influencer, mas sem framework de testes A/B"},
+    "cro":         {"score": 10, "classification": "Crítico", "estimated": true, "highlight": "Apenas landing page — digital não captura leads"},
+    "crm":         {"score":  5, "classification": "Crítico", "estimated": true, "highlight": "Zero CRM — leads no WhatsApp sem follow-up"},
+    "seo":         {"score": 12, "classification": "Crítico", "estimated": true, "highlight": "GMB existe mas não otimizado; sem conteúdo indexado"},
+    "geral":       {"score": 16, "classification": "Crítico", "estimated": true}
+  },
+  "benchmark": {
+    "sector": "Joias e Semijoias",
+    "sector_avg": 35,
+    "gap_geral": -19,
+    "pilares": {
+      "midia_paga":  {"veridian": 20, "setor": 42, "gap": -22},
+      "criativos":   {"veridian": 32, "setor": 38, "gap": -6},
+      "cro":         {"veridian": 10, "setor": 30, "gap": -20},
+      "crm":         {"veridian":  5, "setor": 28, "gap": -23},
+      "seo":         {"veridian": 12, "setor": 35, "gap": -23}
+    },
+    "most_critical_gap": "CRM e SEO — ambos -23 pts, custo de implantação baixo, retorno rápido"
+  },
+  "executive_summary": {
+    "paragraph_1": "A Veridian Jóias tem 3 meses de operação e já fatura R$ 105.000/mês — resultado excepcional, impulsionado pelo ponto físico no centro de Cabo Frio e pela experiência de Jessica no setor. O score geral de maturidade digital é 16/100 (Crítico), 19 pontos abaixo da média do setor (35/100). Na prática, a Veridian está crescendo apesar do digital, não por causa dele. Com o nível atual de estruturação, o teto de crescimento é a capacidade física da loja.",
+    "paragraph_2": "Os dois gaps que estão custando resultado agora: (1) Nenhum CRM — cada lead que chega no WhatsApp e não compra no mesmo dia desaparece para sempre. Com ticket médio de R$ 808, um único lead perdido por dia equivale a R$ 24.000/mês jogados fora. (2) Pixel do Meta sem rastreamento de conversões — a agência está otimizando completamente às cegas. O CPL real da Veridian é desconhecido.",
+    "paragraph_3": "Os dois pontos fortes que precisam ser acelerados: (1) Ecossistema de conteúdo já funcionando — agência + influencer + vendedoras criam matéria-prima de qualidade acima da média para 3 meses. (2) Reconhecimento local com potencial inexplorado — com geolocalização digital, é possível aparecer para os 200k habitantes de Cabo Frio a um custo 5-10x menor que mídia offline."
+  },
+  "priorities": [
+    {
+      "rank": 1,
+      "action": "Implementar CRM (Kommo) e estruturar gestão de leads no WhatsApp",
+      "what": "Configurar Kommo com pipeline básico (Novo Lead → Orçamento → Negociação → Ganho/Perdido). Conectar WhatsApp Business. Criar mensagem de boas-vindas e régua de follow-up em 24h e 3 dias.",
+      "why": "Com ticket de R$ 808, cada lead não gerenciado é dinheiro perdido. Resolver ANTES de escalar investimento em anúncios.",
+      "effort": "médio",
+      "dependencies": ["Acesso ao WhatsApp Business", "Decisão sobre plano Kommo"]
+    },
+    {
+      "rank": 2,
+      "action": "Configurar Pixel do Meta com eventos de conversão",
+      "what": "Instalar Pixel na LP com eventos: PageView, Lead (clique no botão WhatsApp), Contact. Criar públicos personalizados de visitantes. Criar lookalike 1%.",
+      "why": "Agência rodando campanhas às cegas. Com pixel, otimização muda em 2-3 semanas. Custo: 1-2 dias técnicos.",
+      "effort": "baixo",
+      "dependencies": ["Acesso ao Meta Business Manager", "Acesso ao site"]
+    },
+    {
+      "rank": 3,
+      "action": "Escalar mídia paga com geolocalização (raio 10-14km da loja)",
+      "what": "Aumentar budget gradualmente (R$1k → R$2k → R$3k). Campanha de geolocalização centrada na Praça Porto Rocha. Público: mulheres 25-45 + casais + homens 30-55 em datas comemorativas.",
+      "why": "Moradores locais não sabem que a loja existe. Geolocalização resolve por R$0,10-0,30/visualização — incomparavelmente mais barato que telão.",
+      "effort": "médio",
+      "dependencies": ["Pixel configurado", "CRM mínimo funcionando"]
+    },
+    {
+      "rank": 4,
+      "action": "Otimizar Google Meu Negócio (Cabo Frio + Rio das Ostras)",
+      "what": "100% do perfil GMB: fotos profissionais, horário, categorias, descrição com keywords ('joias personalizadas Cabo Frio', 'alianças ouro 18K'), posts semanais, avaliações ativas dos primeiros clientes.",
+      "why": "Custo zero. Impacto direto em buscas locais. Quem busca 'aliança Cabo Frio' no Google hoje encontra Arte In Ouro — isso muda em 1-2 semanas.",
+      "effort": "baixo",
+      "dependencies": []
+    },
+    {
+      "rank": 5,
+      "action": "Evoluir landing page para site com captação de leads e catálogo",
+      "what": "Site de 5 páginas (Home, Sobre, Produtos/Alianças, Personalização, Contato) com formulário integrado ao CRM, galeria de peças, depoimentos e CTA WhatsApp em cada página.",
+      "why": "LP atual não captura leads nem converte — serve só de destino de anúncio. Site básico aumenta aproveitamento do tráfego e cria presença orgânica.",
+      "effort": "alto",
+      "dependencies": ["Manual da marca recebido", "CRM configurado"]
+    }
+  ]
+}

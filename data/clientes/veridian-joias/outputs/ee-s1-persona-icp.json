@@ -1,0 +1,129 @@
+{
+  "summary": "ICP primário: Marina, 28-42 anos, profissional liberal/empreendedora em Cabo Frio, decisora emocional que busca exclusividade e significado — não adorno. Job central: joia como âncora de memória de momentos importantes. Mensagem-chave aprovada: 'A peça certa para o momento que você nunca vai querer esquecer.' (Opção emocional). 2 ICPs secundários: casais buscando alianças e presenteadores sazonais.",
+  "meta": {
+    "client": "Veridian Jóias",
+    "slug": "veridian-joias",
+    "skill": "ee-s1-persona-icp",
+    "version": 1,
+    "generated_at": "2026-05-29",
+    "data_sources": ["client.json (briefing)", "ee-s1-diagnostico-maturidade.json"]
+  },
+  "icp_primario": {
+    "nome_ficticio": "Marina",
+    "demografico": {
+      "faixa_etaria": "28–42 anos",
+      "renda": "R$ 5.000–R$ 15.000/mês",
+      "localizacao": "Cabo Frio, Rio das Ostras e região dos Lagos/RJ — potencial nacional",
+      "estado_civil": "Casada, noiva ou em relacionamento estável",
+      "escolaridade": "Superior completo",
+      "profissao": "Profissional liberal, empreendedora, executiva, professora, influencer local",
+      "filhos": "Pode ter ou não — não determinante"
+    },
+    "comportamental": {
+      "decisao": "Predominantemente emocional, racionalizada depois — se encanta primeiro, justifica com qualidade depois",
+      "jornada": "Instagram/indicação → pesquisa no perfil → visita à loja → fecha presencialmente ou via WhatsApp",
+      "pesquisa": ["Instagram", "Google ('joias personalizadas Cabo Frio', 'alianças ouro 18K')", "Indicação de amigas", "Influencers de moda e lifestyle"],
+      "ciclo_decisao": "1–7 dias para joias de presente/autocompra; 2–4 semanas para alianças (pesquisa múltiplos fornecedores)",
+      "principal_objecao": "Esse valor não é muito caro? + dúvida sobre qualidade (ouro 18K vs 10K) + confiança em marca nova",
+      "gatilho_troca": "Atendimento frio/impessoal; vendedora empurrando; peça que não cumpriu promessa de durabilidade"
+    },
+    "jtbd": {
+      "funcional": "Quando quero marcar um momento especial — meu aniversário, um noivado, um presente significativo — eu quero encontrar uma joia que realmente me represente e que não seja igual à de todo mundo, para que daqui a 20 anos eu olhe para ela e lembre exatamente do que senti naquele dia.",
+      "emocional": "Sentir-se especial, valorizada e única. A joia é prova física de que aquele momento importou. Quer se olhar no espelho e sentir que a peça é dela, não de mais ninguém.",
+      "social": "Ser vista como alguém de bom gosto refinado, que não segue tendência de massa. Quando alguém pergunta 'que joia linda, onde você comprou?' — o job social se completa."
+    },
+    "dores": [
+      {"rank": 1, "dor": "Todas as joias que encontro parecem iguais — entro em 3 lojas e vejo a mesma peça com nome diferente.", "insight": "Quer exclusividade de verdade, não a palavra impressa no catálogo"},
+      {"rank": 2, "dor": "Tenho medo de pagar caro e a peça manchar, escurecer ou quebrar em seis meses.", "insight": "Já foi enganada antes ou conhece alguém que foi — desconfiança de qualidade é a barreira mais difícil em marca nova"},
+      {"rank": 3, "dor": "Não sei diferenciar ouro 18K de ouro 10K olhando a peça — me sinto insegura na hora de comprar.", "insight": "A guerra de preço do mercado a confunde. Por que a aliança de lá custa R$300 e a daqui R$900?"},
+      {"rank": 4, "dor": "Quando entro numa joalheria grande me sinto pressionada, como se eu fosse obrigada a comprar.", "insight": "Ambiente impessoal e abordagem de balcão a deixam desconfortável. Prefere ser acompanhada, não empurrada."},
+      {"rank": 5, "dor": "Quero algo personalizado mas fico com medo: vai ficar bonito mesmo? E se não gostar quando pronto?", "insight": "Fricção de incerteza na compra sob medida — não visualiza o resultado final e teme arrependimento"}
+    ],
+    "ganhos_desejados": [
+      "Uma peça que vai usar por décadas e que vai contar a história daquele momento — durabilidade com significado",
+      "Saber exatamente o que está levando — material, teor do ouro, garantia, procedência — sem dúvida pós-compra",
+      "Ser reconhecida pelo bom gosto quando alguém perguntar sobre a peça",
+      "Uma experiência de compra que ela vai querer contar — atendimento cuidadoso, sem pressa, que a fez sentir-se especial",
+      "A certeza de que o valor pago foi justo — não barato, mas justo para o que recebeu"
+    ]
+  },
+  "persona": {
+    "nome": "Marina Ferreira",
+    "idade_aparente": "32 anos",
+    "foto_descricao": "Marina está em frente ao espelho de um quarto bem decorado, com luz natural entrando pela janela. Ela usa uma blusa off-white, cabelo preso de forma casual, e sorri discretamente enquanto coloca um brinco. A foto não parece encenada — parece um momento real capturado.",
+    "historia": "Marina é fisioterapeuta e tem um consultório próprio em Cabo Frio. Casada há 4 anos, está planejando renovar as alianças com o marido no aniversário do casamento. Ela não quer 'qualquer aliança' — quer uma que seja diferente da primeira, que represente quem eles são hoje. Já passou na Arte In Ouro, achou o atendimento apressado e as alianças genéricas. Uma amiga falou da Veridian. Marina foi 'só olhar' e saiu três horas depois com a aliança escolhida, um anel para ela mesma e sorrindo até chegar em casa.",
+    "frase_citacao": "Eu não queria uma aliança bonita. Eu queria UMA aliança — sabe? Aquela que quando você olha, você lembra do dia que escolheu."
+  },
+  "icps_secundarios": [
+    {
+      "tipo": "Casal em busca de alianças",
+      "idade": "28–50 anos, ambos os sexos",
+      "situacao": "Noivando ou celebrando aniversário de casamento",
+      "decisao": "Conjunta — mulher inicia a pesquisa, casal finaliza junto na loja",
+      "job_funcional": "Quando vou me casar, quero alianças que sejam únicas para nós dois, para que quando olharmos daqui a 30 anos ainda façam sentido.",
+      "dor_principal": "Medo de comprar algo padrão — quer se diferenciar do casamento do vizinho",
+      "canal_entrada": "Instagram + indicação + busca Google ('aliança ouro 18K Cabo Frio')"
+    },
+    {
+      "tipo": "Presenteador sazonal",
+      "idade": "30–60 anos, predominantemente masculino",
+      "situacao": "Datas comemorativas: Dia dos Namorados, Natal, aniversário",
+      "decisao": "Individual, rápida — depende muito do atendimento para decidir",
+      "job_funcional": "Quando quero presentear alguém importante, quero algo que ela use de verdade e não coloque na gaveta.",
+      "dor_principal": "Insegurança sobre o que comprar — delega a decisão para a vendedora",
+      "canal_entrada": "Busca Google local + indicação + passa na frente da loja"
+    }
+  ],
+  "onde_encontrar": {
+    "canais_digitais": [
+      "Instagram: #joiaspersonalizadas, #alianças, #noivado, #casamento, #joiasfemininas, #cabofrio, #riodasostras",
+      "Grupos de Facebook: 'Casamentos RJ', 'Noivas do Rio de Janeiro', 'Cabo Frio — Compra e Venda', 'Lagos RJ'",
+      "Pinterest: 'anel de noivado exclusivo', 'aliança ouro diferente', 'joias minimalistas'",
+      "YouTube: canais de moda, lifestyle e planejamento de casamento"
+    ],
+    "palavras_chave": [
+      "aliança personalizada Cabo Frio",
+      "joias ouro 18K Cabo Frio",
+      "joalheria Rio das Ostras",
+      "anel noivado exclusivo RJ",
+      "onde comprar aliança diferente",
+      "joia com significado presente"
+    ],
+    "influencers": [
+      "Influencers locais de Cabo Frio/Lagos (micro, 5k–50k seguidores)",
+      "Perfis de lifestyle feminino do RJ",
+      "Conteúdo de casamento, decoração e moda acessível-sofisticada"
+    ],
+    "comunidades_fisicas": [
+      "Clínicas de estética, salões e spas em Cabo Frio (local de indicação)",
+      "Eventos de noivas e casamentos na região dos Lagos",
+      "Academia, brunch de negócios femininos, grupos de empreendedoras locais"
+    ]
+  },
+  "mensagens_chave": {
+    "escolhida": "B",
+    "mensagem_aprovada": "A peça certa para o momento que você nunca vai querer esquecer.",
+    "opcoes": [
+      {
+        "id": "A",
+        "tipo": "funcional",
+        "mensagem": "Ouro 18K com design exclusivo. Joias que duram tanto quanto a memória.",
+        "contexto": "Anúncios de conversão, bio do Instagram, headline de landing page"
+      },
+      {
+        "id": "B",
+        "tipo": "emocional",
+        "mensagem": "A peça certa para o momento que você nunca vai querer esquecer.",
+        "contexto": "Criativos de topo de funil, stories, vídeos da influencer, hero da landing page",
+        "escolhida": true
+      },
+      {
+        "id": "C",
+        "tipo": "social",
+        "mensagem": "Design exclusivo que faz as pessoas perguntarem: onde você comprou?",
+        "contexto": "Reels, UGC da influencer, anúncios para públicos de lookalike"
+      }
+    ],
+    "justificativa_escolha": "Arte In Ouro ocupa o território funcional/preço. Vivara ocupa o aspiracional de marca. O único terreno onde a Veridian vence sem histórico de marca ou volume de investimento é o emocional-individual — a joia como âncora de memória."
+  }
+}

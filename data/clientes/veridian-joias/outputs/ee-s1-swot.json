@@ -1,0 +1,168 @@
+{
+  "summary": "Veridian Jóias — território emocional/exclusividade está vago na região. Arte In Ouro compete em preço/volume, Vivara em marca nacional. Janela estratégica: plantar bandeira premium-emocional local antes que alguém ocupe. Risco principal: escalar mídia antes de ter CRM e pixel — burn de margem sem resultado. Estratégia 90 dias: base (CRM + pixel + GMB) nas semanas 1-2, posicionamento + alianças nas semanas 3-4, escalar com dados.",
+  "meta": {
+    "client": "Veridian Jóias",
+    "slug": "veridian-joias",
+    "skill": "ee-s1-swot",
+    "version": 1,
+    "generated_at": "2026-05-29",
+    "data_sources": [
+      "client.json (briefing)",
+      "outputs/ee-s1-diagnostico-maturidade.json",
+      "outputs/ee-s1-persona-icp.json"
+    ]
+  },
+  "forcas": [
+    {
+      "id": "F1",
+      "titulo": "Jessica tem 7 anos de operação interna na Arte In Ouro — conhece o principal concorrente por dentro",
+      "descricao": "Entrou como vendedora em 2018, virou gerente, depois sócia. Saiu em 2025. Conhece precificação, processo e pontos cegos do concorrente.",
+      "implicacao": "Permite antecipar movimentos competitivos e construir comunicação que explora exatamente o que Arte In Ouro não faz."
+    },
+    {
+      "id": "F2",
+      "titulo": "Produção própria dimensionada para 7-8 lojas sem gargalo imediato",
+      "descricao": "Oficina da matriz planejada para expansão. Alianças feitas no mesmo dia em emergência; prazo padrão 3-7 dias.",
+      "implicacao": "Escalar demanda via mídia não vira crise operacional. Diferencial mensurável vs. concorrentes sem produção própria."
+    },
+    {
+      "id": "F3",
+      "titulo": "Apenas ouro 18K — superioridade de material comprovável no ponto de venda",
+      "descricao": "Arte In Ouro usa ouro 10K para alianças baratas. Veridian só trabalha 18K. Vendedoras já sabem argumentar.",
+      "implicacao": "Transforma objeção de preço em conversa sobre valor — argumento tangível e demonstrável."
+    },
+    {
+      "id": "F4",
+      "titulo": "R$ 105.000/mês de faturamento em 3 meses sem digital estruturado",
+      "descricao": "Média meses 03 e 04/2026. Crescimento via loja física, sem investimento estruturado em digital.",
+      "implicacao": "Prova que produto e atendimento funcionam. Teto de crescimento ainda não foi testado — digital pode multiplicar."
+    },
+    {
+      "id": "F5",
+      "titulo": "Ecossistema de conteúdo funcionando desde o lançamento",
+      "descricao": "Agência ativa + influencer semanal + vendedoras produzindo conteúdo. 3 campanhas Meta rodando com segmentações diferentes.",
+      "implicacao": "Matéria-prima de criativos já existe. Com pixel e posicionamento, para de ser decorativo e vira aquisição."
+    },
+    {
+      "id": "F6",
+      "titulo": "Ponto físico premium no centro de Cabo Frio em polo turístico",
+      "descricao": "Praça Porto Rocha, 184 — centro de cidade com ~200k habitantes + fluxo turístico sazonal.",
+      "implicacao": "Geolocalização digital traz quem já está a 10-14km para converter no físico — onde o atendimento fecha a venda."
+    }
+  ],
+  "fraquezas": [
+    {
+      "id": "W1",
+      "titulo": "Score digital 16/100: sem pixel, sem CRM, sem rastreamento — agência operando às cegas",
+      "descricao": "CRM 5/100, CRO 10/100, Mídia Paga 20/100. Campanhas sem eventos de conversão. CPL real desconhecido.",
+      "risco": "Cada R$ investido em mídia tem retorno impossível de medir. Impossível otimizar o que não é rastreado.",
+      "mitigacao": "Pixel + CRM nas primeiras 2 semanas — dependência crítica para todas as ações de mídia."
+    },
+    {
+      "id": "W2",
+      "titulo": "Reconhecimento de marca local próximo de zero apesar do ponto central",
+      "descricao": "Taxista que passa 10x/dia na frente da loja não sabia que ela existia. Apenas 3 meses de operação.",
+      "risco": "Crescimento limitado à conversão de quem entra na loja. Meta de +45% inatingível sem awareness.",
+      "mitigacao": "Geolocalização digital + GMB otimizado + conteúdo de alcance."
+    },
+    {
+      "id": "W3",
+      "titulo": "Margem de contribuição em 23,9% — 6 pontos abaixo da meta de 30%",
+      "descricao": "Taxa de máquina + imposto Simples consumindo ~20% do faturamento. Margem por categoria não mapeada.",
+      "risco": "Escalar vendas sem melhorar margem amplifica o problema. CAC pode consumir toda a MC.",
+      "mitigacao": "Mapear margem por categoria urgentemente para direcionar mídia aos produtos de maior MC."
+    },
+    {
+      "id": "W4",
+      "titulo": "Sem playbook de vendas: processo centralizado em 3 pessoas não documentadas",
+      "descricao": "Sem scripts de WhatsApp, argumentação ou critérios de negociação documentados. Expansão planejada sem processo replicável.",
+      "risco": "Saída de uma vendedora leva junto a capacidade de conversão. Filial abre sem padrão.",
+      "mitigacao": "Playbook básico antes da abertura de Rio das Ostras."
+    },
+    {
+      "id": "W5",
+      "titulo": "Dependência total de agência externa para tráfego pago sem KPIs definidos",
+      "descricao": "Agência não identificada gerencia tráfego. Jessica acompanha resultados reativamente sem métricas definidas.",
+      "risco": "Agência otimiza por métricas de vaidade (alcance, curtidas) em vez de CPL e conversões reais.",
+      "mitigacao": "V4 define KPIs e instala pixel — agência executa dentro dos parâmetros definidos."
+    }
+  ],
+  "oportunidades": [
+    {
+      "id": "O1",
+      "titulo": "Território emocional/exclusividade completamente vago na região",
+      "descricao": "Arte In Ouro compete em preço/volume. Vivara em marca nacional. Nenhum player local ocupa 'joia com história e significado'.",
+      "como_capturar": "Posicionamento consistente com mensagem aprovada em todos os canais — criativos, atendimento, embalagem, WhatsApp."
+    },
+    {
+      "id": "O2",
+      "titulo": "Mercado de joias personalizadas crescendo 8-18%/ano",
+      "descricao": "Setor em +8-18%/ano (Bain/Mordor). E-commerce +48% em 2025. Personalização como tendência de luxo acelerada.",
+      "como_capturar": "Posicionar alianças e joias personalizadas como carro-chefe — não relógios ou perfumes que são commodities."
+    },
+    {
+      "id": "O3",
+      "titulo": "200.000 habitantes em Cabo Frio que não sabem que a Veridian existe",
+      "descricao": "3 meses de operação, zero mídia com geolocalização, GMB não otimizado. Janela de primeiro movimento.",
+      "como_capturar": "Campanhas de awareness com pin de mapa 10-14km + GMB para buscas locais."
+    },
+    {
+      "id": "O4",
+      "titulo": "Alianças: mercado sempre-ativo que não depende de sazonalidade",
+      "descricao": "Casamentos e noivados acontecem todos os meses. Alta margem, sem necessidade de estoque pronto.",
+      "como_capturar": "Funil dedicado para alianças: campanha + LP específica + fluxo WhatsApp para orçamento personalizado."
+    },
+    {
+      "id": "O5",
+      "titulo": "GMB dos concorrentes provavelmente não otimizado — janela para SEO local",
+      "descricao": "Mercado local de joias no Brasil ainda não adotou SEO local. Quem otimiza primeiro captura buscas por anos.",
+      "como_capturar": "GMB 100% preenchido + posts semanais + avaliações dos primeiros clientes = aparecer antes da Arte In Ouro."
+    }
+  ],
+  "ameacas": [
+    {
+      "id": "A1",
+      "titulo": "Arte In Ouro pode reagir ao posicionamento da Veridian com recursos muito maiores",
+      "descricao": "9 lojas, 10+ anos, forte em marketing. Mesma praça física e digital em Cabo Frio.",
+      "protecao": "Não competir no mesmo território (preço/volume). Escalar no emocional/exclusividade — onde tamanho não é vantagem."
+    },
+    {
+      "id": "A2",
+      "titulo": "Ouro em alta histórica pressiona margem de matéria-prima (55% do custo)",
+      "descricao": "Arte In Ouro migrou para ouro 10K exatamente por causa da alta. Pedro sinalizou isso como ameaça real.",
+      "protecao": "Mapear margem por categoria. Produtos com menor dependência de ouro sustentam crescimento enquanto margem de joias é protegida."
+    },
+    {
+      "id": "A3",
+      "titulo": "100% do tráfego pago concentrado em Meta — zero diversificação de canal",
+      "descricao": "Sem Google Ads, sem SEO, sem email. Mudança de algoritmo ou suspensão de conta para toda aquisição.",
+      "protecao": "GMB + SEO local como canal orgânico independente. Google Ads para buscas de intenção alta."
+    },
+    {
+      "id": "A4",
+      "titulo": "Turnover de vendedoras experientes leva o processo de conversão junto",
+      "descricao": "As vendedoras vieram com experiência de mercado. Sem processo documentado, saída de uma delas impacta diretamente o faturamento.",
+      "protecao": "Playbook de vendas antes da abertura da filial."
+    },
+    {
+      "id": "A5",
+      "titulo": "Vivara e marcas nacionais como âncora de comparação para consumidores indecisos",
+      "descricao": "Vivara tem loja na cidade. Para quem não conhece a Veridian, a comparação instintiva é com marcas conhecidas.",
+      "protecao": "Avaliações no GMB + depoimentos de clientes reais + prova social no Instagram constroem confiança que marca nova não tem no início."
+    }
+  ],
+  "sintese": {
+    "alavancagem": "A jogada mais inteligente é usar a intel de Jessica sobre Arte In Ouro (F1) + produção própria de ouro 18K (F2, F3) + conteúdo já produzido (F5) para ocupar o único território estratégico vago: joalheria premium-emocional local. Arte In Ouro não pode responder sem abandonar o posicionamento de volume que sustenta suas 9 lojas.",
+    "protecao": "O risco mais concreto não é o concorrente — é escalar mídia antes de ter CRM e rastreamento (W1 + A3). Investir sem pixel pode acelerar burn de margem (W3) sem gerar resultado. Abertura de filial sem playbook (W4) dilui qualidade de atendimento.",
+    "estrategia_90_dias": "Semanas 1-2: instalar base (CRM + pixel + GMB). Semanas 3-4: lançar posicionamento emocional com geolocalização e funil dedicado de alianças. Semanas 5-8: escalar com CPL real rastreado, playbook antes de Rio das Ostras, construir ativo de avaliações e prova social."
+  },
+  "acoes_prioritarias": [
+    {"rank": 1, "acao": "Instalar Pixel Meta com eventos de conversão + CRM (Kommo)", "base_swot": "Resolve W1, mitiga A3, habilita todas as ações de mídia", "impacto": "alto", "prazo": "Semana 1", "dependencia": "Acesso Meta BM + site"},
+    {"rank": 2, "acao": "Otimizar GMB Cabo Frio + preparar ficha Rio das Ostras", "base_swot": "Captura O5, resolve W2 parcialmente, mitiga A3", "impacto": "alto", "prazo": "Semana 1", "dependencia": "Nenhuma"},
+    {"rank": 3, "acao": "Campanha de geolocalização 10-14km focada em mulheres 25-45 e casais", "base_swot": "Alavanca F6, captura O3, usa F5", "impacto": "alto", "prazo": "Semana 2", "dependencia": "Pixel instalado"},
+    {"rank": 4, "acao": "Funil dedicado de alianças: campanha + LP + fluxo WhatsApp", "base_swot": "Captura O4, alavanca F2+F3, usa intel F1", "impacto": "alto", "prazo": "Semana 2-3", "dependencia": "CRM instalado"},
+    {"rank": 5, "acao": "Posicionar todo o conteúdo no território emocional aprovado", "base_swot": "Captura O1, alavanca F5, consolida diferencial vs A1", "impacto": "médio", "prazo": "Semana 2", "dependencia": "Brandbook (S3)"},
+    {"rank": 6, "acao": "Mapear margem por categoria de produto com Jessica", "base_swot": "Resolve W3, informa priorização de mídia", "impacto": "médio", "prazo": "Semana 1", "dependencia": "Jessica fornecer dados"},
+    {"rank": 7, "acao": "Rascunho de playbook de vendas/WhatsApp antes da abertura de Rio das Ostras", "base_swot": "Resolve W4, mitiga A4", "impacto": "médio", "prazo": "Semana 3-4", "dependencia": "—"}
+  ]
+}

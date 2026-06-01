@@ -15,7 +15,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const CLIENTES_DIR = "/Users/gabrielfragoso/clientes";
+const CLIENTES_DIR = process.env.CLIENTES_DIR ?? path.join(process.cwd(), "data/clientes");
 
 const STATUS_MAP: Record<string, "done" | "in_progress" | "pending" | "blocked"> = {
   completed: "done",
@@ -233,6 +233,26 @@ export default async function ClientePage({
             })}
           </div>
         </div>
+
+        {/* Portal link */}
+        <Link
+          href={`/clientes/${slug}/portal`}
+          className="flex items-center justify-between rounded-xl px-4 py-3 transition-all group"
+          style={{
+            background: "rgba(228,10,20,0.08)",
+            border: "1px solid rgba(228,10,20,0.25)",
+          }}
+        >
+          <div>
+            <p className="text-xs font-black uppercase tracking-wider" style={{ color: "var(--color-primary)" }}>
+              Portal do Cliente
+            </p>
+            <p className="text-xs mt-0.5" style={{ color: "var(--color-text-muted)" }}>
+              Entregáveis da Semana 1 prontos para apresentar
+            </p>
+          </div>
+          <ChevronRight size={16} style={{ color: "var(--color-primary)" }} />
+        </Link>
 
         {/* Last activity */}
         {lastHistory && (

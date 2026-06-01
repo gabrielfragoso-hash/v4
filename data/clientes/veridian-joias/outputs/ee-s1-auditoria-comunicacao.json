@@ -1,0 +1,193 @@
+{
+  "summary": "Veridian Jóias — score médio de comunicação digital: 19/100. Maior problema: mensagem-chave aprovada (Opção B emocional) não está sendo usada em nenhum canal. Site sem prova social, sem captura de lead, CTA envia para iJewel externo. GMB invisível para buscas locais. WhatsApp sem saudação, sem follow-up, sem CRM — balde furado. 5 quick wins de impacto alto e esforço baixo implementáveis esta semana sem custo.",
+  "meta": {
+    "client": "Veridian Jóias",
+    "slug": "veridian-joias",
+    "skill": "ee-s1-auditoria-comunicacao",
+    "version": 1,
+    "generated_at": "2026-05-29",
+    "data_sources": [
+      "client.json (briefing)",
+      "outputs/ee-s1-persona-icp.json",
+      "outputs/ee-s1-diagnostico-maturidade.json",
+      "outputs/ee-s1-swot.json",
+      "WebFetch: veridianjoias.com.br"
+    ]
+  },
+  "canais": [
+    {
+      "canal": "Site / Landing Page",
+      "url": "https://www.veridianjoias.com.br/",
+      "plataforma": "GreatPages",
+      "score": 18,
+      "classificacao": "Crítico",
+      "itens": [
+        {"item": "Title tag", "status": "alerta", "diagnostico": "'joias em Cabo Frio' — sem nome da marca, perde branding em buscas diretas pelo nome"},
+        {"item": "Meta description", "status": "alerta", "diagnostico": "'Joias que unem exclusividade, significado e sofisticação.' — aceitável mas genérica, sem keywords long-tail"},
+        {"item": "Hero headline", "status": "alerta", "diagnostico": "'TRANSFORME MOMENTOS EM SÍMBOLOS ETERNOS DE AFETO' — emocionalmente alinhada mas diferente da mensagem aprovada ('A peça certa para o momento que você nunca vai querer esquecer.')"},
+        {"item": "CTA principal", "status": "crítico", "diagnostico": "'Veja nosso catálogo' → abre iJewel (plataforma externa) — usuário sai da LP sem captura de lead"},
+        {"item": "Botão WhatsApp", "status": "alerta", "diagnostico": "Presente mas sem pixel de conversão configurado — cliques não rastreados"},
+        {"item": "Prova social", "status": "crítico", "diagnostico": "Zero depoimentos, avaliações ou logos visíveis — aumenta barreira de confiança em marca nova"},
+        {"item": "Formulário de captação", "status": "crítico", "diagnostico": "Inexistente — visitante só converte se clicar no WhatsApp ativamente"},
+        {"item": "Navegação", "status": "crítico", "diagnostico": "Apenas 'Sobre' (Instagram) e 'Como chegar' (Maps) — site não retém nem gera leads"},
+        {"item": "SEO on-page", "status": "crítico", "diagnostico": "H1 não identificado, Title sem marca, sem keywords long-tail no corpo do conteúdo"},
+        {"item": "Pixel Meta", "status": "crítico", "diagnostico": "Não configurado com eventos de conversão — nenhuma ação do usuário é rastreada"}
+      ]
+    },
+    {
+      "canal": "Instagram",
+      "handle": "@veridianjoias",
+      "score": 32,
+      "classificacao": "Baixo",
+      "nota": "Análise baseada em briefing — screenshots não fornecidos",
+      "itens": [
+        {"item": "Frequência de conteúdo", "status": "ok", "diagnostico": "Alta — agência + influencer semanal + vendedoras produzem conteúdo regularmente"},
+        {"item": "Diversidade de formatos", "status": "ok", "diagnostico": "Fotos, reels, stories, influencer — variedade positiva para algoritmo"},
+        {"item": "Bio", "status": "alerta", "diagnostico": "Provavelmente não otimizada para keywords do ICP ('alianças ouro 18K Cabo Frio', 'joias personalizadas')"},
+        {"item": "Link na bio", "status": "alerta", "diagnostico": "Provavelmente aponta para LP — mas LP não converte (ver canal 1)"},
+        {"item": "Consistência de mensagem", "status": "crítico", "diagnostico": "Campanha Dia dos Namorados com carrossel de preços — contradiz posicionamento emocional aprovado"},
+        {"item": "Alinhamento com mensagem-chave", "status": "crítico", "diagnostico": "Mensagem aprovada Opção B não está sendo usada como fio condutor dos criativos"},
+        {"item": "Descoberta local", "status": "crítico", "diagnostico": "@veridianjoias não aparece em buscas de 'joias Cabo Frio' — zero awareness orgânico confirmado"}
+      ]
+    },
+    {
+      "canal": "Anúncios Meta Ads",
+      "score": 18,
+      "classificacao": "Crítico",
+      "campanhas_ativas": [
+        "Campanha para seguidores",
+        "Campanha para não seguidores com localização da loja",
+        "Campanha Dia dos Namorados — carrossel de produtos com preços"
+      ],
+      "itens": [
+        {"item": "Campanha não seguidores + geolocalização", "status": "ok", "diagnostico": "Correta em princípio — aponta para potenciais locais"},
+        {"item": "Campanha Dia dos Namorados", "status": "crítico", "diagnostico": "Carrossel com preços — posicionamento de volume, não emocional — desalinhado com ICP Marina"},
+        {"item": "Pixel com eventos de conversão", "status": "crítico", "diagnostico": "Zero eventos configurados — agência otimiza por alcance/clique, não por Lead"},
+        {"item": "Lookalike audiences", "status": "crítico", "diagnostico": "Impossível criar sem pixel configurado"},
+        {"item": "CPL real", "status": "crítico", "diagnostico": "Desconhecido — 6 leads mencionados no 1º dia mas sem atribuição confirmada"},
+        {"item": "Mensagem-chave nos criativos", "status": "crítico", "diagnostico": "Criativos não refletem território emocional 'âncora de memória' aprovado"}
+      ]
+    },
+    {
+      "canal": "Google Meu Negócio",
+      "score": 12,
+      "classificacao": "Crítico",
+      "itens": [
+        {"item": "Perfil existente", "status": "ok", "diagnostico": "GMB cadastrado e confirmado"},
+        {"item": "Completude do perfil", "status": "crítico", "diagnostico": "Score SEO 12/100 implica campos críticos vazios — descrição, categorias, fotos"},
+        {"item": "Visibilidade em 'joias Cabo Frio'", "status": "crítico", "diagnostico": "Busca ao vivo não retornou Veridian — Arte In Ouro provavelmente aparece antes"},
+        {"item": "Keywords na descrição", "status": "crítico", "diagnostico": "Provavelmente sem 'alianças personalizadas', 'ouro 18K', 'joias exclusivas Cabo Frio'"},
+        {"item": "Avaliações", "status": "crítico", "diagnostico": "3 meses de operação — provavelmente < 10 avaliações, sem processo ativo de coleta"},
+        {"item": "Posts recentes", "status": "crítico", "diagnostico": "Provavelmente inexistentes — canal orgânico de custo zero desperdiçado"},
+        {"item": "Fotos profissionais", "status": "alerta", "diagnostico": "Status desconhecido — aguarda materiais que Jessica comprometeu-se a enviar"}
+      ]
+    },
+    {
+      "canal": "WhatsApp Business",
+      "score": 15,
+      "classificacao": "Crítico",
+      "itens": [
+        {"item": "WhatsApp Business ativo", "status": "ok", "diagnostico": "Confirmado nos acessos — base existe"},
+        {"item": "Mensagem de saudação", "status": "alerta", "diagnostico": "Status desconhecido — provavelmente mensagem padrão do sistema, sem personalização de marca"},
+        {"item": "Mensagem de ausência", "status": "crítico", "diagnostico": "Sem processo documentado — leads fora do horário ficam sem resposta"},
+        {"item": "Tempo de resposta", "status": "crítico", "diagnostico": "Não medido — vendedoras se revezam balcão+digital — risco real de demora"},
+        {"item": "Follow-up", "status": "crítico", "diagnostico": "Inexistente — orçamentos enviados sem processo de retorno estruturado"},
+        {"item": "CRM integrado", "status": "crítico", "diagnostico": "Zero — leads somem após primeira conversa sem compra"},
+        {"item": "Script de atendimento", "status": "crítico", "diagnostico": "Inexistente — cada vendedora atende do jeito dela, sem padrão de marca"}
+      ]
+    }
+  ],
+  "scores_resumo": {
+    "site": 18,
+    "instagram": 32,
+    "meta_ads": 18,
+    "gmb": 12,
+    "whatsapp": 15,
+    "media_geral": 19
+  },
+  "matriz_gaps": [
+    {"rank": 1, "canal": "Ads + Site", "gap": "Pixel sem eventos de conversão — agência otimiza às cegas", "impacto": "alto", "esforco": "baixo", "prioridade": "quick_win", "acao": "Instalar evento Lead no clique do botão WhatsApp via Meta Business Manager"},
+    {"rank": 2, "canal": "WhatsApp", "gap": "Sem follow-up + sem CRM — leads orçados somem", "impacto": "alto", "esforco": "baixo", "prioridade": "quick_win", "acao": "Configurar mensagem de saudação/ausência + iniciar fluxo manual de follow-up em 24h"},
+    {"rank": 3, "canal": "GMB", "gap": "Perfil incompleto — não aparece para 'joias Cabo Frio'", "impacto": "alto", "esforco": "baixo", "prioridade": "quick_win", "acao": "Preencher 100% GMB com keywords do ICP + solicitar avaliações de primeiros clientes"},
+    {"rank": 4, "canal": "Todos", "gap": "Mensagem-chave aprovada (Opção B) não está sendo usada em nenhum canal", "impacto": "alto", "esforco": "baixo", "prioridade": "quick_win", "acao": "Atualizar hero do site, bio do Instagram, scripts WhatsApp com mensagem aprovada"},
+    {"rank": 5, "canal": "Site", "gap": "CTA 'Veja catálogo' leva para iJewel — usuário sai sem se converter", "impacto": "alto", "esforco": "baixo", "prioridade": "quick_win", "acao": "Trocar CTA por 'Fale com a gente no WhatsApp' com link direto rastreado"},
+    {"rank": 6, "canal": "Ads", "gap": "Campanha Dia dos Namorados com preços — posiciona como volume, não emocional", "impacto": "alto", "esforco": "medio", "prioridade": "estrategico", "acao": "Recriar campanha com criativos emocionais alinhados ao ICP Marina (pós-brandbook S3)"},
+    {"rank": 7, "canal": "Site", "gap": "Sem prova social — aumenta barreira de confiança em marca nova", "impacto": "alto", "esforco": "medio", "prioridade": "estrategico", "acao": "Coletar 3-5 depoimentos de primeiros clientes com foto e resultado + inserir na LP"},
+    {"rank": 8, "canal": "Instagram", "gap": "Bio não otimizada para keywords do ICP", "impacto": "medio", "esforco": "baixo", "prioridade": "quick_win", "acao": "Reescrever bio com 'joias exclusivas ouro 18K | alianças personalizadas | Cabo Frio'"},
+    {"rank": 9, "canal": "Site", "gap": "Title tag sem nome da marca", "impacto": "medio", "esforco": "baixo", "prioridade": "quick_win", "acao": "Atualizar para 'Veridian Jóias — Joias exclusivas em Cabo Frio'"},
+    {"rank": 10, "canal": "Site", "gap": "Sem formulário de captação de leads", "impacto": "alto", "esforco": "alto", "prioridade": "estrategico", "acao": "Resolver com evolução da LP para site completo (skill ee-s3-landing-page)"},
+    {"rank": 11, "canal": "WhatsApp", "gap": "Sem mensagem de saudação/ausência configuradas", "impacto": "medio", "esforco": "baixo", "prioridade": "quick_win", "acao": "Configurar saudação com tom emocional da marca em 20 min"}
+  ],
+  "resumo_executivo": {
+    "problema_1": {
+      "titulo": "Mensagem-chave inconsistente em todos os canais",
+      "evidencia": "Hero do site ('Transforme momentos em símbolos eternos de afeto') diverge da mensagem aprovada ('A peça certa para o momento que você nunca vai querer esquecer.'). Campanha Dia dos Namorados com carrossel de preços usa linguagem de volume.",
+      "impacto": "ICP Marina não reconhece a Veridian como marca de significado — vê mais uma joalheria genérica. Posicionamento emocional que é a vantagem estratégica real não está chegando até ela.",
+      "acao": "Unificar mensagem-chave aprovada em site, bio Instagram, criativos e WhatsApp — custo zero, impacto imediato."
+    },
+    "problema_2": {
+      "titulo": "Pixel sem conversão + WhatsApp sem CRM = balde furado",
+      "evidencia": "6 leads no 1º dia da nova campanha — mas quantos foram respondidos? Em quanto tempo? Quantos viraram venda? Ninguém sabe. Ticket médio de R$808 × leads perdidos = perda invisível diária.",
+      "impacto": "Cada R$1 investido em mídia tem retorno incalculável. Agência não tem como otimizar. Leads que chegam no WhatsApp e não compram no mesmo dia desaparecem para sempre.",
+      "acao": "Pixel com evento Lead (clique WhatsApp) + mensagem de boas-vindas/follow-up 24h no WhatsApp Business."
+    },
+    "problema_3": {
+      "titulo": "GMB invisível para 'joias Cabo Frio'",
+      "evidencia": "Busca ao vivo não retornou Veridian nos primeiros resultados locais. Perfil existe mas não ranqueia — campos críticos presumivelmente vazios.",
+      "impacto": "Quem busca 'aliança personalizada Cabo Frio' no Google encontra Arte In Ouro. Canal orgânico de custo zero desperdiçado.",
+      "acao": "Preencher 100% GMB com keywords do ICP + solicitar avaliações dos primeiros clientes."
+    }
+  },
+  "quick_wins": [
+    {
+      "rank": 1,
+      "acao": "Instalar Pixel Meta com evento Lead no botão WhatsApp do site",
+      "canal": "Site + Meta Ads",
+      "passo_a_passo": "Meta Business Manager → Gerenciador de Eventos → Pixel → Adicionar evento Lead no clique do botão WhatsApp da LP. Opcional: adicionar ViewContent no PageView.",
+      "tempo_estimado": "1-2 horas",
+      "impacto": "Agência passa a otimizar por Lead real. CPL real conhecido em 2-3 semanas. Base para lookalike audiences.",
+      "quem_faz": "V4 (acesso Meta BM + site confirmados)",
+      "dependencia": "Acesso ao Meta Business Manager + ao site (ambos confirmados)"
+    },
+    {
+      "rank": 2,
+      "acao": "Atualizar hero text e CTA principal do site com mensagem aprovada",
+      "canal": "Site",
+      "passo_a_passo": "GreatPages: trocar hero 'TRANSFORME MOMENTOS...' por 'A peça certa para o momento que você nunca vai querer esquecer.' Trocar CTA 'Veja nosso catálogo' por 'Escolha a sua no WhatsApp' com link wa.me/5522988171080.",
+      "tempo_estimado": "30 minutos",
+      "impacto": "Consistência de mensagem entre anúncio → site → WhatsApp. Reduz fricção. Reforça posicionamento emocional.",
+      "quem_faz": "V4 (acesso website_admin confirmado)",
+      "dependencia": "Nenhuma"
+    },
+    {
+      "rank": 3,
+      "acao": "Otimizar Google Meu Negócio com keywords do ICP",
+      "canal": "Google Meu Negócio",
+      "passo_a_passo": "1) Descrição: incluir 'joias personalizadas Cabo Frio', 'alianças ouro 18K', 'joalheria exclusiva'. 2) Adicionar 10+ fotos profissionais da loja e produtos. 3) Verificar horário correto. 4) Categorias: Joalheria + Loja de joias + Joias. 5) Criar primeiro post semanal. 6) Enviar mensagem para os últimos 20 clientes pedindo avaliação Google.",
+      "tempo_estimado": "2 horas",
+      "impacto": "Aparecer nas buscas locais em 1-2 semanas. Capturar leads de intenção alta (quem já busca 'aliança Cabo Frio').",
+      "quem_faz": "V4 (acesso GMB confirmado) + Jessica (fotos profissionais)",
+      "dependencia": "Jessica enviar fotos profissionais da loja e produtos"
+    },
+    {
+      "rank": 4,
+      "acao": "Configurar mensagem de saudação e ausência no WhatsApp Business",
+      "canal": "WhatsApp",
+      "passo_a_passo": "WhatsApp Business → Ferramentas comerciais. Saudação: 'Olá! Bem-vinda à Veridian Jóias ✨ Que momento especial te trouxe até aqui? Me conta que a gente ajuda a encontrar a peça perfeita!' Ausência: 'Oi! Estamos fora do horário agora, mas adoramos a sua mensagem. Te respondemos assim que abrirmos — segunda a sábado das 9h às 18h. Até já 💛'",
+      "tempo_estimado": "20 minutos",
+      "impacto": "Leads fora do horário não ficam sem resposta. Tom emocional da marca presente desde o primeiro contato.",
+      "quem_faz": "V4 ou Jessica (acesso whatsapp_business confirmado)",
+      "dependencia": "Nenhuma"
+    },
+    {
+      "rank": 5,
+      "acao": "Reescrever bio do Instagram com keywords do ICP",
+      "canal": "Instagram",
+      "passo_a_passo": "Substituir bio atual por: 'Joias exclusivas em ouro 18K ✨ | Alianças personalizadas | Cabo Frio + Rio das Ostras | 📍 Praça Porto Rocha, 184 | 👇 Orçamento no link'. Trocar link na bio por WhatsApp com mensagem pré-preenchida: wa.me/5522988171080?text=Olá!+Quero+conhecer+as+joias+da+Veridian",
+      "tempo_estimado": "15 minutos",
+      "impacto": "Visitantes do perfil entendem imediatamente o que a Veridian faz e para quem. Link direto ao WhatsApp aumenta conversão de visita → contato.",
+      "quem_faz": "V4 (acesso instagram_admin confirmado)",
+      "dependencia": "Nenhuma"
+    }
+  ]
+}
