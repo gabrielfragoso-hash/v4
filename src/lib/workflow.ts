@@ -11,7 +11,9 @@ export interface Skill {
 
 export interface Stage {
   id: string;
-  week: string;
+  week: string;          // label interno (operacional)
+  clientWeek: string;    // label externo (portal do cliente — bate com o que foi vendido)
+  clientTitle: string;   // título externo
   title: string;
   objective: string;
   color: string;
@@ -25,6 +27,8 @@ export const STAGES: Stage[] = [
   {
     id: "s0",
     week: "Setup",
+    clientWeek: "Semana 1",
+    clientTitle: "Reunião de Kick-Off",
     title: "Onboarding",
     objective: "Cadastrar cliente e configurar workspace",
     color: "text-slate-700",
@@ -52,6 +56,8 @@ export const STAGES: Stage[] = [
   {
     id: "s1",
     week: "Semana 1",
+    clientWeek: "Semana 2",
+    clientTitle: "Diagnóstico de Marketing",
     title: "Diagnóstico Estratégico",
     objective: "Construir a base estratégica. Tudo downstream depende da S1 ser precisa.",
     color: "text-violet-700",
@@ -95,6 +101,8 @@ export const STAGES: Stage[] = [
   {
     id: "s2",
     week: "Semana 2",
+    clientWeek: "Semana 3",
+    clientTitle: "Diagnóstico Comercial",
     title: "Pesquisa & Posicionamento",
     objective: "Validar oportunidade de mercado e definir posição exata do cliente.",
     color: "text-blue-700",
@@ -146,6 +154,8 @@ export const STAGES: Stage[] = [
   {
     id: "s3",
     week: "Semana 3",
+    clientWeek: "Semana 4–5",
+    clientTitle: "Planejamento de Marketing e Vendas + Materiais Criativos",
     title: "Produção de Marca & Marketing",
     objective: "Produzir todos os entregáveis de marketing prontos para execução.",
     color: "text-emerald-700",
@@ -221,6 +231,8 @@ export const STAGES: Stage[] = [
   {
     id: "s4",
     week: "Semana 4",
+    clientWeek: "Semana 3",
+    clientTitle: "Diagnóstico Comercial",
     title: "Operações de Vendas",
     objective: "Mapear o funil de vendas e testar o processo antes de automatizar com SDR IA.",
     color: "text-orange-700",
@@ -249,6 +261,8 @@ export const STAGES: Stage[] = [
   {
     id: "s5",
     week: "Semana 5",
+    clientWeek: "Semana 5",
+    clientTitle: "Automação SDR IA — Próximo Passo",
     title: "Automação SDR IA",
     objective: "Implantar SDR IA no WhatsApp com qualificação inteligente e integração com CRM.",
     color: "text-rose-700",

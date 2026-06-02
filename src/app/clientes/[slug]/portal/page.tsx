@@ -2,7 +2,8 @@ import fs from "fs/promises";
 import path from "path";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, TrendingUp, TrendingDown, Minus, AlertTriangle, CheckCircle2, Zap, Target, Users, BarChart3, MessageSquare, Search, Smartphone } from "lucide-react";
+import { getStagesForClient } from "@/lib/workflow";
+import { ArrowLeft, TrendingUp, TrendingDown, AlertTriangle, Zap, Target, BarChart3, MessageSquare, Search, Smartphone, CheckCircle2, Clock } from "lucide-react";
 
 const CLIENTES_DIR = process.env.CLIENTES_DIR ?? path.join(process.cwd(), "data/clientes");
 
@@ -169,7 +170,20 @@ export default async function PortalPage({
   const moduloVendas = (clientData.meta as Record<string, unknown>)?.modulo_vendas === true;
   const b = (clientData.briefing as Record<string, unknown>) ?? {};
   const id = (b.identification as Record<string, unknown>) ?? {};
+  const progress = (clientData.progress as Record<string, unknown>) ?? {};
+  const rawSkills = (progress.skills as Record<string, Record<string, unknown>>) ?? {};
   const name = (id.name as string) ?? slug;
+
+  // Timeline stages filtered by modulo_vendas
+  const timelineStages = getStagesForClient(moduloVendas);
+  // Determine which client weeks are "done" vs active vs pending
+  const stageStatus = timelineStages.map((stage) => {
+    const total = stage.skills.length;
+    const done = stage.skills.filter(s => rawSkills[s.id]?.status === "completed").length;
+    if (done === total && total > 0) return "done";
+    if (done > 0) return "active";
+    return "pending";
+  });
 
   const completedAt = new Date("2026-05-29").toLocaleDateString("pt-BR", {
     day: "2-digit", month: "long", year: "numeric",
@@ -225,16 +239,96 @@ export default async function PortalPage({
         {/* Hero */}
         <div className="space-y-3 text-center">
           <p className="text-[10px] font-black uppercase tracking-widest" style={{ color: "var(--color-primary)" }}>
-            Entregáveis — Semana 1
+            Processo de Estruturação — 45 dias
           </p>
           <h1 className="text-3xl font-black leading-tight" style={{ color: "var(--color-text)" }}>
-            Diagnóstico Estratégico
+            As Etapas do Processo
           </h1>
           <p className="text-sm max-w-lg mx-auto" style={{ color: "var(--color-text-muted)" }}>
-            Base estratégica construída para a {name}. Tudo que vem a seguir — posicionamento, criativos, CRM — parte daqui.
+            Acompanhe em tempo real o que já foi entregue e o que vem a seguir.
           </p>
-          <p className="text-xs" style={{ color: "#3a3a3a" }}>Gerado em {completedAt}</p>
         </div>
+
+        {/* Timeline */}
+        <div className="rounded-xl p-5 overflow-x-auto" style={{
+          background: "var(--color-surface)",
+          border: "1px solid var(--color-border)",
+        }}>
+          {/* Steps */}
+          <div className="flex items-start gap-0 min-w-max mx-auto">
+            {timelineStages.map((stage, i) => {
+              const status = stageStatus[i];
+              const isLast = i === timelineStages.length - 1;
+              const color = status === "done" ? "#4ade80" : status === "active" ? "#e40a14" : "#2a2a2a";
+              const textColor = status === "done" ? "#4ade80" : status === "active" ? "#e40a14" : "#4a4a4a";
+              return (
+                <div key={stage.id} className="flex items-center">
+                  <div className="flex flex-col items-center gap-2" style={{ width: "120px" }}>
+                    {/* Label above */}
+                    <p className="text-[10px] font-semibold text-center leading-tight px-1"
+                      style={{ color: textColor, minHeight: "28px" }}>
+                      {stage.clientTitle}
+                    </p>
+                    {/* Badge */}
+                    <div className="px-3 py-1.5 rounded font-black text-xs text-center w-full"
+                      style={{
+                        background: status === "done" ? "rgba(74,222,128,0.12)" : status === "active" ? "var(--color-primary)" : "var(--color-surface-elevated)",
+                        color: status === "done" ? "#4ade80" : status === "active" ? "#fff" : "#4a4a4a",
+                        border: `1px solid ${color}44`,
+                        boxShadow: status === "active" ? "0 0 12px rgba(228,10,20,0.4)" : "none",
+                      }}>
+                      {stage.clientWeek}
+                    </div>
+                    {/* Status icon */}
+                    <div className="flex items-center justify-center">
+                      {status === "done"
+                        ? <CheckCircle2 size={14} style={{ color: "#4ade80" }} />
+                        : status === "active"
+                        ? <Clock size={14} style={{ color: "#e40a14" }} />
+                        : <div className="w-3.5 h-3.5 rounded-full" style={{ border: "1.5px solid #2a2a2a" }} />
+                      }
+                    </div>
+                  </div>
+                  {/* Connector line */}
+                  {!isLast && (
+                    <div className="h-px w-6 shrink-0 mb-10"
+                      style={{ background: stageStatus[i + 1] === "pending" ? "#2a2a2a" : "#e40a1444" }} />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Progress bar */}
+          <div className="mt-4 pt-4" style={{ borderTop: "1px solid var(--color-border)" }}>
+            <div className="flex justify-between text-[10px] mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+              <span>Início</span>
+              <span className="font-bold" style={{ color: "var(--color-primary)" }}>
+                {stageStatus.filter(s => s === "done").length} de {timelineStages.length} etapas concluídas
+              </span>
+              <span>45 dias</span>
+            </div>
+            <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "var(--color-border)" }}>
+              <div className="h-full rounded-full transition-all"
+                style={{
+                  width: `${(stageStatus.filter(s => s === "done").length / timelineStages.length) * 100}%`,
+                  background: "var(--color-primary)",
+                  boxShadow: "0 0 8px rgba(228,10,20,0.6)",
+                }} />
+            </div>
+          </div>
+        </div>
+
+        {/* Section divider */}
+        <div className="flex items-center gap-3">
+          <div className="h-px flex-1" style={{ background: "var(--color-border)" }} />
+          <span className="text-[10px] font-black uppercase tracking-widest px-3"
+            style={{ color: "var(--color-text-muted)" }}>
+            Entregáveis da Semana 2 — Diagnóstico de Marketing
+          </span>
+          <div className="h-px flex-1" style={{ background: "var(--color-border)" }} />
+        </div>
+        <p className="text-xs text-center -mt-2" style={{ color: "#3a3a3a" }}>Gerado em {completedAt}</p>
 
         {/* ── DIAGNÓSTICO ──────────────────────────────────────── */}
         {diagnostico && (
