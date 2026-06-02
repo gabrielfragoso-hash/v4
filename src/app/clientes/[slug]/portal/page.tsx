@@ -166,6 +166,7 @@ export default async function PortalPage({
     readOutput(slug, "ee-s1-auditoria-comunicacao"),
   ]);
 
+  const moduloVendas = (clientData.meta as Record<string, unknown>)?.modulo_vendas === true;
   const b = (clientData.briefing as Record<string, unknown>) ?? {};
   const id = (b.identification as Record<string, unknown>) ?? {};
   const name = (id.name as string) ?? slug;

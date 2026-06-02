@@ -18,6 +18,7 @@ export interface Stage {
   bg: string;
   border: string;
   skills: Skill[];
+  requiresModuloVendas?: boolean;
 }
 
 export const STAGES: Stage[] = [
@@ -225,6 +226,7 @@ export const STAGES: Stage[] = [
     color: "text-orange-700",
     bg: "bg-orange-50",
     border: "border-orange-200",
+    requiresModuloVendas: true,
     skills: [
       {
         id: "ee-s4-diagnostico-comercial",
@@ -252,6 +254,7 @@ export const STAGES: Stage[] = [
     color: "text-rose-700",
     bg: "bg-rose-50",
     border: "border-rose-200",
+    requiresModuloVendas: true,
     skills: [
       {
         id: "ee-s5-scripts-sdr",
@@ -274,3 +277,7 @@ export const STAGES: Stage[] = [
 ];
 
 export const ALL_SKILLS = STAGES.flatMap((s) => s.skills);
+
+export function getStagesForClient(moduloVendas: boolean): Stage[] {
+  return STAGES.filter((s) => !s.requiresModuloVendas || moduloVendas);
+}

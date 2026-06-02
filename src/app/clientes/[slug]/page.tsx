@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { STAGES } from "@/lib/workflow";
+import { getStagesForClient } from "@/lib/workflow";
 import { ProgressRing } from "@/components/ProgressRing";
 import {
   ArrowLeft,
@@ -92,6 +92,9 @@ export default async function ClientePage({
     const raw = (val.status as string) ?? "pending";
     statuses[skillId] = STATUS_MAP[raw] ?? "pending";
   }
+
+  const moduloVendas = (data.meta as Record<string, unknown>)?.modulo_vendas === true;
+  const STAGES = getStagesForClient(moduloVendas);
 
   const allSkills = STAGES.flatMap((s) => s.skills);
   const totalSkills = allSkills.length;
