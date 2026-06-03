@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "name": "PCP Engenharia",
+    "slug": "pcp-engenharia",
+    "razao_social": "PCP Engenharia",
+    "cnpj": null,
+    "workspace_id": null,
+    "created_at": "2026-05-26",
+    "modulo_vendas": false
+  },
+  "briefing": {
+    "identification": {
+      "name": "PCP Engenharia",
+      "contact_name": "Gleyson Marquesin Pereira",
+      "contact_role": "Comercial/Operacional (acumula Admin/Financeiro) — Decisor Final",
+      "team": [
+        {"name": "Gleyson Marquesin Pereira", "role": "Comercial/Operacional/Admin-Financeiro — decisor total"},
+        {"name": "Patrick", "role": "Engenharia e Novos Negócios — influenciador técnico/comercial"},
+        {"name": "Anderson Beneg", "role": "Engenharia e Tecnologia — influenciador técnico"}
+      ],
+      "team_v4": [
+        {"name": "Julio César dos Santos", "role": "Account / GT"},
+        {"name": "Samira Barbosa", "role": "Designer"},
+        {"name": "Matheus Xavier", "role": "Sales Enable / CSM"},
+        {"name": "Jean Fabio Martins", "role": "Coordenador"},
+        {"name": "Fernando Gevenka", "role": "Gerente"}
+      ],
+      "segment": "B2B nicho extremo — monitoramento e diagnóstico geofísico (mineração, energia, infraestrutura)",
+      "annual_revenue_est": "R$ 30.000.000/ano",
+      "monthly_revenue_avg": "R$ 2.500.000/mês",
+      "years_in_market": "10+ anos",
+      "moment": "Alerta — risco de perda de 40% do faturamento em 6 meses por concentração em 10-12 clientes estratégicos",
+      "location_matrix": "Brasil — atuação nacional",
+      "website": "https://pcp.eng.br/",
+      "instagram": null,
+      "gmb": false
+    },
+    "financials": {
+      "faturamento_medio_mensal": "~R$ 2.500.000/mês",
+      "fee_v4": "R$ 25.090 à vista via Pix",
+      "investimento_midia": "Não definido — será determinado após diagnóstico",
+      "crm": "RD Station (subutilizado — pago mas sem processos ou métricas)",
+      "obs": "Alta sensibilidade a preço e controle rígido de fluxo de caixa"
+    },
+    "product": {
+      "main_product": "Monitoramento e diagnóstico geofísico de estruturas — represamentos, barragens, mineração, hidrelétricas, asfalto",
+      "technology": "Willowstick® — tecnologia proprietária patenteada de detecção de infiltrações em estruturas geotécnicas. Aplicada em 130+ projetos. Único player no Brasil com essa tecnologia.",
+      "billing_model": "B2B contratos de projeto (alto ticket, baixa frequência)",
+      "client_profile": "Vale, Gerdau, Petrobras, mineradoras, hidrelétricas, empresas de infraestrutura",
+      "venda_preventiva": "Oportunidade estratégica: transformar monitoramento reativo (emergência) em recorrente preventivo"
+    },
+    "icp": {
+      "publico_1": "Engenheiros técnicos das plantas — conhecem a PCP, buscam precisão e confiabilidade técnica. Já são warm leads.",
+      "publico_2": "C-Level (Diretores, VPs) — tomam decisão final, precisam de autoridade de marca e credibilidade. Não conhecem a PCP diretamente.",
+      "publico_3": "Área de Suprimentos — cadastram fornecedores nos portais (Ariba, Coupa). PCP não está cadastrada na maioria. BLOQUEIO CRÍTICO.",
+      "decision_insight": "3 públicos distintos com diferentes linguagens — branding precisa funcionar nos 3 níveis simultaneamente",
+      "problems_before": [
+        "Vagas técnicas especializadas não aparecem nos portais de suprimentos — PCP não é convidada para licitações",
+        "Marketing reativo: só contratam em crise/emergência, sem monitoramento preventivo",
+        "Concentração em 10-12 clientes: perda de um grande = impacto catastrófico no faturamento",
+        "Conhecimento da empresa ainda está nas pessoas (Anderson, Patrick, Gleyson), não na marca"
+      ]
+    },
+    "competition": {
+      "competitors": [
+        {"name": "G5 (mencionado)", "type": "direto", "perceived_differential": "Ativo no LinkedIn — exploram o oceano azul que a PCP está perdendo"},
+        {"name": "Headhunters geotécnicos regionais", "type": "indireto", "perceived_differential": "Mais baratos, mas sem a tecnologia Willowstick®"}
+      ],
+      "real_differential": "Willowstick® — tecnologia patenteada única no Brasil + 130+ projetos executados + equipe técnica de altíssimo nível. Ninguém no Brasil tem o que a PCP tem.",
+      "competitive_angle": "Transformar superioridade técnica silenciosa em autoridade de marca visível antes que concorrentes ocupem o espaço digital"
+    },
+    "brand": {
+      "adjectives": ["Autoridade técnica", "Precisa", "Confiável", "Investigativa", "Preventiva"],
+      "voice_tone": "Técnico com autoridade — linguagem de engenharia que transmite confiança antes da proposta chegar",
+      "territory": "Inteligência aplicada — ver o invisível. Fluxos subterrâneos, conexões ocultas, antecipação de riscos.",
+      "has_logo": true,
+      "brand_risk": "Conhecimento concentrado em pessoas, não na marca — se Anderson ou Patrick saírem, a percepção de valor vai junto"
+    },
+    "digital_situation": {
+      "paid_traffic": false,
+      "platforms_active": ["instagram", "linkedin", "website"],
+      "crm": "RD Station (pago, não utilizado corretamente)",
+      "lead_sources": "Indicação + presença em eventos + visitas presenciais ('cafezinhos')",
+      "brand_awareness_problem": "Instagram genérico que 'joga contra' a autoridade técnica. LinkedIn subutilizado enquanto G5 domina. Não cadastrado nos portais de suprimentos Ariba/Coupa.",
+      "biggest_pain": "Marketing reativo + não encontrado em portais de suprimentos + risco de perda de 40% faturamento + concentração de carteira"
+    },
+    "accesses": {
+      "meta_business": false,
+      "google_ads": false,
+      "instagram_admin": true,
+      "website_admin": true,
+      "crm": true,
+      "gmb": false,
+      "linkedin": true
+    },
+    "objectives": {
+      "main_goal": "Gerar 2-3 leads altamente qualificados por mês via autoridade de marca e conteúdo técnico",
+      "secondary_goals": [
+        "Cadastrar nos portais de suprimentos Ariba/Coupa dos principais clientes",
+        "Construir presença no LinkedIn antes que G5 consolide posição",
+        "Transformar Willowstick® em ativo de marca reconhecível",
+        "Migrar de venda reativa (emergência) para venda preventiva (recorrência)"
+      ],
+      "financial_urgency": "Risco de perda de 40% do faturamento em 6 meses — projetos de clientes atuais encerrando sem renovação",
+      "v4_start": "2026-05-26",
+      "v4_end": "2026-06-30"
+    },
+    "warnings": [
+      "Conteúdo técnico depende de Patrick e Anderson participarem ativamente — se não participarem, marketing fica artificial",
+      "RD Station: cliente paga mas não usa — auditoria precisa decidir entre simplificar ou potencializar",
+      "Foco regional necessário para não encarecer tráfego em nicho extremamente específico",
+      "Cliente tem pressa por leads mas EE é fase de diagnóstico — expectativa precisa ser gerenciada"
+    ],
+    "sales_module": null
+  },
+  "research": {
+    "fetched_at": "2026-06-03",
+    "site": "https://pcp.eng.br/",
+    "sources": ["ROI Plan PCP (Drive)", "Kickoff transcription 26/05/2026", "EE Presentation PCP (Drive — já com diagnóstico de marketing e branding)"]
+  },
+  "connectors": {"fetched_at": null, "integrations": null},
+  "progress": {
+    "current_week": 2,
+    "skills": {
+      "ee-novo-cliente": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-26", "completed_at": "2026-05-26"},
+      "ee-onboarding": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-26", "completed_at": "2026-05-26"},
+      "ee-s1-diagnostico-maturidade": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-26", "completed_at": "2026-05-26"},
+      "ee-s1-persona-icp": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-26", "completed_at": "2026-05-26"},
+      "ee-s1-swot": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-26", "completed_at": "2026-05-26"},
+      "ee-s1-auditoria-comunicacao": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-26", "completed_at": "2026-05-26"},
+      "ee-s2-pesquisa-mercado": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
+      "ee-s2-posicionamento": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
+      "ee-s2-diagnostico-midia": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
+      "ee-s2-diagnostico-criativos": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
+      "ee-s2-diagnostico-cro": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
+      "ee-s3-identidade-visual": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-brandbook": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-landing-page": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-copy-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-criativos-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-crm-setup": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-forecast-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-gmb-otimizacao": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null}
+    }
+  },
+  "history": [
+    {"ts": "2026-05-26T13:58:00Z", "skill": "ee-novo-cliente", "checkpoint": 1, "decision": "Cliente cadastrado. PCP Engenharia. B2B geofísico, R$30M/ano, Willowstick® patenteado, risco 40% faturamento em 6 meses. Fee R$25.090 à vista."},
+    {"ts": "2026-05-26T13:58:00Z", "skill": "ee-s1-diagnostico-maturidade", "checkpoint": 1, "decision": "Kickoff + Growth Class realizados. Diagnóstico: marketing reativo, LinkedIn subutilizado, não cadastrado em portais suprimentos, Instagram genérico contra autoridade técnica."},
+    {"ts": "2026-06-02T00:00:00Z", "skill": "ee-s2-diagnostico-criativos", "checkpoint": 1, "decision": "Diagnóstico de Marketing realizado. Branding: conhecimento nas pessoas, não na marca. Oportunidade: Willowstick® como ativo de marca. 3 públicos: técnicos, C-level, suprimentos."}
+  ]
+}

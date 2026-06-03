@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "name": "Marroquina Divina Pele",
+    "slug": "marroquina",
+    "razao_social": "Marroquina Divina Pele",
+    "cnpj": "13.590.541/0001-69",
+    "workspace_id": null,
+    "created_at": "2026-06-02",
+    "modulo_vendas": false
+  },
+  "briefing": {
+    "identification": {
+      "name": "Marroquina Divina Pele",
+      "contact_name": "Inês Rodrigues",
+      "contact_role": "Fundadora e gestora",
+      "team": [
+        {"name": "Inês Rodrigues", "role": "Fundadora, gestora, acumula recepção (recepcionista em licença maternidade)"},
+        {"name": "Luiz", "role": "Criação de conteúdo, gravação de vídeos, recepção e agendamentos"},
+        {"name": "9 depiladoras", "role": "Equipe de atendimento"},
+        {"name": "1 profissional masculino", "role": "Em treinamento para atendimento masculino"}
+      ],
+      "team_v4": [
+        {"name": "Julio César dos Santos", "role": "Account / GT"},
+        {"name": "Samira Barbosa", "role": "Designer"},
+        {"name": "Matheus Xavier", "role": "Sales Enable / CSM"},
+        {"name": "Gabriel Fragoso", "role": "Coordenador"},
+        {"name": "Fernando Gevenka", "role": "Gerente"}
+      ],
+      "segment": "Estética e beleza — depilação e serviços correlatos",
+      "annual_revenue_est": "R$ 1.200.000/ano",
+      "monthly_revenue_avg": "R$ 97.000/mês",
+      "years_in_market": "17 anos (fundada 2009 em Dourados/MS)",
+      "moment": "Crescimento leve — capacidade ociosa crítica: atende 750 clientes/mês de uma capacidade de 2.000",
+      "location_matrix": "Dourados / MS — cidade com ~230.000 habitantes",
+      "website": "https://marroquinadivinapele.com.br/",
+      "instagram": "@marroquinadivinapele",
+      "gmb": true
+    },
+    "financials": {
+      "ticket_medio": "R$ 120,00 por cliente",
+      "faturamento_medio_mensal": "R$ 97.000",
+      "margem_contribuicao_pct": "50% (custos variáveis = 50% do faturamento)",
+      "fee_v4": "R$ 12.000 (12x R$1.000 no cartão)",
+      "investimento_midia": "~R$ 2.000/mês (Meta Ads, sem estratégia estruturada)",
+      "capacidade_instalada": "2.000 atendimentos/mês",
+      "atendimento_atual": "~750 clientes/mês ativos",
+      "gap_capacidade": "1.250 clientes/mês ociosos",
+      "base_clientes": "18.000 clientes cadastradas (histórico)"
+    },
+    "product": {
+      "main_product": "Depilação com cera marroquina — técnica própria mais confortável",
+      "full_portfolio": [
+        "Depilação com cera natural de chocolate",
+        "Clareamento íntimo",
+        "Esfoliação pré-depilatória",
+        "Design de sobrancelha",
+        "Massagem com esfoliação hidratante (produto próprio desenvolvido pela Inês)",
+        "Clube VIP (fidelização — 53 membros ativos, meta 100)"
+      ],
+      "billing_model": "Venda única (por sessão) + clube VIP recorrente",
+      "diferencial": "17 anos com mesma técnica, várias profissionais treinadas uniformemente, maior flexibilidade de horários, ambiente tranquilo, tudo descartável"
+    },
+    "icp": {
+      "publico_1": "Mulheres locais 20-50 anos em Dourados/MS — já clientes (base de 18k) ou indicação. Buscam técnica confortável e profissionais de confiança. Sazonalidade negativa no inverno (jun-ago).",
+      "publico_2": "Público masculino (novo) — em desenvolvimento, profissional masculino em treinamento",
+      "problems_before": [
+        "Dor durante depilação em outros espaços",
+        "Falta de horários disponíveis em outros locais",
+        "Atendimento impessoal e padronizado"
+      ],
+      "results_after": [
+        "Depilação mais confortável graças à técnica exclusiva",
+        "Momento de relaxamento — esfoliação + cuidados",
+        "Relação de confiança e continuidade com profissional"
+      ],
+      "churn_reasons": "Sazonalidade (inverno), concorrência (laser, salões), inatividade por falta de contato/reativação"
+    },
+    "competition": {
+      "competitors": [
+        {"name": "Laser/depilação definitiva", "type": "indireto", "perceived_differential": "Permanência, mas alto custo e contraindicações"},
+        {"name": "Salões de beleza com depilação", "type": "direto", "perceived_differential": "Conveniência, mas sem especialização"},
+        {"name": "Outros espaços de depilação em Dourados", "type": "direto", "perceived_differential": "Preço, mas sem 17 anos de expertise e técnica própria"}
+      ],
+      "real_differential": "Técnica exclusiva mais confortável desenvolvida em 17 anos + time treinado uniformemente + base de 18k clientes + Clube VIP",
+      "why_choose_us": "Técnica mais confortável, profissional de confiança, flexibilidade de horários, 17 anos no mesmo endereço"
+    },
+    "brand": {
+      "adjectives": ["Acolhedora", "Confiável", "Especialista", "Humana", "Experiente"],
+      "voice_tone": "Caloroso, próximo, humano — sem robotização. Inês tem relacionamento pessoal com clientes.",
+      "admired_brands": "A mapear",
+      "has_logo": true
+    },
+    "digital_situation": {
+      "paid_traffic": true,
+      "platforms_active": ["meta_ads", "instagram", "whatsapp"],
+      "monthly_investment_ads": "~R$ 2.000/mês",
+      "crm": "Sistema próprio (puxa clientes em tempo de retorno e inativas — sem histórico de preferências, sem follow-up estruturado)",
+      "website_type": "Site próprio — marroquinadivinapele.com.br",
+      "lead_sources": "Indicação (principal) + Meta Ads (fraco resultado) + base de 18k clientes",
+      "brand_awareness_problem": "Tráfego pago não gera resultado — sem estratégia. Base de 18k sem reativação estruturada.",
+      "biggest_pain": "Capacidade ociosa de 1.250 clientes/mês + base de 18k parada + tráfego sem resultado + sazonalidade de inverno"
+    },
+    "accesses": {
+      "meta_business": true,
+      "google_ads": false,
+      "instagram_admin": true,
+      "website_admin": true,
+      "gmb": true,
+      "whatsapp_business": true
+    },
+    "seasonality": {
+      "low_months": ["Junho", "Julho", "Agosto"],
+      "peak_months": ["Outubro", "Novembro", "Dezembro", "Janeiro", "Fevereiro"],
+      "mitigation": "Pacote 3 meses com 17% de desconto para cobrir jun/jul/ago — já testado"
+    },
+    "objectives": {
+      "main_goal": "Preencher capacidade ociosa — chegar a 2.000 atendimentos/mês",
+      "secondary_goals": [
+        "Reativar base de 18.000 clientes cadastradas",
+        "Escalar Clube VIP de 53 para 100+ membros",
+        "Estruturar processo comercial com CRM e jornada do cliente"
+      ],
+      "future": "Expansão — abertura de novas unidades (não franquia ainda)",
+      "v4_start": "2026-06-02",
+      "v4_end": "2026-07-07"
+    },
+    "warnings": [
+      "Histórico negativo com G4 Educação — investiu R$20k sem retorno. Alta exigência de suporte real e entrega concreta.",
+      "Inês acumula gestão + recepção (recepcionista em licença) — tempo limitado para projetos",
+      "Qualquer sinal de robotização ou falta de suporte vai ativar gatilho negativo. Onboarding precisa ser humano."
+    ],
+    "sales_module": null
+  },
+  "research": {
+    "fetched_at": "2026-06-03",
+    "site": "https://marroquinadivinapele.com.br/",
+    "instagram": "@marroquinadivinapele",
+    "sources": ["ROI Plan (Drive)", "Kickoff PDF (Drive)", "Kickoff GC transcription 02/06/2026"]
+  },
+  "connectors": {"fetched_at": null, "integrations": null},
+  "progress": {
+    "current_week": 1,
+    "skills": {
+      "ee-novo-cliente": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
+      "ee-onboarding": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
+      "ee-s1-diagnostico-maturidade": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s1-persona-icp": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s1-swot": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s1-auditoria-comunicacao": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-pesquisa-mercado": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-posicionamento": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-diagnostico-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-diagnostico-criativos": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-diagnostico-cro": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-identidade-visual": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-brandbook": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-landing-page": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-copy-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-criativos-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-crm-setup": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-forecast-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-gmb-otimizacao": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null}
+    }
+  },
+  "history": [
+    {"ts": "2026-06-02T10:00:00Z", "skill": "ee-novo-cliente", "checkpoint": 1, "decision": "Cliente cadastrada. Inês Rodrigues — Marroquina Divina Pele. Espaço de depilação 17 anos, Dourados/MS. Capacidade ociosa: 750 de 2.000 atendimentos/mês. Base 18k clientes parada. Histórico negativo G4."}
+  ]
+}

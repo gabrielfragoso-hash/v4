@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "name": "Btiger Adega",
+    "slug": "btiger",
+    "razao_social": "Btiger Adega",
+    "cnpj": null,
+    "workspace_id": null,
+    "created_at": "2026-05-28",
+    "modulo_vendas": false
+  },
+  "briefing": {
+    "identification": {
+      "name": "Btiger Adega",
+      "contact_name": "A confirmar no kickoff",
+      "contact_role": "A confirmar",
+      "team_v4": [
+        {"name": "Julio César dos Santos", "role": "Account / GT"},
+        {"name": "Samira Barbosa", "role": "Designer"},
+        {"name": "Matheus Xavier", "role": "Sales Enable / CSM"},
+        {"name": "Gabriel Fragoso", "role": "Coordenador (a confirmar)"},
+        {"name": "Fernando Gevenka", "role": "Gerente"}
+      ],
+      "segment": "Adega / bebidas — a confirmar no kickoff",
+      "annual_revenue_est": "R$ 960.000/ano (~R$80k/mês)",
+      "monthly_revenue_avg": "~R$ 80.000/mês",
+      "website": "A confirmar",
+      "instagram": "A confirmar",
+      "gmb": null
+    },
+    "financials": {
+      "fee_v4": "R$ 16.860",
+      "obs": "Dados detalhados a coletar no kickoff de sexta-feira 06/06 às 09h"
+    },
+    "product": {
+      "main_product": "Adega — vinhos, bebidas, A confirmar no kickoff",
+      "billing_model": "A confirmar"
+    },
+    "icp": {
+      "publico_1": "A mapear no kickoff"
+    },
+    "competition": {
+      "competitors": [],
+      "real_differential": "A mapear no kickoff"
+    },
+    "brand": {
+      "adjectives": [],
+      "has_logo": null
+    },
+    "digital_situation": {
+      "paid_traffic": null,
+      "biggest_pain": "A identificar no kickoff"
+    },
+    "accesses": {
+      "meta_business": null,
+      "google_ads": null,
+      "instagram_admin": null,
+      "website_admin": null,
+      "crm": null,
+      "gmb": null
+    },
+    "objectives": {
+      "main_goal": "A definir no kickoff",
+      "v4_start": "2026-05-28",
+      "v4_end": "2026-07-12",
+      "kickoff_agendado": "2026-06-06T09:00:00-03:00"
+    },
+    "sales_module": null
+  },
+  "research": {
+    "fetched_at": "2026-06-03",
+    "sources": ["Drive folder criado, aguardando kickoff 06/06"]
+  },
+  "connectors": {"fetched_at": null, "integrations": null},
+  "progress": {
+    "current_week": 1,
+    "skills": {
+      "ee-novo-cliente": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-28", "completed_at": "2026-05-28"},
+      "ee-onboarding": {"status": "in_progress", "checkpoint": 0, "started_at": "2026-06-06", "completed_at": null},
+      "ee-s1-diagnostico-maturidade": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s1-persona-icp": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s1-swot": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s1-auditoria-comunicacao": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-pesquisa-mercado": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-posicionamento": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-diagnostico-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-diagnostico-criativos": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s2-diagnostico-cro": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-identidade-visual": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-brandbook": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-landing-page": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-copy-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-criativos-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-crm-setup": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-forecast-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-gmb-otimizacao": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null}
+    }
+  },
+  "history": [
+    {"ts": "2026-05-28T00:00:00Z", "skill": "ee-novo-cliente", "checkpoint": 1, "decision": "Cliente cadastrado. Btiger Adega. Kickoff agendado sexta-feira 06/06/2026 às 09h. Dados completos a coletar no kickoff."}
+  ]
+}
