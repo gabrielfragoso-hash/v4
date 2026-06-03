@@ -1,0 +1,185 @@
+{
+  "meta": {
+    "name": "AssessMan | Vaga Fácil",
+    "slug": "assessman",
+    "razao_social": "ASSESSMAN ASSESSORIA DE MANUTENCAO INDUSTRIAL LTDA",
+    "cnpj": "50.537.400/0001-09",
+    "workspace_id": null,
+    "created_at": "2026-05-22",
+    "founded_at": null,
+    "modulo_vendas": false
+  },
+  "briefing": {
+    "identification": {
+      "name": "AssessMan | Vaga Fácil",
+      "contact_name": "Luis Binotto",
+      "contact_role": "Fundador / Sócio — Desenvolvimento de Negócios",
+      "team": [
+        {"name": "Luis Binotto", "role": "Fundador/Sócio — CEO, Biz Dev, principal decisor"},
+        {"name": "Henrique Garcia", "role": "Sócio — Operações e Técnico"}
+      ],
+      "team_v4": [
+        {"name": "Julio César dos Santos", "role": "Account / GT"},
+        {"name": "Samira Barbosa", "role": "Designer / Branding"},
+        {"name": "Matheus Xavier", "role": "Sales Enablement / CSM"},
+        {"name": "Gabriel Fragoso", "role": "Coordenador"},
+        {"name": "Fernando Gevenka", "role": "Gerente"}
+      ],
+      "background": "Luis Binotto foi VP Global da Divisão de Manutenção da Andritz. Henrique Garcia era Diretor de Operações Brasil e Diretor Técnico Global. Ambos saíram para fundar a AssessMan. 30+ anos de experiência no setor industrial, especialmente papel e celulose. Network C-level consolidado.",
+      "segment": "HR Tech / Recrutamento Industrial B2B+B2C",
+      "product_name": "Vaga Fácil",
+      "product_url": "vagafacil.org",
+      "annual_revenue_est": "R$ 1.500.000 (AssessMan assessoria, 2025)",
+      "monthly_revenue_avg": null,
+      "years_in_market": "AssessMan: 2+ anos | Vaga Fácil: pré-lançamento (jun/2026)",
+      "moment": "Lançamento — plataforma em desenvolvimento, pré-operacional. Pressão de go-to-market imediato.",
+      "location_matrix": "Porto Alegre / RS",
+      "website": "vagafacil.org",
+      "instagram": null,
+      "whatsapp": null,
+      "facebook": null,
+      "gmb": false
+    },
+    "financials": {
+      "ticket_medio": "10-20% do salário anual do contratado (fee por sucesso)",
+      "faturamento_medio_mensal": "R$ 125.000 (AssessMan assessoria)",
+      "margem_contribuicao_pct": "~25% GM",
+      "fee_v4": "R$ 4.182,18/mês — contrato 12 meses (R$ 50.186,15 total)",
+      "investimento_midia": "R$ 8.000/mês aprovado",
+      "obs": "Produto Vaga Fácil ainda sem receita. Modelo: success fee — empresa só paga quando contrata candidato."
+    },
+    "product": {
+      "main_product": "Plataforma Vaga Fácil — recrutamento confidencial especializado para setor industrial",
+      "strategic_product": "Matching B2B (empresas contratantes) + B2C (candidatos técnicos industriais) com confidencialidade",
+      "full_portfolio": [
+        "Plataforma Vaga Fácil — recrutamento industrial confidencial",
+        "AssessMan — assessoria de manutenção industrial (produto principal atual, não foco da EE)"
+      ],
+      "modelo_negocio": "Marketplace bilateral: candidatos gratuitos + empresas pagam fee por contratação (10-20% salário anual)",
+      "diferencial_principal": "Confidencialidade total do candidato até aceitar participar da vaga + candidatos pré-qualificados (autoavaliação + testes técnicos certificados)",
+      "status_plataforma": "Em desenvolvimento — previsão lançamento jun/2026",
+      "billing_model": "Success fee (receita só ocorre com contratação efetiva)"
+    },
+    "icp": {
+      "publico_1": "Candidatos técnicos industriais — operadores e mantenedores do setor industrial, especialmente papel e celulose. Empregados mas insatisfeitos. Buscam nova oportunidade sem se expor na empresa atual. Confidencialidade é o gatilho principal.",
+      "publico_2": "Empresas industriais — RH e gestores técnicos de plantas industriais. Problema: vagas especializadas demoram 60-90 dias para preencher. Buscam candidatos pré-qualificados. Decisores: gerente técnico/RH + C-level aprova.",
+      "publico_3": "Escolas técnicas e associações — SENAI, Escolas Técnicas Federais, AbraMan, ABTCP. Canal multiplicador. Ganham com taxa de contratação de alunos/associados.",
+      "problems_before": [
+        "Vagas técnicas especializadas ficam abertas 60-90 dias — impacto direto na produção",
+        "Candidatos empregados têm medo de se expor no LinkedIn e perder emprego atual",
+        "Sem banco de candidatos pré-qualificados tecnicamente — CVs bons na teoria, fracos na prática",
+        "Escassez crítica de técnicos qualificados — 5 novas plantas de celulose precisam ~500 profissionais cada"
+      ],
+      "results_after": [
+        "Empresas: redução de 60-90 para ~30 dias no preenchimento de vagas técnicas",
+        "Candidatos: trocar de emprego com segurança e confidencialidade",
+        "Candidatos: saber quanto o mercado paga pelo seu perfil"
+      ]
+    },
+    "competition": {
+      "competitors": [
+        {"name": "LinkedIn", "type": "indireto", "perceived_differential": "Base enorme, mas candidatos técnicos evitam por falta de confidencialidade"},
+        {"name": "Catho", "type": "direto", "perceived_differential": "580M candidatos globais, mas sem foco industrial técnico e sem pré-qualificação"},
+        {"name": "Empregga.com.br", "type": "direto", "perceived_differential": "Concorrente regional"},
+        {"name": "MeuEmprego.com.br", "type": "direto", "perceived_differential": "Concorrente genérico"}
+      ],
+      "real_differential": "Único player com confidencialidade real para candidatos técnicos industriais + pré-qualificação por autoavaliação + testes técnicos certificados. LinkedIn é o maior 'concorrente' mas os candidatos industriais evitam exatamente por isso.",
+      "why_choose_us": "Acesso a candidatos não disponíveis em outras plataformas — os 'melhores' estão empregados e só entram em plataformas confidenciais",
+      "competitive_angle": "Não competir com LinkedIn — criar 'raia própria' no nicho industrial"
+    },
+    "brand": {
+      "puv": "A plataforma de recrutamento industrial onde candidatos aparecem com segurança e empresas encontram quem realmente entende de manutenção.",
+      "adjectives": ["Confiável", "Especializado", "Confidencial", "Técnico", "Humano"],
+      "voice_tone": "autoridade técnica com humanização — foco em saúde emocional no trabalho, liberdade profissional, respeito ao trabalhador",
+      "territory": "Porta libertadora — carreira como saúde emocional. Quem tá mal empregado merece sair com dignidade.",
+      "brand_concerns": "Registro no INPI pendente — só tem domínio .org até agora. Verificar disponibilidade arrobas Instagram.",
+      "has_logo": true,
+      "current_colors": "A verificar"
+    },
+    "digital_situation": {
+      "paid_traffic": false,
+      "paid_traffic_plan": "Google Ads + Meta Ads + LinkedIn Ads (planejado)",
+      "platforms_active": [],
+      "monthly_investment_ads": "R$ 8.000/mês aprovado (ainda não rodando)",
+      "crm": null,
+      "website_type": "vagafacil.org — em desenvolvimento",
+      "lead_sources": "Networking direto de Luis Binotto",
+      "brand_awareness_problem": "Zero awareness digital. Plataforma desconhecida. Sem presença em nenhum canal.",
+      "biggest_pain": "Plataforma em pré-lançamento, sem digital estruturado, sem histórico de aquisição, modelo B2B+B2C simultâneo nunca testado"
+    },
+    "accesses": {
+      "meta_business": false,
+      "google_ads": false,
+      "google_analytics": false,
+      "google_search_console": false,
+      "instagram_admin": false,
+      "website_admin": false,
+      "crm": false,
+      "gmb": false,
+      "whatsapp_business": false
+    },
+    "seasonality": {
+      "peak_months": ["Lançamento de novas plantas industriais — múltiplas contratações simultâneas"],
+      "low_months": ["Recessão de mercado com poucas vagas abertas"],
+      "opportunity": "5 projetos de grandes plantas de celulose no Brasil agora — cada uma precisa ~250 operadores + 250 mantenedores"
+    },
+    "objectives": {
+      "main_goal": "Lançar Vaga Fácil e consolidar no setor industrial: >10.000 candidatos + >50 empresas cadastradas",
+      "v4_project_scope": "45 dias: kickoff (S1) → diagnóstico marketing (S2) → diagnóstico comercial (S3) → planejamento (S4) → materiais+entrega (S5)",
+      "v4_start": "2026-05-22",
+      "v4_end": "2026-07-06",
+      "financial_projections": "1.000 vagas preenchidas = ~R$13M em fees. Meta: 100k candidatos na base."
+    },
+    "sales_module": null,
+    "pending_actions": [
+      {"owner": "Luis Binotto", "action": "Registrar marca no INPI (recomendação da Samira — reunião 27/05)"},
+      {"owner": "Samira Barbosa", "action": "Planejar conteúdo focado em saúde mental e carreira"},
+      {"owner": "Luis Binotto", "action": "Produzir cursos/materiais educativos para candidatos"},
+      {"owner": "Equipe", "action": "Verificar disponibilidade arrobas Instagram"},
+      {"owner": "Julio / Equipe", "action": "Criar slogan focado em diferenciais e valores"},
+      {"owner": "Julio / Equipe", "action": "Realizar PUV completo"}
+    ]
+  },
+  "research": {
+    "fetched_at": "2026-06-03",
+    "site": "https://vagafacil.org",
+    "sources": ["Kick-Off V4 (Drive)", "Notas Kickoff 22/05 (Gemini)", "Notas Diagnóstico de Marketing 27/05 (Gemini)", "Plano de ROI Assessman (Drive)", "Dossiê EE (Drive)", "Weekly Saber 01/06 (Gemini)"]
+  },
+  "connectors": {
+    "fetched_at": null,
+    "integrations": null
+  },
+  "progress": {
+    "current_week": 3,
+    "skills": {
+      "ee-novo-cliente": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-22", "completed_at": "2026-05-22"},
+      "ee-onboarding": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-22", "completed_at": "2026-05-22"},
+      "ee-s1-diagnostico-maturidade": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-22", "completed_at": "2026-05-22"},
+      "ee-s1-persona-icp": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-22", "completed_at": "2026-05-22"},
+      "ee-s1-swot": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-22", "completed_at": "2026-05-22"},
+      "ee-s1-auditoria-comunicacao": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-22", "completed_at": "2026-05-22"},
+      "ee-s2-pesquisa-mercado": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-27", "completed_at": "2026-05-27"},
+      "ee-s2-posicionamento": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-27", "completed_at": "2026-05-27"},
+      "ee-s2-diagnostico-midia": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-27", "completed_at": "2026-05-27"},
+      "ee-s2-diagnostico-criativos": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-27", "completed_at": "2026-05-27"},
+      "ee-s2-diagnostico-cro": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-27", "completed_at": "2026-05-27"},
+      "ee-s3-identidade-visual": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-brandbook": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-landing-page": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-copy-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-criativos-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-crm-setup": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-forecast-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
+      "ee-s3-gmb-otimizacao": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null}
+    }
+  },
+  "history": [
+    {"ts": "2026-05-22T10:00:00Z", "skill": "ee-novo-cliente", "checkpoint": 1, "decision": "Cliente cadastrado. Luis Binotto — Assessman/Vaga Fácil. Plataforma de recrutamento industrial confidencial em pré-lançamento."},
+    {"ts": "2026-05-22T10:00:00Z", "skill": "ee-s1-diagnostico-maturidade", "checkpoint": 1, "decision": "Maturidade digital baixa/inexistente. Produto em pré-lançamento. Zero histórico digital. Foco em estruturar aquisição B2B+B2C simultânea."},
+    {"ts": "2026-05-22T10:00:00Z", "skill": "ee-s1-persona-icp", "checkpoint": 1, "decision": "3 públicos: candidatos técnicos industriais (B2C), empresas industriais RH/gestores (B2B), escolas técnicas/associações (canal). Confidencialidade como gatilho primário."},
+    {"ts": "2026-05-22T10:00:00Z", "skill": "ee-s1-swot", "checkpoint": 1, "decision": "Força: network C-level Luis + confidencialidade única + expertise 30 anos setor. Fraqueza: produto não validado + zero digital + bootstrapped. Oportunidade: 5 plantas celulose em construção no Brasil."},
+    {"ts": "2026-05-27T10:00:00Z", "skill": "ee-s2-pesquisa-mercado", "checkpoint": 1, "decision": "Diagnóstico de Marketing realizado. Branding: território 'porta libertadora' — saúde emocional no trabalho. Diferenciação: nicho industrial, não competir com LinkedIn. PUV: confidencialidade + qualificação técnica."},
+    {"ts": "2026-05-27T10:00:00Z", "skill": "ee-s2-posicionamento", "checkpoint": 1, "decision": "Posicionamento: recrutamento industrial confidencial. Não é jobboard genérico. Tom: humanização + autoridade técnica. Registro INPI urgente — só tem .org."},
+    {"ts": "2026-06-03T10:00:00Z", "skill": "ee-s2-diagnostico-midia", "checkpoint": 1, "decision": "Diagnóstico Comercial realizado — reunião 03/06 às 10h. Processo comercial, funil de aquisição dual B2B+B2C, objeções e plano de ação mapeados."}
+  ]
+}

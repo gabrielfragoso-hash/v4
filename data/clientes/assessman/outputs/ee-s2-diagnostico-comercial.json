@@ -1,0 +1,222 @@
+{
+  "summary": "Vaga Fácil — modelo de negócio bilateral (B2B+B2C) com diferencial único de confidencialidade, mas com processo comercial 100% dependente do networking do fundador, sem funil estruturado, sem CRM e produto ainda não validado em receita. A janela estratégica é real: 5 novas plantas de celulose no Brasil = demanda crítica imediata. Risco principal: tentar ativar B2B e B2C ao mesmo tempo sem produto validado e sem equipe de vendas.",
+  "meta": {
+    "client": "AssessMan | Vaga Fácil",
+    "slug": "assessman",
+    "skill": "ee-s2-diagnostico-comercial",
+    "version": 1,
+    "generated_at": "2026-06-03",
+    "reuniao": "Diagnóstico Comercial — 03/06/2026 às 10h",
+    "data_sources": [
+      "Kick-Off V4 (Drive)",
+      "Notas Kickoff 22/05/2026 (Gemini)",
+      "Notas Diagnóstico de Marketing 27/05/2026 (Gemini)",
+      "Plano de ROI Assessman (Drive)",
+      "Weekly Saber 01/06/2026 (Gemini)"
+    ]
+  },
+
+  "contexto_negocio": {
+    "empresa": "AssessMan Assessoria de Manutenção Industrial LTDA",
+    "produto_foco": "Vaga Fácil — plataforma de recrutamento industrial confidencial",
+    "modelo": "Marketplace bilateral: candidatos (gratuito) + empresas pagam fee por sucesso (10-20% salário anual do contratado)",
+    "estagio": "Pré-lançamento — plataforma em desenvolvimento, zero receita validada no produto",
+    "fundadores": "Luis Binotto (ex-VP Global Andritz) + Henrique Garcia — 30+ anos no setor industrial",
+    "receita_atual": "R$ 1.5M/ano via AssessMan assessoria (produto separado, não foco da EE)",
+    "budget_midia": "R$ 8.000/mês aprovado"
+  },
+
+  "modelo_comercial": {
+    "proposta_de_valor": {
+      "para_candidatos": "Trocar de emprego com segurança total — sua identidade só é revelada quando VOCÊ aceita participar de uma vaga específica. Saber quanto o mercado paga pelo seu perfil. Candidatos pré-qualificados por autoavaliação + testes técnicos.",
+      "para_empresas": "Acesso a candidatos que não estão no LinkedIn — os melhores técnicos estão empregados e entram só em plataformas confidenciais. Candidatos pré-qualificados tecnicamente. Redução de 60-90 dias para ~30 dias no preenchimento de vagas.",
+      "diferencial_unico": "Confidencialidade real + qualificação técnica certificada. Nenhum concorrente oferece os dois juntos no nicho industrial."
+    },
+    "processo_de_venda_atual": {
+      "descricao": "Luis Binotto faz todo o desenvolvimento de negócios via networking pessoal. Henrique cuida de operações.",
+      "funil": [
+        "Contato via rede pessoal de Luis (C-level papel e celulose)",
+        "Reunião de apresentação da plataforma",
+        "Cadastro da empresa + publicação de vaga",
+        "Matching algoritmo (candidato x vaga)",
+        "Empresa aceita candidato → candidato revela identidade",
+        "Entrevista",
+        "Contratação → fee pago"
+      ],
+      "gargalos": [
+        "Zero leads digitais — 100% networking manual do fundador",
+        "Sem equipe de vendas — Luis acumula CEO + biz dev + produto + operação",
+        "Sem CRM — nenhum pipeline de empresas ou candidatos sendo gerenciado",
+        "Produto ainda não validado comercialmente — sem case de sucesso ainda",
+        "Receita só ocorre com contratação efetiva (success fee = ciclo longo)"
+      ]
+    },
+    "ciclo_de_venda_estimado": {
+      "b2b_empresa": "4-8 semanas — desde primeiro contato até primeira vaga publicada",
+      "b2c_candidato": "2-4 semanas — desde cadastro até match com empresa",
+      "receita": "60-120 dias após início do funil (sucesso = contratação efetivada)"
+    }
+  },
+
+  "analise_competitiva": {
+    "posicionamento": "Nicho industrial técnico — 'raia própria'. Não compete com LinkedIn ou Catho no volume. Compete na qualidade e confidencialidade.",
+    "concorrentes": [
+      {
+        "nome": "LinkedIn",
+        "tipo": "indireto",
+        "fraqueza_deles": "Candidatos técnicos industriais evitam expor perfil — risco de empresa atual descobrir. Sem pré-qualificação técnica.",
+        "nossa_vantagem": "Exatamente onde o LinkedIn falha — candidatos empregados que não aparecem lá"
+      },
+      {
+        "nome": "Catho / Infojobs",
+        "tipo": "direto",
+        "fraqueza_deles": "Genérico, sem foco industrial, sem pré-qualificação técnica, candidatos auto-declarados sem validação",
+        "nossa_vantagem": "Especialização + qualificação técnica certificada"
+      },
+      {
+        "nome": "Headhunters tradicionais",
+        "tipo": "indireto",
+        "fraqueza_deles": "Caros (20-30% salário anual), lentos, dependem de relacionamento individual",
+        "nossa_vantagem": "Mais barato (10-20% com possível redução futura), mais rápido, escalável"
+      }
+    ],
+    "janela_estrategica": "5 novas plantas de celulose em construção no Brasil agora — cada uma precisa ~250 operadores + 250 mantenedores = ~2.500 vagas críticas no setor que Luis conhece profundamente. Esta janela fecha em 2-3 anos."
+  },
+
+  "diagnostico_funil_duplo": {
+    "desafio_central": "Marketplace bilateral precisa de dois públicos crescendo em sincronia — sem candidatos as empresas não pagam, sem empresas os candidatos saem. O ovo e a galinha.",
+    "estrategia_recomendada": "Ativar candidatos PRIMEIRO — base de candidatos pré-qualificados é o produto real que as empresas pagam. Sem base, não há argumento comercial B2B.",
+    "sequencia": [
+      {
+        "fase": "1 — Construção de Base (mês 1-2)",
+        "foco": "Candidatos",
+        "acao": "Meta Ads + LinkedIn Ads segmentado para técnicos industriais das regiões das plantas. Apelo: confidencialidade + oportunidade de avaliação de mercado.",
+        "meta": "500-1.000 candidatos cadastrados e qualificados",
+        "custo": "R$ 4.000-6.000 em mídia"
+      },
+      {
+        "fase": "2 — Ativação Comercial B2B (mês 2-3)",
+        "foco": "Empresas",
+        "acao": "Outbound via rede de Luis + apresentação com dados da base de candidatos como prova social. 'Temos X técnicos de papel e celulose prontos para avaliar oportunidades — quer acesso?'",
+        "meta": "5-10 empresas primeiras cadastradas",
+        "custo": "Tempo de Luis + eventual SDR"
+      },
+      {
+        "fase": "3 — Primeiras Contratações + Cases (mês 3-4)",
+        "foco": "Conversão e prova",
+        "acao": "Fechar primeiras vagas com custo zero para empresa (modelo de lançamento). Gerar 2-3 cases com depoimento.",
+        "meta": "2-3 contratações realizadas = primeiros fees",
+        "obs": "Considerar vagas gratuitas no lançamento para gerar prova social urgente"
+      }
+    ]
+  },
+
+  "objecoes_e_respostas": [
+    {
+      "objecao": "Como vou confiar em uma plataforma nova sem histórico?",
+      "resposta": "Exatamente por isso estamos oferecendo a primeira vaga sem custo. Você só paga quando contratar. Risco zero para começar.",
+      "gatilho": "Proposta de vaga piloto gratuita para primeiros 10 clientes"
+    },
+    {
+      "objecao": "O fee de 10-20% do salário anual é caro",
+      "resposta": "Quanto custa deixar uma vaga técnica aberta por 90 dias? Custo de produção parada, headhunter cobra 20-30% e demora o mesmo tempo.",
+      "gatilho": "Calculadora de custo de vaga aberta — apresentar no meeting"
+    },
+    {
+      "objecao": "Não temos candidatos ainda — vai demorar para ter resultado",
+      "resposta": "Nossa estratégia começa pelo candidato — quando chegamos a você já vamos ter base qualificada do setor. A proposta é: você publica agora e a gente traz os candidatos.",
+      "gatilho": "Mostrar o funil de atração de candidatos já em andamento"
+    },
+    {
+      "objecao": "O LinkedIn já resolve pra gente",
+      "resposta": "Os candidatos que você encontra no LinkedIn são os que já se expuseram. Os que você nunca consegue contratar — os ótimos que estão bem empregados mas insatisfeitos — estão na Vaga Fácil.",
+      "gatilho": "Dado: 40-60% dos melhores técnicos industriais nunca colocam CV em plataformas abertas"
+    },
+    {
+      "objecao": "Meu RH já tem processo de seleção",
+      "resposta": "A Vaga Fácil não substitui o RH — entrega candidatos pré-qualificados tecnicamente para o RH entrevistar só quem realmente sabe fazer. O R&S vai de 90 para 30 dias.",
+      "gatilho": "Enfatizar que reduz carga do RH, não ameaça"
+    }
+  ],
+
+  "riscos_do_negocio": [
+    {
+      "risco": "Produto sem validação comercial — zero cases de sucesso ainda",
+      "impacto": "Alto",
+      "mitigacao": "Oferecer vagas piloto gratuitas para primeiros clientes B2B — gerar cases urgentemente antes de cobrar"
+    },
+    {
+      "risco": "Receita 100% success fee = caixa longo antes do primeiro pagamento",
+      "impacto": "Alto",
+      "mitigacao": "AssessMan sustenta operação enquanto Vaga Fácil valida. Fee V4 sai do AssessMan. Planejar runway de 6 meses sem receita Vaga Fácil."
+    },
+    {
+      "risco": "Registro de marca no INPI não feito — Vaga Fácil pode ser copiada",
+      "impacto": "Alto",
+      "mitigacao": "URGENTE: contratar advogado para registro no INPI esta semana. Nome disponível apenas no .org hoje."
+    },
+    {
+      "risco": "Dependência total do networking de Luis — não escalável",
+      "impacto": "Médio",
+      "mitigacao": "Estruturar outbound digital para B2B e inbound para candidatos via mídia paga — reduz dependência do fundador"
+    },
+    {
+      "risco": "Plataforma pode provocar 'turnover involuntário' — empresa encontra o próprio funcionário em vaga",
+      "impacto": "Médio",
+      "mitigacao": "O sistema pede identificação da empresa atual do candidato e bloqueia o match. Comunicar isso claramente nas vendas B2B."
+    }
+  ],
+
+  "acoes_prioritarias_reuniao_hoje": [
+    {
+      "rank": 1,
+      "acao": "Definir estratégia go-to-market: B2C (candidatos) ANTES de B2B (empresas)",
+      "justificativa": "Sem base de candidatos qualificados, não há produto para oferecer às empresas. Inverter a ordem clássica do marketplace.",
+      "responsavel": "Luis Binotto + Julio (plano de mídia)",
+      "prazo": "Decisão hoje"
+    },
+    {
+      "rank": 2,
+      "acao": "Definir oferta de lançamento para empresas: primeiras 10 vagas sem custo (fee zero)",
+      "justificativa": "Sem cases de sucesso, a objeção de confiança é intransponível. Vaga gratuita = case = credencial para cobrar das próximas.",
+      "responsavel": "Luis Binotto",
+      "prazo": "Decisão hoje"
+    },
+    {
+      "rank": 3,
+      "acao": "Registrar marca Vaga Fácil no INPI esta semana",
+      "justificativa": "Risco existencial — qualquer concorrente pode registrar o nome antes. Produto sensível e confidencial.",
+      "responsavel": "Luis Binotto",
+      "prazo": "Esta semana"
+    },
+    {
+      "rank": 4,
+      "acao": "Definir fee definitivo e modelo de precificação com Henrique",
+      "justificativa": "Range de 10-20% ainda indefinido. Sem preço claro, argumento comercial fica incompleto.",
+      "responsavel": "Luis Binotto + Henrique",
+      "prazo": "Até sexta-feira"
+    },
+    {
+      "rank": 5,
+      "acao": "Mapear as 5 empresas do network de Luis para primeiras abordagens B2B",
+      "justificativa": "Primeiros clientes virão do network — identificar as 5 mais prontas para cadastro e vaga piloto.",
+      "responsavel": "Luis Binotto",
+      "prazo": "Próxima semana"
+    }
+  ],
+
+  "perguntas_para_reuniao": [
+    "Luis, a plataforma já aceita cadastro de candidatos? Se não, qual a previsão exata de go-live?",
+    "Qual o fee que você já se sentiu confortável em cotar em alguma conversa? 10% ou mais?",
+    "Das empresas do seu network, qual teria a vaga mais urgente para ser a primeira a publicar?",
+    "Você toparia oferecer as primeiras 5 vagas sem custo para gerar cases urgentemente?",
+    "Registro no INPI: tem advogado disponível ou precisa de indicação?"
+  ],
+
+  "oportunidade_imediata": {
+    "descricao": "5 novas plantas de celulose em construção no Brasil precisam de ~250 operadores + 250 mantenedores cada = 2.500 vagas técnicas críticas nos próximos 24 meses",
+    "empresas_alvo": ["Suzano", "Bracell", "CMPC", "Arauco", "Outros projetos em construção"],
+    "conexao_luis": "Luis tem network direto neste setor — ex-VP Global da Andritz que construiu plantas. Esta é a abertura para os primeiros casos de sucesso.",
+    "janela": "Este setor vai saturar ou resolver o problema nos próximos 2 anos. Quem plantar agora colhe a categoria."
+  }
+}
