@@ -3,7 +3,32 @@ import path from "path";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getStagesForClient } from "@/lib/workflow";
+import { ApprovalPanel } from "@/components/ApprovalPanel";
 import { ArrowLeft, TrendingUp, TrendingDown, AlertTriangle, Zap, Target, BarChart3, MessageSquare, Search, Smartphone, CheckCircle2, Clock } from "lucide-react";
+
+async function getApprovals(slug: string): Promise<Record<string, { status: "approved" | "needs_changes"; comment: string; approvedBy: string; approvedAt: string }>> {
+  try {
+    const url = process.env.UPSTASH_REDIS_REST_URL;
+    const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+    if (!url || !token) return {};
+    // Lazy import to avoid build errors when env vars not set
+    const { Redis } = await import("@upstash/redis");
+    const redis = new Redis({ url, token });
+    const { redis: redisLib, allApprovalsKey, approvalKey } = await import("@/lib/redis");
+    void redisLib; // eslint
+    const ids = await redis.smembers(allApprovalsKey(slug));
+    if (!ids.length) return {};
+    const entries = await Promise.all(
+      ids.map(async (id) => {
+        const data = await redis.get(approvalKey(slug, id));
+        return [id, data] as const;
+      })
+    );
+    return Object.fromEntries(entries.filter(([, v]) => v != null)) as Record<string, { status: "approved" | "needs_changes"; comment: string; approvedBy: string; approvedAt: string }>;
+  } catch {
+    return {};
+  }
+}
 
 const CLIENTES_DIR = process.env.CLIENTES_DIR ?? path.join(process.cwd(), "data/clientes");
 
@@ -160,11 +185,12 @@ export default async function PortalPage({
     notFound();
   }
 
-  const [diagnostico, persona, swot, auditoria] = await Promise.all([
+  const [diagnostico, persona, swot, auditoria, diagComercial] = await Promise.all([
     readOutput(slug, "ee-s1-diagnostico-maturidade"),
     readOutput(slug, "ee-s1-persona-icp"),
     readOutput(slug, "ee-s1-swot"),
     readOutput(slug, "ee-s1-auditoria-comunicacao"),
+    readOutput(slug, "ee-s2-diagnostico-comercial"),
   ]);
 
   const moduloVendas = (clientData.meta as Record<string, unknown>)?.modulo_vendas === true;
@@ -185,6 +211,8 @@ export default async function PortalPage({
     return "pending";
   });
 
+  const approvals = await getApprovals(slug);
+
   const completedAt = new Date("2026-05-29").toLocaleDateString("pt-BR", {
     day: "2-digit", month: "long", year: "numeric",
   });
@@ -194,11 +222,13 @@ export default async function PortalPage({
     { id: "persona", label: "ICP & Persona" },
     { id: "swot", label: "SWOT" },
     { id: "auditoria", label: "Auditoria" },
+    { id: "comercial", label: "Comercial" },
   ].filter(n =>
     (n.id === "diagnostico" && diagnostico) ||
     (n.id === "persona" && persona) ||
     (n.id === "swot" && swot) ||
-    (n.id === "auditoria" && auditoria)
+    (n.id === "auditoria" && auditoria) ||
+    (n.id === "comercial" && diagComercial)
   );
 
   return (
@@ -412,6 +442,7 @@ export default async function PortalPage({
                 ))}
               </div>
             </Card>
+            <ApprovalPanel slug={slug} skillId="ee-s1-diagnostico-maturidade" skillName="Diagnóstico de Maturidade" existingApproval={approvals["ee-s1-diagnostico-maturidade"] ?? null} />
           </Section>
         )}
 
@@ -490,6 +521,7 @@ export default async function PortalPage({
                 {persona.mensagens_chave?.opcoes?.find((o: { escolhida?: boolean; justificativa?: string }) => o.escolhida)?.justificativa ?? persona.mensagens_chave?.justificativa_escolha}
               </p>
             </Card>
+            <ApprovalPanel slug={slug} skillId="ee-s1-persona-icp" skillName="ICP & Persona" existingApproval={approvals["ee-s1-persona-icp"] ?? null} />
           </Section>
         )}
 
@@ -563,6 +595,7 @@ export default async function PortalPage({
                 ))}
               </div>
             </Card>
+            <ApprovalPanel slug={slug} skillId="ee-s1-swot" skillName="Matriz SWOT" existingApproval={approvals["ee-s1-swot"] ?? null} />
           </Section>
         )}
 
@@ -638,6 +671,143 @@ export default async function PortalPage({
                 ))}
               </div>
             </Card>
+            <ApprovalPanel slug={slug} skillId="ee-s1-auditoria-comunicacao" skillName="Auditoria de Comunicação" existingApproval={approvals["ee-s1-auditoria-comunicacao"] ?? null} />
+          </Section>
+        )}
+
+        {/* ── DIAGNÓSTICO COMERCIAL ─────────────────────────────── */}
+        {diagComercial && (
+          <Section id="comercial" label="05 — Diagnóstico Comercial">
+
+            {/* Modelo comercial */}
+            <Card accent>
+              <p className="text-[10px] font-black uppercase tracking-wider mb-3" style={{ color: "var(--color-primary)" }}>
+                Proposta de valor
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { label: "Para candidatos", text: diagComercial.modelo_comercial?.proposta_de_valor?.para_candidatos },
+                  { label: "Para empresas", text: diagComercial.modelo_comercial?.proposta_de_valor?.para_empresas },
+                ].map(({ label, text }) => (
+                  <div key={label}>
+                    <p className="text-[10px] font-bold uppercase tracking-wider mb-1" style={{ color: "var(--color-text-muted)" }}>{label}</p>
+                    <p className="text-xs leading-relaxed" style={{ color: "var(--color-text)" }}>{text}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 pt-3" style={{ borderTop: "1px solid var(--color-border)" }}>
+                <p className="text-[10px] font-bold uppercase tracking-wider mb-1" style={{ color: "var(--color-primary)" }}>Diferencial único</p>
+                <p className="text-sm font-semibold" style={{ color: "var(--color-text)" }}>{diagComercial.modelo_comercial?.proposta_de_valor?.diferencial_unico}</p>
+              </div>
+            </Card>
+
+            {/* Funil dual */}
+            {diagComercial.diagnostico_funil_duplo && (
+              <Card>
+                <p className="text-[10px] font-black uppercase tracking-wider mb-1" style={{ color: "#facc15" }}>
+                  Estratégia go-to-market — funil duplo B2B+B2C
+                </p>
+                <p className="text-xs mb-4 leading-relaxed" style={{ color: "var(--color-text-muted)" }}>
+                  {diagComercial.diagnostico_funil_duplo.desafio_central}
+                </p>
+                <div className="space-y-3">
+                  {diagComercial.diagnostico_funil_duplo.sequencia?.map((fase: { fase: string; foco: string; acao: string; meta: string; custo?: string }) => (
+                    <div key={fase.fase} className="flex gap-3">
+                      <div className="shrink-0 w-6 h-6 rounded flex items-center justify-center text-[10px] font-black"
+                        style={{ background: "rgba(250,204,21,0.12)", color: "#facc15", border: "1px solid rgba(250,204,21,0.25)" }}>
+                        {fase.fase.split("—")[0].replace("Fase","").replace(" ","").trim().charAt(0)}
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <p className="text-sm font-bold" style={{ color: "var(--color-text)" }}>{fase.fase}</p>
+                          <Tag type="opportunity">foco: {fase.foco}</Tag>
+                        </div>
+                        <p className="text-xs mt-1 leading-relaxed" style={{ color: "var(--color-text-muted)" }}>{fase.acao}</p>
+                        <p className="text-xs mt-1 font-semibold" style={{ color: "#4ade80" }}>Meta: {fase.meta}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            )}
+
+            {/* Objeções */}
+            {diagComercial.objecoes_e_respostas?.length > 0 && (
+              <Card>
+                <p className="text-[10px] font-black uppercase tracking-wider mb-4" style={{ color: "var(--color-text-muted)" }}>
+                  Objeções e respostas prontas
+                </p>
+                <div className="space-y-4">
+                  {diagComercial.objecoes_e_respostas.map((o: { objecao: string; resposta: string; gatilho: string }, i: number) => (
+                    <div key={i} className="rounded-lg p-3" style={{ background: "var(--color-surface-elevated)", border: "1px solid var(--color-border)" }}>
+                      <p className="text-xs font-bold mb-1" style={{ color: "#facc15" }}>❝ {o.objecao}</p>
+                      <p className="text-xs leading-relaxed" style={{ color: "var(--color-text)" }}>{o.resposta}</p>
+                      <p className="text-[11px] mt-1.5 font-semibold" style={{ color: "var(--color-primary)" }}>→ {o.gatilho}</p>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            )}
+
+            {/* Ações prioritárias reunião */}
+            {diagComercial.acoes_prioritarias_reuniao_hoje?.length > 0 && (
+              <Card accent>
+                <p className="text-[10px] font-black uppercase tracking-wider mb-4" style={{ color: "var(--color-primary)" }}>
+                  Ações para decidir hoje
+                </p>
+                <div className="space-y-3">
+                  {diagComercial.acoes_prioritarias_reuniao_hoje.map((a: { rank: number; acao: string; justificativa: string; responsavel: string; prazo: string }) => (
+                    <div key={a.rank} className="flex gap-3">
+                      <span className="text-sm font-black shrink-0 w-5" style={{ color: "var(--color-primary)" }}>{a.rank}</span>
+                      <div className="flex-1">
+                        <p className="text-sm font-bold" style={{ color: "var(--color-text)" }}>{a.acao}</p>
+                        <p className="text-xs mt-0.5 leading-relaxed" style={{ color: "var(--color-text-muted)" }}>{a.justificativa}</p>
+                        <div className="flex gap-1.5 mt-1.5 flex-wrap">
+                          <Tag type="neutral">{a.responsavel}</Tag>
+                          <Tag type={a.prazo === "Decisão hoje" ? "negative" : "neutral"}>{a.prazo}</Tag>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            )}
+
+            {/* Perguntas para reunião */}
+            {diagComercial.perguntas_para_reuniao?.length > 0 && (
+              <Card>
+                <p className="text-[10px] font-black uppercase tracking-wider mb-3" style={{ color: "#4ade80" }}>
+                  Perguntas-chave para a reunião
+                </p>
+                <div className="space-y-2">
+                  {diagComercial.perguntas_para_reuniao.map((q: string, i: number) => (
+                    <div key={i} className="flex gap-2">
+                      <span className="text-xs shrink-0 font-bold" style={{ color: "#4ade80" }}>{i + 1}.</span>
+                      <p className="text-xs leading-relaxed" style={{ color: "var(--color-text)" }}>{q}</p>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            )}
+
+            {/* Janela estratégica */}
+            {diagComercial.oportunidade_imediata && (
+              <Card accent>
+                <p className="text-[10px] font-black uppercase tracking-wider mb-2" style={{ color: "var(--color-primary)" }}>
+                  ⚡ Janela estratégica imediata
+                </p>
+                <p className="text-sm font-bold leading-snug" style={{ color: "var(--color-text)" }}>
+                  {diagComercial.oportunidade_imediata.descricao}
+                </p>
+                <p className="text-xs mt-2 leading-relaxed" style={{ color: "var(--color-text-muted)" }}>
+                  {diagComercial.oportunidade_imediata.conexao_luis}
+                </p>
+                <p className="text-xs mt-2 font-semibold" style={{ color: "var(--color-primary)" }}>
+                  {diagComercial.oportunidade_imediata.janela}
+                </p>
+              </Card>
+            )}
+            <ApprovalPanel slug={slug} skillId="ee-s2-diagnostico-comercial" skillName="Diagnóstico Comercial" existingApproval={approvals["ee-s2-diagnostico-comercial"] ?? null} />
           </Section>
         )}
 
