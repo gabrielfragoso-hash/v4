@@ -15,11 +15,26 @@
       "contact_name": "Jessica Machado",
       "contact_role": "Sócia — Comercial e Administrativo",
       "team": [
-        {"name": "Jessica Machado", "role": "Sócia — Comercial, Vendas e Administrativo (ponto de contato principal)"},
-        {"name": "Michelle Monteiro Dantas", "role": "Sócia Administrativa"},
-        {"name": "Pedro Machado", "role": "Sócio — Produção e Confecção (marido da Jessica, 4 anos na área)"},
-        {"name": "Cotrin", "role": "Sócio (mencionado, papel não detalhado)"},
-        {"name": "Luiz Henrique", "role": "Filho da Michelle — suporte geral / possivelmente jurídico"}
+        {
+          "name": "Jessica Machado",
+          "role": "Sócia — Comercial, Vendas e Administrativo (ponto de contato principal)"
+        },
+        {
+          "name": "Michelle Monteiro Dantas",
+          "role": "Sócia Administrativa"
+        },
+        {
+          "name": "Pedro Machado",
+          "role": "Sócio — Produção e Confecção (marido da Jessica, 4 anos na área)"
+        },
+        {
+          "name": "Cotrin",
+          "role": "Sócio (mencionado, papel não detalhado)"
+        },
+        {
+          "name": "Luiz Henrique",
+          "role": "Filho da Michelle — suporte geral / possivelmente jurídico"
+        }
       ],
       "jessica_background": "10+ anos no ramo de joalheria. Entrou como vendedora na Arte In Ouro em 2018, virou gerente, depois sócia. Saiu em 2025 para fundar a Veridian com Michelle e Cotrin. Conhece profundamente o principal concorrente por dentro.",
       "segment": "Joias exclusivas e personalizadas",
@@ -146,7 +161,13 @@
     },
     "brand": {
       "puv": "Veridian Joias: Design exclusivo que eterniza sua história. Joias que transcendem o tempo, transformando momentos em memórias preciosas com brilho e sofisticação.",
-      "adjectives": ["Exclusivo", "Sofisticado", "Atemporal", "Significativo", "Autêntico"],
+      "adjectives": [
+        "Exclusivo",
+        "Sofisticado",
+        "Atemporal",
+        "Significativo",
+        "Autêntico"
+      ],
       "voice_tone": "sofisticado, emocional, exclusivo — foco no desejo e no significado, não em preço/performance",
       "admired_brands": "A mapear",
       "current_colors": "A verificar com materiais gráficos (Jessica vai enviar)",
@@ -158,7 +179,11 @@
       "paid_traffic": true,
       "paid_traffic_detail": "Iniciou com R$ 1.000 na inauguração + R$ 1.000 recentemente (em execução). Já gerou 6 leads no primeiro dia da nova campanha.",
       "paid_traffic_manager": "Agência externa (não identificada) — cria conteúdo e gerencia tráfego",
-      "platforms_active": ["instagram", "facebook", "whatsapp"],
+      "platforms_active": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
       "ad_campaigns_running": [
         "Campanha para seguidores",
         "Campanha para não seguidores (com localização da loja)",
@@ -191,7 +216,12 @@
       "whatsapp_business": true
     },
     "seasonality": {
-      "peak_months": ["Maio (Dia das Mães)", "Junho (Dia dos Namorados)", "Novembro (Black Friday)", "Dezembro (Natal)"],
+      "peak_months": [
+        "Maio (Dia das Mães)",
+        "Junho (Dia dos Namorados)",
+        "Novembro (Black Friday)",
+        "Dezembro (Natal)"
+      ],
       "low_months": "Demais meses do ano",
       "seasonal_buyer_profile": "Homens compram principalmente em datas comemorativas. Alianças são demanda constante (casamentos/noivados não têm sazonalidade forte)."
     },
@@ -245,11 +275,26 @@
     },
     "sales_module": null,
     "pending_actions": [
-      {"owner": "Jessica", "action": "Enviar materiais gráficos e documentos da marca na pasta compartilhada"},
-      {"owner": "Jessica", "action": "Levantar volume de vendas e margem por categoria de produto"},
-      {"owner": "Jessica/equipe", "action": "Monitorar tempo médio de resposta no WhatsApp"},
-      {"owner": "Júlio (V4)", "action": "Análise de viabilidade de alianças em ouro 10K"},
-      {"owner": "Gabriel (V4)", "action": "Verificar link da pasta compartilhada no WhatsApp do grupo"}
+      {
+        "owner": "Jessica",
+        "action": "Enviar materiais gráficos e documentos da marca na pasta compartilhada"
+      },
+      {
+        "owner": "Jessica",
+        "action": "Levantar volume de vendas e margem por categoria de produto"
+      },
+      {
+        "owner": "Jessica/equipe",
+        "action": "Monitorar tempo médio de resposta no WhatsApp"
+      },
+      {
+        "owner": "Júlio (V4)",
+        "action": "Análise de viabilidade de alianças em ouro 10K"
+      },
+      {
+        "owner": "Gabriel (V4)",
+        "action": "Verificar link da pasta compartilhada no WhatsApp do grupo"
+      }
     ]
   },
   "research": {
@@ -257,7 +302,10 @@
     "site": "https://www.veridianjoias.com.br/",
     "instagram": "@veridianjoias",
     "hero": "Transforme momentos em símbolos eternos de afeto",
-    "locations": ["Cabo Frio / RJ — centro", "Rio das Ostras / RJ — em obra"],
+    "locations": [
+      "Cabo Frio / RJ — centro",
+      "Rio das Ostras / RJ — em obra"
+    ],
     "whatsapp": "+55 22 98817-1080"
   },
   "connectors": {
@@ -265,34 +313,238 @@
     "integrations": null
   },
   "progress": {
-    "current_week": 1,
+    "current_week": 3,
     "skills": {
-      "ee-novo-cliente": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-29", "completed_at": "2026-05-29"},
-      "ee-onboarding": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-29", "completed_at": "2026-05-29"},
-      "ee-s1-diagnostico-maturidade": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-29", "completed_at": "2026-05-29"},
-      "ee-s1-swot": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-29", "completed_at": "2026-05-29"},
-      "ee-s1-persona-icp": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-29", "completed_at": "2026-05-29"},
-      "ee-s1-auditoria-comunicacao": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-29", "completed_at": "2026-05-29"},
-      "ee-s2-pesquisa-mercado": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s2-posicionamento": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s2-diagnostico-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s2-diagnostico-criativos": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s2-diagnostico-cro": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-identidade-visual": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-brandbook": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-landing-page": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-copy-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-criativos-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-crm-setup": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-forecast-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-gmb-otimizacao": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null}
+      "ee-s1-gc": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s1-kickoff": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-diagnostico-branding": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-diagnostico-criativos": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-benchmarking-criativos": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-diagnostico-social-media": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-benchmarking-social-media": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-analise-site": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-benchmarking-site": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s3-cliente-oculto": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-estrutura-topologica": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-escopo-comercial": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-jornada-cliente": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-metricas-comercial": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-stack-ferramentas": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-analise-submercados": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-tam-sam-som": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-swot": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s4-comparacao-concorrentes": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-posicionamento-puv": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-aquisicao": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-engajamento": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-monetizacao": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-retencao": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-drawflow": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-diagnostico-midia-paga": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-identidade-visual": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-manual-copy": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-criativos": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-landing-page": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-proximos-passos": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-feedback": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-proposta-comercial": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      }
     }
   },
   "history": [
-    {"ts": "2026-05-29T00:00:00Z", "skill": "ee-novo-cliente", "checkpoint": 0, "decision": "Cliente cadastrado. Briefing completo via kickoff V4 + transcrição da reunião GC/KickOff de 27/05/2026 + pesquisa automática."},
-    {"ts": "2026-05-29T01:00:00Z", "skill": "ee-s1-diagnostico-maturidade", "checkpoint": 1, "decision": "Score geral 16/100 (Crítico). Gaps críticos: CRM inexistente e Pixel sem conversão. Aprovado pelo operador sem ajustes."},
-    {"ts": "2026-05-29T02:00:00Z", "skill": "ee-s1-persona-icp", "checkpoint": 1, "decision": "ICP primário: Marina, 28-42 anos, decisora emocional. Mensagem-chave aprovada: opção B (emocional). 2 ICPs secundários mapeados. Aprovado sem ajustes."},
-    {"ts": "2026-05-29T03:00:00Z", "skill": "ee-s1-swot", "checkpoint": 1, "decision": "6 Forças, 5 Fraquezas, 5 Oportunidades, 5 Ameaças. Janela estratégica: território emocional/exclusividade vago. Risco principal: escalar mídia sem CRM/pixel. Estratégia 90 dias definida. Aprovado sem ajustes."},
-    {"ts": "2026-05-29T04:00:00Z", "skill": "ee-s1-auditoria-comunicacao", "checkpoint": 1, "decision": "Score médio 19/100. Top 3 problemas: mensagem-chave inconsistente em todos os canais, pixel+CRM inexistentes (balde furado), GMB invisível para buscas locais. 5 quick wins mapeados. Aprovado sem ajustes."}
+    {
+      "ts": "2026-05-29T00:00:00Z",
+      "skill": "ee-novo-cliente",
+      "checkpoint": 0,
+      "decision": "Cliente cadastrado. Briefing completo via kickoff V4 + transcrição da reunião GC/KickOff de 27/05/2026 + pesquisa automática."
+    },
+    {
+      "ts": "2026-05-29T01:00:00Z",
+      "skill": "ee-s1-diagnostico-maturidade",
+      "checkpoint": 1,
+      "decision": "Score geral 16/100 (Crítico). Gaps críticos: CRM inexistente e Pixel sem conversão. Aprovado pelo operador sem ajustes."
+    },
+    {
+      "ts": "2026-05-29T02:00:00Z",
+      "skill": "ee-s1-persona-icp",
+      "checkpoint": 1,
+      "decision": "ICP primário: Marina, 28-42 anos, decisora emocional. Mensagem-chave aprovada: opção B (emocional). 2 ICPs secundários mapeados. Aprovado sem ajustes."
+    },
+    {
+      "ts": "2026-05-29T03:00:00Z",
+      "skill": "ee-s1-swot",
+      "checkpoint": 1,
+      "decision": "6 Forças, 5 Fraquezas, 5 Oportunidades, 5 Ameaças. Janela estratégica: território emocional/exclusividade vago. Risco principal: escalar mídia sem CRM/pixel. Estratégia 90 dias definida. Aprovado sem ajustes."
+    },
+    {
+      "ts": "2026-05-29T04:00:00Z",
+      "skill": "ee-s1-auditoria-comunicacao",
+      "checkpoint": 1,
+      "decision": "Score médio 19/100. Top 3 problemas: mensagem-chave inconsistente em todos os canais, pixel+CRM inexistentes (balde furado), GMB invisível para buscas locais. 5 quick wins mapeados. Aprovado sem ajustes."
+    }
   ]
 }

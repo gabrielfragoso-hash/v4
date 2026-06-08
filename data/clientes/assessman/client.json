@@ -15,15 +15,36 @@
       "contact_name": "Luis Binotto",
       "contact_role": "Fundador / Sócio — Desenvolvimento de Negócios",
       "team": [
-        {"name": "Luis Binotto", "role": "Fundador/Sócio — CEO, Biz Dev, principal decisor"},
-        {"name": "Henrique Garcia", "role": "Sócio — Operações e Técnico"}
+        {
+          "name": "Luis Binotto",
+          "role": "Fundador/Sócio — CEO, Biz Dev, principal decisor"
+        },
+        {
+          "name": "Henrique Garcia",
+          "role": "Sócio — Operações e Técnico"
+        }
       ],
       "team_v4": [
-        {"name": "Julio César dos Santos", "role": "Account / GT"},
-        {"name": "Samira Barbosa", "role": "Designer / Branding"},
-        {"name": "Matheus Xavier", "role": "Sales Enablement / CSM"},
-        {"name": "Gabriel Fragoso", "role": "Coordenador"},
-        {"name": "Fernando Gevenka", "role": "Gerente"}
+        {
+          "name": "Julio César dos Santos",
+          "role": "Account / GT"
+        },
+        {
+          "name": "Samira Barbosa",
+          "role": "Designer / Branding"
+        },
+        {
+          "name": "Matheus Xavier",
+          "role": "Sales Enablement / CSM"
+        },
+        {
+          "name": "Gabriel Fragoso",
+          "role": "Coordenador"
+        },
+        {
+          "name": "Fernando Gevenka",
+          "role": "Gerente"
+        }
       ],
       "background": "Luis Binotto foi VP Global da Divisão de Manutenção da Andritz. Henrique Garcia era Diretor de Operações Brasil e Diretor Técnico Global. Ambos saíram para fundar a AssessMan. 30+ anos de experiência no setor industrial, especialmente papel e celulose. Network C-level consolidado.",
       "segment": "HR Tech / Recrutamento Industrial B2B+B2C",
@@ -78,10 +99,26 @@
     },
     "competition": {
       "competitors": [
-        {"name": "LinkedIn", "type": "indireto", "perceived_differential": "Base enorme, mas candidatos técnicos evitam por falta de confidencialidade"},
-        {"name": "Catho", "type": "direto", "perceived_differential": "580M candidatos globais, mas sem foco industrial técnico e sem pré-qualificação"},
-        {"name": "Empregga.com.br", "type": "direto", "perceived_differential": "Concorrente regional"},
-        {"name": "MeuEmprego.com.br", "type": "direto", "perceived_differential": "Concorrente genérico"}
+        {
+          "name": "LinkedIn",
+          "type": "indireto",
+          "perceived_differential": "Base enorme, mas candidatos técnicos evitam por falta de confidencialidade"
+        },
+        {
+          "name": "Catho",
+          "type": "direto",
+          "perceived_differential": "580M candidatos globais, mas sem foco industrial técnico e sem pré-qualificação"
+        },
+        {
+          "name": "Empregga.com.br",
+          "type": "direto",
+          "perceived_differential": "Concorrente regional"
+        },
+        {
+          "name": "MeuEmprego.com.br",
+          "type": "direto",
+          "perceived_differential": "Concorrente genérico"
+        }
       ],
       "real_differential": "Único player com confidencialidade real para candidatos técnicos industriais + pré-qualificação por autoavaliação + testes técnicos certificados. LinkedIn é o maior 'concorrente' mas os candidatos industriais evitam exatamente por isso.",
       "why_choose_us": "Acesso a candidatos não disponíveis em outras plataformas — os 'melhores' estão empregados e só entram em plataformas confidenciais",
@@ -89,7 +126,13 @@
     },
     "brand": {
       "puv": "A plataforma de recrutamento industrial onde candidatos aparecem com segurança e empresas encontram quem realmente entende de manutenção.",
-      "adjectives": ["Confiável", "Especializado", "Confidencial", "Técnico", "Humano"],
+      "adjectives": [
+        "Confiável",
+        "Especializado",
+        "Confidencial",
+        "Técnico",
+        "Humano"
+      ],
       "voice_tone": "autoridade técnica com humanização — foco em saúde emocional no trabalho, liberdade profissional, respeito ao trabalhador",
       "territory": "Porta libertadora — carreira como saúde emocional. Quem tá mal empregado merece sair com dignidade.",
       "brand_concerns": "Registro no INPI pendente — só tem domínio .org até agora. Verificar disponibilidade arrobas Instagram.",
@@ -119,8 +162,12 @@
       "whatsapp_business": false
     },
     "seasonality": {
-      "peak_months": ["Lançamento de novas plantas industriais — múltiplas contratações simultâneas"],
-      "low_months": ["Recessão de mercado com poucas vagas abertas"],
+      "peak_months": [
+        "Lançamento de novas plantas industriais — múltiplas contratações simultâneas"
+      ],
+      "low_months": [
+        "Recessão de mercado com poucas vagas abertas"
+      ],
       "opportunity": "5 projetos de grandes plantas de celulose no Brasil agora — cada uma precisa ~250 operadores + 250 mantenedores"
     },
     "objectives": {
@@ -132,54 +179,293 @@
     },
     "sales_module": null,
     "pending_actions": [
-      {"owner": "Luis Binotto", "action": "Registrar marca no INPI (recomendação da Samira — reunião 27/05)"},
-      {"owner": "Samira Barbosa", "action": "Planejar conteúdo focado em saúde mental e carreira"},
-      {"owner": "Luis Binotto", "action": "Produzir cursos/materiais educativos para candidatos"},
-      {"owner": "Equipe", "action": "Verificar disponibilidade arrobas Instagram"},
-      {"owner": "Julio / Equipe", "action": "Criar slogan focado em diferenciais e valores"},
-      {"owner": "Julio / Equipe", "action": "Realizar PUV completo"}
+      {
+        "owner": "Luis Binotto",
+        "action": "Registrar marca no INPI (recomendação da Samira — reunião 27/05)"
+      },
+      {
+        "owner": "Samira Barbosa",
+        "action": "Planejar conteúdo focado em saúde mental e carreira"
+      },
+      {
+        "owner": "Luis Binotto",
+        "action": "Produzir cursos/materiais educativos para candidatos"
+      },
+      {
+        "owner": "Equipe",
+        "action": "Verificar disponibilidade arrobas Instagram"
+      },
+      {
+        "owner": "Julio / Equipe",
+        "action": "Criar slogan focado em diferenciais e valores"
+      },
+      {
+        "owner": "Julio / Equipe",
+        "action": "Realizar PUV completo"
+      }
     ]
   },
   "research": {
     "fetched_at": "2026-06-03",
     "site": "https://vagafacil.org",
-    "sources": ["Kick-Off V4 (Drive)", "Notas Kickoff 22/05 (Gemini)", "Notas Diagnóstico de Marketing 27/05 (Gemini)", "Plano de ROI Assessman (Drive)", "Dossiê EE (Drive)", "Weekly Saber 01/06 (Gemini)"]
+    "sources": [
+      "Kick-Off V4 (Drive)",
+      "Notas Kickoff 22/05 (Gemini)",
+      "Notas Diagnóstico de Marketing 27/05 (Gemini)",
+      "Plano de ROI Assessman (Drive)",
+      "Dossiê EE (Drive)",
+      "Weekly Saber 01/06 (Gemini)"
+    ]
   },
   "connectors": {
     "fetched_at": null,
     "integrations": null
   },
   "progress": {
-    "current_week": 3,
+    "current_week": 4,
     "skills": {
-      "ee-novo-cliente": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-22", "completed_at": "2026-05-22"},
-      "ee-onboarding": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-22", "completed_at": "2026-05-22"},
-      "ee-s1-diagnostico-maturidade": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-22", "completed_at": "2026-05-22"},
-      "ee-s1-persona-icp": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-22", "completed_at": "2026-05-22"},
-      "ee-s1-swot": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-22", "completed_at": "2026-05-22"},
-      "ee-s1-auditoria-comunicacao": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-22", "completed_at": "2026-05-22"},
-      "ee-s2-pesquisa-mercado": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-27", "completed_at": "2026-05-27"},
-      "ee-s2-posicionamento": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-27", "completed_at": "2026-05-27"},
-      "ee-s2-diagnostico-midia": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-27", "completed_at": "2026-05-27"},
-      "ee-s2-diagnostico-criativos": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-27", "completed_at": "2026-05-27"},
-      "ee-s2-diagnostico-cro": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-27", "completed_at": "2026-05-27"},
-      "ee-s3-identidade-visual": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-brandbook": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-landing-page": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-copy-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-criativos-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-crm-setup": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-forecast-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-gmb-otimizacao": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null}
+      "ee-s1-gc": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s1-kickoff": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-diagnostico-branding": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-diagnostico-criativos": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-benchmarking-criativos": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-diagnostico-social-media": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-benchmarking-social-media": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-analise-site": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-benchmarking-site": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s3-cliente-oculto": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s3-estrutura-topologica": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s3-escopo-comercial": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s3-jornada-cliente": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s3-metricas-comercial": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s3-stack-ferramentas": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s4-analise-submercados": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s4-tam-sam-som": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s4-swot": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s4-comparacao-concorrentes": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s4-posicionamento-puv": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s4-estrategias-aquisicao": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-engajamento": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-monetizacao": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-retencao": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-drawflow": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-diagnostico-midia-paga": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s5-identidade-visual": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-manual-copy": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-criativos": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-landing-page": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-proximos-passos": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-feedback": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-proposta-comercial": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      }
     }
   },
   "history": [
-    {"ts": "2026-05-22T10:00:00Z", "skill": "ee-novo-cliente", "checkpoint": 1, "decision": "Cliente cadastrado. Luis Binotto — Assessman/Vaga Fácil. Plataforma de recrutamento industrial confidencial em pré-lançamento."},
-    {"ts": "2026-05-22T10:00:00Z", "skill": "ee-s1-diagnostico-maturidade", "checkpoint": 1, "decision": "Maturidade digital baixa/inexistente. Produto em pré-lançamento. Zero histórico digital. Foco em estruturar aquisição B2B+B2C simultânea."},
-    {"ts": "2026-05-22T10:00:00Z", "skill": "ee-s1-persona-icp", "checkpoint": 1, "decision": "3 públicos: candidatos técnicos industriais (B2C), empresas industriais RH/gestores (B2B), escolas técnicas/associações (canal). Confidencialidade como gatilho primário."},
-    {"ts": "2026-05-22T10:00:00Z", "skill": "ee-s1-swot", "checkpoint": 1, "decision": "Força: network C-level Luis + confidencialidade única + expertise 30 anos setor. Fraqueza: produto não validado + zero digital + bootstrapped. Oportunidade: 5 plantas celulose em construção no Brasil."},
-    {"ts": "2026-05-27T10:00:00Z", "skill": "ee-s2-pesquisa-mercado", "checkpoint": 1, "decision": "Diagnóstico de Marketing realizado. Branding: território 'porta libertadora' — saúde emocional no trabalho. Diferenciação: nicho industrial, não competir com LinkedIn. PUV: confidencialidade + qualificação técnica."},
-    {"ts": "2026-05-27T10:00:00Z", "skill": "ee-s2-posicionamento", "checkpoint": 1, "decision": "Posicionamento: recrutamento industrial confidencial. Não é jobboard genérico. Tom: humanização + autoridade técnica. Registro INPI urgente — só tem .org."},
-    {"ts": "2026-06-03T10:00:00Z", "skill": "ee-s2-diagnostico-midia", "checkpoint": 1, "decision": "Diagnóstico Comercial realizado — reunião 03/06 às 10h. Processo comercial, funil de aquisição dual B2B+B2C, objeções e plano de ação mapeados."}
+    {
+      "ts": "2026-05-22T10:00:00Z",
+      "skill": "ee-novo-cliente",
+      "checkpoint": 1,
+      "decision": "Cliente cadastrado. Luis Binotto — Assessman/Vaga Fácil. Plataforma de recrutamento industrial confidencial em pré-lançamento."
+    },
+    {
+      "ts": "2026-05-22T10:00:00Z",
+      "skill": "ee-s1-diagnostico-maturidade",
+      "checkpoint": 1,
+      "decision": "Maturidade digital baixa/inexistente. Produto em pré-lançamento. Zero histórico digital. Foco em estruturar aquisição B2B+B2C simultânea."
+    },
+    {
+      "ts": "2026-05-22T10:00:00Z",
+      "skill": "ee-s1-persona-icp",
+      "checkpoint": 1,
+      "decision": "3 públicos: candidatos técnicos industriais (B2C), empresas industriais RH/gestores (B2B), escolas técnicas/associações (canal). Confidencialidade como gatilho primário."
+    },
+    {
+      "ts": "2026-05-22T10:00:00Z",
+      "skill": "ee-s1-swot",
+      "checkpoint": 1,
+      "decision": "Força: network C-level Luis + confidencialidade única + expertise 30 anos setor. Fraqueza: produto não validado + zero digital + bootstrapped. Oportunidade: 5 plantas celulose em construção no Brasil."
+    },
+    {
+      "ts": "2026-05-27T10:00:00Z",
+      "skill": "ee-s2-pesquisa-mercado",
+      "checkpoint": 1,
+      "decision": "Diagnóstico de Marketing realizado. Branding: território 'porta libertadora' — saúde emocional no trabalho. Diferenciação: nicho industrial, não competir com LinkedIn. PUV: confidencialidade + qualificação técnica."
+    },
+    {
+      "ts": "2026-05-27T10:00:00Z",
+      "skill": "ee-s2-posicionamento",
+      "checkpoint": 1,
+      "decision": "Posicionamento: recrutamento industrial confidencial. Não é jobboard genérico. Tom: humanização + autoridade técnica. Registro INPI urgente — só tem .org."
+    },
+    {
+      "ts": "2026-06-03T10:00:00Z",
+      "skill": "ee-s2-diagnostico-midia",
+      "checkpoint": 1,
+      "decision": "Diagnóstico Comercial realizado — reunião 03/06 às 10h. Processo comercial, funil de aquisição dual B2B+B2C, objeções e plano de ação mapeados."
+    }
   ]
 }

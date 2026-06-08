@@ -14,17 +14,44 @@
       "contact_name": "Inês Rodrigues",
       "contact_role": "Fundadora e gestora",
       "team": [
-        {"name": "Inês Rodrigues", "role": "Fundadora, gestora, acumula recepção (recepcionista em licença maternidade)"},
-        {"name": "Luiz", "role": "Criação de conteúdo, gravação de vídeos, recepção e agendamentos"},
-        {"name": "9 depiladoras", "role": "Equipe de atendimento"},
-        {"name": "1 profissional masculino", "role": "Em treinamento para atendimento masculino"}
+        {
+          "name": "Inês Rodrigues",
+          "role": "Fundadora, gestora, acumula recepção (recepcionista em licença maternidade)"
+        },
+        {
+          "name": "Luiz",
+          "role": "Criação de conteúdo, gravação de vídeos, recepção e agendamentos"
+        },
+        {
+          "name": "9 depiladoras",
+          "role": "Equipe de atendimento"
+        },
+        {
+          "name": "1 profissional masculino",
+          "role": "Em treinamento para atendimento masculino"
+        }
       ],
       "team_v4": [
-        {"name": "Julio César dos Santos", "role": "Account / GT"},
-        {"name": "Samira Barbosa", "role": "Designer"},
-        {"name": "Matheus Xavier", "role": "Sales Enable / CSM"},
-        {"name": "Gabriel Fragoso", "role": "Coordenador"},
-        {"name": "Fernando Gevenka", "role": "Gerente"}
+        {
+          "name": "Julio César dos Santos",
+          "role": "Account / GT"
+        },
+        {
+          "name": "Samira Barbosa",
+          "role": "Designer"
+        },
+        {
+          "name": "Matheus Xavier",
+          "role": "Sales Enable / CSM"
+        },
+        {
+          "name": "Gabriel Fragoso",
+          "role": "Coordenador"
+        },
+        {
+          "name": "Fernando Gevenka",
+          "role": "Gerente"
+        }
       ],
       "segment": "Estética e beleza — depilação e serviços correlatos",
       "annual_revenue_est": "R$ 1.200.000/ano",
@@ -77,22 +104,44 @@
     },
     "competition": {
       "competitors": [
-        {"name": "Laser/depilação definitiva", "type": "indireto", "perceived_differential": "Permanência, mas alto custo e contraindicações"},
-        {"name": "Salões de beleza com depilação", "type": "direto", "perceived_differential": "Conveniência, mas sem especialização"},
-        {"name": "Outros espaços de depilação em Dourados", "type": "direto", "perceived_differential": "Preço, mas sem 17 anos de expertise e técnica própria"}
+        {
+          "name": "Laser/depilação definitiva",
+          "type": "indireto",
+          "perceived_differential": "Permanência, mas alto custo e contraindicações"
+        },
+        {
+          "name": "Salões de beleza com depilação",
+          "type": "direto",
+          "perceived_differential": "Conveniência, mas sem especialização"
+        },
+        {
+          "name": "Outros espaços de depilação em Dourados",
+          "type": "direto",
+          "perceived_differential": "Preço, mas sem 17 anos de expertise e técnica própria"
+        }
       ],
       "real_differential": "Técnica exclusiva mais confortável desenvolvida em 17 anos + time treinado uniformemente + base de 18k clientes + Clube VIP",
       "why_choose_us": "Técnica mais confortável, profissional de confiança, flexibilidade de horários, 17 anos no mesmo endereço"
     },
     "brand": {
-      "adjectives": ["Acolhedora", "Confiável", "Especialista", "Humana", "Experiente"],
+      "adjectives": [
+        "Acolhedora",
+        "Confiável",
+        "Especialista",
+        "Humana",
+        "Experiente"
+      ],
       "voice_tone": "Caloroso, próximo, humano — sem robotização. Inês tem relacionamento pessoal com clientes.",
       "admired_brands": "A mapear",
       "has_logo": true
     },
     "digital_situation": {
       "paid_traffic": true,
-      "platforms_active": ["meta_ads", "instagram", "whatsapp"],
+      "platforms_active": [
+        "meta_ads",
+        "instagram",
+        "whatsapp"
+      ],
       "monthly_investment_ads": "~R$ 2.000/mês",
       "crm": "Sistema próprio (puxa clientes em tempo de retorno e inativas — sem histórico de preferências, sem follow-up estruturado)",
       "website_type": "Site próprio — marroquinadivinapele.com.br",
@@ -109,8 +158,18 @@
       "whatsapp_business": true
     },
     "seasonality": {
-      "low_months": ["Junho", "Julho", "Agosto"],
-      "peak_months": ["Outubro", "Novembro", "Dezembro", "Janeiro", "Fevereiro"],
+      "low_months": [
+        "Junho",
+        "Julho",
+        "Agosto"
+      ],
+      "peak_months": [
+        "Outubro",
+        "Novembro",
+        "Dezembro",
+        "Janeiro",
+        "Fevereiro"
+      ],
       "mitigation": "Pacote 3 meses com 17% de desconto para cobrir jun/jul/ago — já testado"
     },
     "objectives": {
@@ -135,34 +194,225 @@
     "fetched_at": "2026-06-03",
     "site": "https://marroquinadivinapele.com.br/",
     "instagram": "@marroquinadivinapele",
-    "sources": ["ROI Plan (Drive)", "Kickoff PDF (Drive)", "Kickoff GC transcription 02/06/2026"]
+    "sources": [
+      "ROI Plan (Drive)",
+      "Kickoff PDF (Drive)",
+      "Kickoff GC transcription 02/06/2026"
+    ]
   },
-  "connectors": {"fetched_at": null, "integrations": null},
+  "connectors": {
+    "fetched_at": null,
+    "integrations": null
+  },
   "progress": {
-    "current_week": 1,
+    "current_week": 2,
     "skills": {
-      "ee-novo-cliente": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
-      "ee-onboarding": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
-      "ee-s1-diagnostico-maturidade": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s1-persona-icp": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s1-swot": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s1-auditoria-comunicacao": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s2-pesquisa-mercado": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s2-posicionamento": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s2-diagnostico-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s2-diagnostico-criativos": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s2-diagnostico-cro": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-identidade-visual": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-brandbook": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-landing-page": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-copy-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-criativos-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-crm-setup": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-forecast-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-gmb-otimizacao": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null}
+      "ee-s1-gc": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s1-kickoff": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-diagnostico-branding": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s2-diagnostico-criativos": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s2-benchmarking-criativos": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s2-diagnostico-social-media": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s2-benchmarking-social-media": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s2-analise-site": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s2-benchmarking-site": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-cliente-oculto": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-estrutura-topologica": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-escopo-comercial": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-jornada-cliente": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-metricas-comercial": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-stack-ferramentas": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-analise-submercados": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-tam-sam-som": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-swot": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-comparacao-concorrentes": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-posicionamento-puv": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-aquisicao": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-engajamento": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-monetizacao": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-retencao": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-drawflow": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-diagnostico-midia-paga": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-identidade-visual": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-manual-copy": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-criativos": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-landing-page": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-proximos-passos": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-feedback": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-proposta-comercial": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      }
     }
   },
   "history": [
-    {"ts": "2026-06-02T10:00:00Z", "skill": "ee-novo-cliente", "checkpoint": 1, "decision": "Cliente cadastrada. Inês Rodrigues — Marroquina Divina Pele. Espaço de depilação 17 anos, Dourados/MS. Capacidade ociosa: 750 de 2.000 atendimentos/mês. Base 18k clientes parada. Histórico negativo G4."}
+    {
+      "ts": "2026-06-02T10:00:00Z",
+      "skill": "ee-novo-cliente",
+      "checkpoint": 1,
+      "decision": "Cliente cadastrada. Inês Rodrigues — Marroquina Divina Pele. Espaço de depilação 17 anos, Dourados/MS. Capacidade ociosa: 750 de 2.000 atendimentos/mês. Base 18k clientes parada. Histórico negativo G4."
+    }
   ]
 }

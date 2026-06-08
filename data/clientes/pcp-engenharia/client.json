@@ -14,16 +14,40 @@
       "contact_name": "Gleyson Marquesin Pereira",
       "contact_role": "Comercial/Operacional (acumula Admin/Financeiro) — Decisor Final",
       "team": [
-        {"name": "Gleyson Marquesin Pereira", "role": "Comercial/Operacional/Admin-Financeiro — decisor total"},
-        {"name": "Patrick", "role": "Engenharia e Novos Negócios — influenciador técnico/comercial"},
-        {"name": "Anderson Beneg", "role": "Engenharia e Tecnologia — influenciador técnico"}
+        {
+          "name": "Gleyson Marquesin Pereira",
+          "role": "Comercial/Operacional/Admin-Financeiro — decisor total"
+        },
+        {
+          "name": "Patrick",
+          "role": "Engenharia e Novos Negócios — influenciador técnico/comercial"
+        },
+        {
+          "name": "Anderson Beneg",
+          "role": "Engenharia e Tecnologia — influenciador técnico"
+        }
       ],
       "team_v4": [
-        {"name": "Julio César dos Santos", "role": "Account / GT"},
-        {"name": "Samira Barbosa", "role": "Designer"},
-        {"name": "Matheus Xavier", "role": "Sales Enable / CSM"},
-        {"name": "Jean Fabio Martins", "role": "Coordenador"},
-        {"name": "Fernando Gevenka", "role": "Gerente"}
+        {
+          "name": "Julio César dos Santos",
+          "role": "Account / GT"
+        },
+        {
+          "name": "Samira Barbosa",
+          "role": "Designer"
+        },
+        {
+          "name": "Matheus Xavier",
+          "role": "Sales Enable / CSM"
+        },
+        {
+          "name": "Jean Fabio Martins",
+          "role": "Coordenador"
+        },
+        {
+          "name": "Fernando Gevenka",
+          "role": "Gerente"
+        }
       ],
       "segment": "B2B nicho extremo — monitoramento e diagnóstico geofísico (mineração, energia, infraestrutura)",
       "annual_revenue_est": "R$ 30.000.000/ano",
@@ -63,14 +87,28 @@
     },
     "competition": {
       "competitors": [
-        {"name": "G5 (mencionado)", "type": "direto", "perceived_differential": "Ativo no LinkedIn — exploram o oceano azul que a PCP está perdendo"},
-        {"name": "Headhunters geotécnicos regionais", "type": "indireto", "perceived_differential": "Mais baratos, mas sem a tecnologia Willowstick®"}
+        {
+          "name": "G5 (mencionado)",
+          "type": "direto",
+          "perceived_differential": "Ativo no LinkedIn — exploram o oceano azul que a PCP está perdendo"
+        },
+        {
+          "name": "Headhunters geotécnicos regionais",
+          "type": "indireto",
+          "perceived_differential": "Mais baratos, mas sem a tecnologia Willowstick®"
+        }
       ],
       "real_differential": "Willowstick® — tecnologia patenteada única no Brasil + 130+ projetos executados + equipe técnica de altíssimo nível. Ninguém no Brasil tem o que a PCP tem.",
       "competitive_angle": "Transformar superioridade técnica silenciosa em autoridade de marca visível antes que concorrentes ocupem o espaço digital"
     },
     "brand": {
-      "adjectives": ["Autoridade técnica", "Precisa", "Confiável", "Investigativa", "Preventiva"],
+      "adjectives": [
+        "Autoridade técnica",
+        "Precisa",
+        "Confiável",
+        "Investigativa",
+        "Preventiva"
+      ],
       "voice_tone": "Técnico com autoridade — linguagem de engenharia que transmite confiança antes da proposta chegar",
       "territory": "Inteligência aplicada — ver o invisível. Fluxos subterrâneos, conexões ocultas, antecipação de riscos.",
       "has_logo": true,
@@ -78,7 +116,11 @@
     },
     "digital_situation": {
       "paid_traffic": false,
-      "platforms_active": ["instagram", "linkedin", "website"],
+      "platforms_active": [
+        "instagram",
+        "linkedin",
+        "website"
+      ],
       "crm": "RD Station (pago, não utilizado corretamente)",
       "lead_sources": "Indicação + presença em eventos + visitas presenciais ('cafezinhos')",
       "brand_awareness_problem": "Instagram genérico que 'joga contra' a autoridade técnica. LinkedIn subutilizado enquanto G5 domina. Não cadastrado nos portais de suprimentos Ariba/Coupa.",
@@ -116,36 +158,237 @@
   "research": {
     "fetched_at": "2026-06-03",
     "site": "https://pcp.eng.br/",
-    "sources": ["ROI Plan PCP (Drive)", "Kickoff transcription 26/05/2026", "EE Presentation PCP (Drive — já com diagnóstico de marketing e branding)"]
+    "sources": [
+      "ROI Plan PCP (Drive)",
+      "Kickoff transcription 26/05/2026",
+      "EE Presentation PCP (Drive — já com diagnóstico de marketing e branding)"
+    ]
   },
-  "connectors": {"fetched_at": null, "integrations": null},
+  "connectors": {
+    "fetched_at": null,
+    "integrations": null
+  },
   "progress": {
-    "current_week": 2,
+    "current_week": 4,
     "skills": {
-      "ee-novo-cliente": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-26", "completed_at": "2026-05-26"},
-      "ee-onboarding": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-26", "completed_at": "2026-05-26"},
-      "ee-s1-diagnostico-maturidade": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-26", "completed_at": "2026-05-26"},
-      "ee-s1-persona-icp": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-26", "completed_at": "2026-05-26"},
-      "ee-s1-swot": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-26", "completed_at": "2026-05-26"},
-      "ee-s1-auditoria-comunicacao": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-05-26", "completed_at": "2026-05-26"},
-      "ee-s2-pesquisa-mercado": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
-      "ee-s2-posicionamento": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
-      "ee-s2-diagnostico-midia": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
-      "ee-s2-diagnostico-criativos": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
-      "ee-s2-diagnostico-cro": {"status": "completed", "checkpoint": 1, "version": 1, "started_at": "2026-06-02", "completed_at": "2026-06-02"},
-      "ee-s3-identidade-visual": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-brandbook": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-landing-page": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-copy-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-criativos-anuncios": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-crm-setup": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-forecast-midia": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null},
-      "ee-s3-gmb-otimizacao": {"status": "pending", "checkpoint": 0, "started_at": null, "completed_at": null}
+      "ee-s1-gc": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s1-kickoff": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-diagnostico-branding": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-diagnostico-criativos": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-benchmarking-criativos": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-diagnostico-social-media": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-benchmarking-social-media": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-analise-site": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s2-benchmarking-site": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s3-cliente-oculto": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-estrutura-topologica": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-escopo-comercial": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-jornada-cliente": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-metricas-comercial": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s3-stack-ferramentas": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-analise-submercados": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s4-tam-sam-som": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s4-swot": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s4-comparacao-concorrentes": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s4-posicionamento-puv": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s4-estrategias-aquisicao": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-engajamento": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-monetizacao": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-estrategias-retencao": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-drawflow": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s4-diagnostico-midia-paga": {
+        "status": "completed",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": "2026-06"
+      },
+      "ee-s5-identidade-visual": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-manual-copy": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-criativos": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-landing-page": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-proximos-passos": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-feedback": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      },
+      "ee-s5-proposta-comercial": {
+        "status": "pending",
+        "checkpoint": 0,
+        "started_at": null,
+        "completed_at": null
+      }
     }
   },
   "history": [
-    {"ts": "2026-05-26T13:58:00Z", "skill": "ee-novo-cliente", "checkpoint": 1, "decision": "Cliente cadastrado. PCP Engenharia. B2B geofísico, R$30M/ano, Willowstick® patenteado, risco 40% faturamento em 6 meses. Fee R$25.090 à vista."},
-    {"ts": "2026-05-26T13:58:00Z", "skill": "ee-s1-diagnostico-maturidade", "checkpoint": 1, "decision": "Kickoff + Growth Class realizados. Diagnóstico: marketing reativo, LinkedIn subutilizado, não cadastrado em portais suprimentos, Instagram genérico contra autoridade técnica."},
-    {"ts": "2026-06-02T00:00:00Z", "skill": "ee-s2-diagnostico-criativos", "checkpoint": 1, "decision": "Diagnóstico de Marketing realizado. Branding: conhecimento nas pessoas, não na marca. Oportunidade: Willowstick® como ativo de marca. 3 públicos: técnicos, C-level, suprimentos."}
+    {
+      "ts": "2026-05-26T13:58:00Z",
+      "skill": "ee-novo-cliente",
+      "checkpoint": 1,
+      "decision": "Cliente cadastrado. PCP Engenharia. B2B geofísico, R$30M/ano, Willowstick® patenteado, risco 40% faturamento em 6 meses. Fee R$25.090 à vista."
+    },
+    {
+      "ts": "2026-05-26T13:58:00Z",
+      "skill": "ee-s1-diagnostico-maturidade",
+      "checkpoint": 1,
+      "decision": "Kickoff + Growth Class realizados. Diagnóstico: marketing reativo, LinkedIn subutilizado, não cadastrado em portais suprimentos, Instagram genérico contra autoridade técnica."
+    },
+    {
+      "ts": "2026-06-02T00:00:00Z",
+      "skill": "ee-s2-diagnostico-criativos",
+      "checkpoint": 1,
+      "decision": "Diagnóstico de Marketing realizado. Branding: conhecimento nas pessoas, não na marca. Oportunidade: Willowstick® como ativo de marca. 3 públicos: técnicos, C-level, suprimentos."
+    }
   ]
 }
