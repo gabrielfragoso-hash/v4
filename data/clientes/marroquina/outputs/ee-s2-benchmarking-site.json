@@ -1,0 +1,108 @@
+{
+  "summary": "Benchmarking do site da Marroquina Divina Pele versus referências de mercado em espaços de beleza, depilação e wellness com boa presença digital. Identifica padrões de sites eficazes no setor e traduz aprendizados em requisitos concretos para o novo site da Marroquina.",
+  "generated_at": "2026-06-08",
+  "cliente": "Marroquina Divina Pele",
+  "contexto": "Site atual (marroquinadivinapele.com.br) foi diagnosticado como obsoleto e prejudicial à conversão. Novo site institucional será desenvolvido em 30-40 dias. Este benchmarking orienta os requisitos e padrões de qualidade para o novo site.",
+
+  "referencias_analisadas": [
+    {
+      "categoria": "Espaços de beleza premium com forte presença digital",
+      "perfil": "Spas, clínicas de estética e espaços de beleza que usam o site como vitrine de autoridade e conversão",
+      "diferenciais_identificados": [
+        "Hero section com proposta de valor clara e visual de alta qualidade",
+        "Identidade visual do site 100% consistente com redes sociais",
+        "Histórias da fundadora / equipe com fotos reais — humanização que transmite confiança",
+        "Seção de resultados e depoimentos com fotos reais de clientes (não stock)",
+        "Booking online integrado — mínimo de cliques para agendamento",
+        "Mobile-first — experiência fluida no celular, onde a maioria dos acessos ocorre"
+      ],
+      "aprendizados_para_marroquina": [
+        "Hero da home deve comunicar imediatamente o diferencial: '17 anos de cera marroquina exclusiva em Dourados'",
+        "Fotos reais da equipe e do espaço físico da Marroquina são obrigatórias — banco de imagens destrói credibilidade",
+        "Integração direta com WhatsApp para agendamento — reduz fricção máxima"
+      ]
+    },
+    {
+      "categoria": "Marcas de depilação com identidade digital forte (referência Depction)",
+      "perfil": "Marcas especializadas em depilação com site que reforça posicionamento de bem-estar",
+      "diferenciais_identificados": [
+        "Território de bem-estar — site comunica muito mais que 'depilação'; comunica autocuidado, ritual, experiência",
+        "Paleta de cores coesa e tipografia editorial aplicada no site com consistência",
+        "Conteúdo sobre técnica apresentado de forma acessível e diferenciadora",
+        "Clube ou programa de fidelidade com página dedicada e benefícios claros"
+      ],
+      "aprendizados_para_marroquina": [
+        "Site deve reforçar o território de bem-estar — a cera marroquina não é 'tirar pelo'; é um ritual confortável",
+        "Página dedicada ao Clube VIP com benefícios detalhados — ferramenta de conversão de membros",
+        "Aplicar rigorosamente a nova identidade visual pós-rebranding (Semana 5) em todo o site"
+      ]
+    },
+    {
+      "categoria": "Negócios locais de serviços em cidades médias com alta conversão digital",
+      "perfil": "Negócios com 10+ anos de mercado em cidades de 100k-300k habitantes que usam site para converter pesquisa local",
+      "diferenciais_identificados": [
+        "SEO local bem trabalhado — aparecem nos primeiros resultados para 'serviço + cidade'",
+        "Google Meu Negócio integrado com site — avaliações e informações consistentes",
+        "Prova social local — depoimentos com nome e bairro do cliente, fotos reais",
+        "Página 'Sobre' com história genuína — anos de mercado, conquistas, equipe",
+        "Informações práticas visíveis — endereço, horário, como agendar — sem precisar procurar"
+      ],
+      "aprendizados_para_marroquina": [
+        "SEO para 'depilação Dourados', 'cera marroquina Dourados' — capturar buscas locais",
+        "Integrar avaliações do Google/Instagram no site como prova social da base de 18.000 clientes",
+        "Página 'Nossa História' com fotos reais dos 17 anos — o principal diferencial da Marroquina em Dourados",
+        "Informações de contato e agendamento visíveis no header em todas as páginas"
+      ]
+    }
+  ],
+
+  "comparativo_site_atual_marroquina_vs_referencias": {
+    "proposta_de_valor_clara": {
+      "marroquina_atual": "Ausente — site não comunica o diferencial de 17 anos e técnica exclusiva",
+      "referencias": "Alto — primeiros 5 segundos já comunicam o que a marca entrega de único",
+      "gap": "Crítico — será o primeiro elemento a corrigir no novo site"
+    },
+    "fotos_reais": {
+      "marroquina_atual": "Deficiente — site desatualizado com pouca ou nenhuma foto real do espaço atual",
+      "referencias": "Alto — fotos profissionais do espaço e equipe são padrão",
+      "gap": "Alto — sessão fotográfica profissional necessária antes do lançamento do novo site"
+    },
+    "ux_agendamento": {
+      "marroquina_atual": "Alto atrito — jornada para agendar não é clara",
+      "referencias": "Baixo atrito — máximo 2 cliques para iniciar agendamento",
+      "gap": "Crítico — cada clique extra reduz conversão significativamente"
+    },
+    "seo_local": {
+      "marroquina_atual": "Histórico acumulado (domínio mantido) mas conteúdo desatualizado",
+      "referencias": "Bem trabalhado em sites de referência local",
+      "gap": "Médio — manter domínio preserva histórico; novo conteúdo otimizado ampliará resultado"
+    },
+    "mobile": {
+      "marroquina_atual": "Não avaliado formalmente — site antigo provavelmente não é mobile-first",
+      "referencias": "Obrigatório — 70-80% dos acessos em beleza/estética ocorrem por celular",
+      "gap": "Alto — novo site deve ser desenvolvido com abordagem mobile-first"
+    },
+    "historia_da_marca": {
+      "marroquina_atual": "Ausente",
+      "referencias": "Presente e destacada em marcas de referência com tradição",
+      "gap": "Alto — 17 anos de Marroquina Divina Pele em Dourados é ativo único e deve ser protagonista"
+    }
+  },
+
+  "especificacoes_para_o_novo_site": {
+    "baseadas_no_benchmarking": [
+      "Hero section com headline forte: posicionar a técnica exclusiva e os 17 anos em primeira dobra",
+      "Mobile-first obrigatório — a maioria dos acessos em beleza/estética vem de celular",
+      "Botão de WhatsApp fixo e visível em todas as páginas — canal principal da Marroquina",
+      "Fotos reais do espaço, equipe e Inês Rodrigues — não aceitar banco de imagens",
+      "Página dedicada à história da Marroquina — trajetória de 17 anos e fundadora",
+      "Página dedicada ao Clube VIP com benefícios e CTA de adesão",
+      "Depoimentos reais com fotos e nomes de clientes da base de 18.000",
+      "SEO local configurado desde o desenvolvimento — não como ajuste posterior",
+      "Identidade visual do rebranding (Semana 5) aplicada integralmente — não lançar antes do branding aprovado"
+    ],
+    "prazo_desenvolvimento": "30-40 dias",
+    "responsavel_orçamento": "Julio César",
+    "prerequisito": "Rebranding completo aprovado (Semana 5) antes do desenvolvimento — site deve nascer com nova identidade"
+  }
+}

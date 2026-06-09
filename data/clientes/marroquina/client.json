@@ -205,7 +205,7 @@
     "integrations": null
   },
   "progress": {
-    "current_week": 2,
+    "current_week": 3,
     "skills": {
       "ee-s1-gc": {
         "status": "completed",
@@ -220,46 +220,46 @@
         "completed_at": "2026-06"
       },
       "ee-s2-diagnostico-branding": {
-        "status": "pending",
+        "status": "completed",
         "checkpoint": 0,
-        "started_at": null,
-        "completed_at": null
+        "started_at": "2026-06-08",
+        "completed_at": "2026-06-08"
       },
       "ee-s2-diagnostico-criativos": {
-        "status": "pending",
+        "status": "completed",
         "checkpoint": 0,
-        "started_at": null,
-        "completed_at": null
+        "started_at": "2026-06-08",
+        "completed_at": "2026-06-08"
       },
       "ee-s2-benchmarking-criativos": {
-        "status": "pending",
+        "status": "completed",
         "checkpoint": 0,
-        "started_at": null,
-        "completed_at": null
+        "started_at": "2026-06-08",
+        "completed_at": "2026-06-08"
       },
       "ee-s2-diagnostico-social-media": {
-        "status": "pending",
+        "status": "completed",
         "checkpoint": 0,
-        "started_at": null,
-        "completed_at": null
+        "started_at": "2026-06-08",
+        "completed_at": "2026-06-08"
       },
       "ee-s2-benchmarking-social-media": {
-        "status": "pending",
+        "status": "completed",
         "checkpoint": 0,
-        "started_at": null,
-        "completed_at": null
+        "started_at": "2026-06-08",
+        "completed_at": "2026-06-08"
       },
       "ee-s2-analise-site": {
-        "status": "pending",
+        "status": "completed",
         "checkpoint": 0,
-        "started_at": null,
-        "completed_at": null
+        "started_at": "2026-06-08",
+        "completed_at": "2026-06-08"
       },
       "ee-s2-benchmarking-site": {
-        "status": "pending",
+        "status": "completed",
         "checkpoint": 0,
-        "started_at": null,
-        "completed_at": null
+        "started_at": "2026-06-08",
+        "completed_at": "2026-06-08"
       },
       "ee-s3-cliente-oculto": {
         "status": "pending",
@@ -413,6 +413,12 @@
       "skill": "ee-novo-cliente",
       "checkpoint": 1,
       "decision": "Cliente cadastrada. Inês Rodrigues — Marroquina Divina Pele. Espaço de depilação 17 anos, Dourados/MS. Capacidade ociosa: 750 de 2.000 atendimentos/mês. Base 18k clientes parada. Histórico negativo G4."
+    },
+    {
+      "ts": "2026-06-08T09:00:00Z",
+      "skill": "ee-s2-diagnostico-marketing",
+      "checkpoint": 0,
+      "decision": "Semana 2 concluída na reunião de Diagnóstico de Marketing (08/06). Decisões: rebranding completo aprovado por Inês, site antigo a desativar, Instagram migra de vitrine para humanização via método COCA. Próxima reunião: 15/06 às 9h — Diagnóstico Comercial."
     }
   ]
 }

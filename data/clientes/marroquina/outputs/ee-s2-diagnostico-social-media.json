@@ -1,0 +1,153 @@
+{
+  "summary": "Diagnóstico completo do Instagram da Marroquina Divina Pele com base na reunião de 08/06/2026. Mapeia o perfil atual do canal, gaps de estratégia, e registra o plano de transição para conteúdo humanizado com aplicação do Método COCA.",
+  "generated_at": "2026-06-08",
+  "cliente": "Marroquina Divina Pele",
+  "canal": "Instagram",
+  "responsavel_conteudo": "Luiz Fernando",
+  "account_v4": "Julio César",
+
+  "perfil_atual_do_canal": {
+    "descricao_geral": "Perfil ativo com publicações regulares, porém com posicionamento de 'vitrine de vendas' — conteúdo focado exclusivamente em promoções e argumentos de conversão imediata",
+    "tipo_de_conteudo_publicado": [
+      "Promoções e ofertas de serviços",
+      "Conteúdo técnico sobre depilação (dores, dúvidas, desejos)",
+      "Posts informativos sobre os serviços disponíveis"
+    ],
+    "ausencias_identificadas": [
+      "Nenhum conteúdo de bastidores ou equipe",
+      "Inês Rodrigues não aparece — fundadora invisível no canal",
+      "Sem histórias da marca ou trajetória dos 17 anos",
+      "Sem depoimentos visuais de clientes da base de 18.000",
+      "Sem conteúdo sobre o Clube VIP (53 membros ativos)"
+    ],
+    "frequencia_de_publicacao": "Ativa — Luiz Fernando mantém calendário de conteúdo",
+    "engajamento": "Baixo proporcional à base de clientes — 18.000 clientes deveriam gerar engajamento orgânico muito maior"
+  },
+
+  "gaps_estrategicos": [
+    {
+      "gap": "Perfil funciona como catálogo, não como comunidade",
+      "descricao": "Conteúdo 100% orientado para venda direta não cria relacionamento nem fidelização",
+      "impacto": "Alto — miss oportunidade de reativar base de 18.000 clientes através do Instagram"
+    },
+    {
+      "gap": "Ausência de humanização",
+      "descricao": "Marca com 17 anos de história, fundadora apaixonada e equipe treinada uniformemente — nada disso aparece no Instagram",
+      "impacto": "Alto — humanização é o principal driver de engajamento orgânico no setor de beleza"
+    },
+    {
+      "gap": "Inês Rodrigues como autoridade não explorada",
+      "descricao": "Fundadora com 17 anos de mercado, formadora de profissionais e trajetória empreendedora poderosa nunca aparece como voz da marca",
+      "impacto": "Alto — conteúdo de autoridade da fundadora teria alta taxa de salvamento e compartilhamento"
+    },
+    {
+      "gap": "Clube VIP invisível no Instagram",
+      "descricao": "53 membros ativos e meta de 100 — o Instagram não trabalha ativamente para ampliar o Clube",
+      "impacto": "Médio-alto — Instagram é canal natural para recrutamento de membros VIP"
+    },
+    {
+      "gap": "Base de 18.000 clientes não ativada pelo canal",
+      "descricao": "Clientes da base raramente são convocados pelo Instagram — nem via conteúdo de reativação nem via UGC",
+      "impacto": "Alto — 18.000 clientes que já conhecem a marca são o público mais fácil de reconverter"
+    }
+  ],
+
+  "metodo_coca": {
+    "status": "APROVADO na reunião de 08/06/2026",
+    "descricao": "Framework de distribuição de conteúdo que equilibra os quatro pilares: Conexão, Objeção, Conversão e Autoridade",
+    "aplicacao_para_marroquina": {
+      "conexao": {
+        "descricao": "Conteúdo humanizado que cria vínculo emocional com a marca",
+        "exemplos_especificos": [
+          "Bastidores da equipe uniformizada da Marroquina",
+          "Histórias de clientes com fotos reais do espaço",
+          "Dia a dia de Inês e da equipe",
+          "Celebrações de clientes — aniversários, conquistas, fidelidade"
+        ],
+        "proporcao_recomendada": "30-35% do calendário"
+      },
+      "objecao": {
+        "descricao": "Conteúdo que quebra barreiras de entrada e responde dúvidas comuns",
+        "exemplos_especificos": [
+          "Cera marroquina dói menos? (técnica exclusiva explicada)",
+          "É seguro fazer depilação com a pele sensível?",
+          "Vídeo de biossegurança e higienização (post prioritário definido na reunião)",
+          "Diferença entre cera marroquina e outras técnicas"
+        ],
+        "proporcao_recomendada": "25-30% do calendário"
+      },
+      "conversao": {
+        "descricao": "Conteúdo com CTA claro direcionado ao agendamento ou Clube VIP",
+        "exemplos_especificos": [
+          "Promoções sazonais com identidade visual da marca",
+          "Benefícios do Clube VIP — diferencial para os 53 ativos e recrutamento dos próximos",
+          "Posts de oferta com depoimento real como prova social"
+        ],
+        "proporcao_recomendada": "20-25% do calendário"
+      },
+      "autoridade": {
+        "descricao": "Conteúdo que posiciona Inês Rodrigues e a Marroquina como referência técnica no setor",
+        "exemplos_especificos": [
+          "Post fixado: história da marca com fotos antigas dos 17 anos (decidido na reunião)",
+          "Inês como formadora de profissionais — fragmentos de sua trajetória",
+          "Reconhecimentos, premiações, tempo de mercado",
+          "Técnica exclusiva de cera marroquina — por que é diferente"
+        ],
+        "proporcao_recomendada": "15-20% do calendário"
+      }
+    }
+  },
+
+  "estrategia_de_transicao": {
+    "fase_1_imediata": {
+      "descricao": "Ações que podem ser feitas agora, sem esperar o rebranding",
+      "acoes": [
+        "Fixar post sobre técnica confortável da cera marroquina (Luiz — decidido na reunião)",
+        "Publicar post de história da marca com fotos antigas (Luiz — decidido na reunião)",
+        "Criar e publicar vídeo de biossegurança (Luiz — decidido na reunião)",
+        "Reduzir imediatamente uso de banco de imagens — substituir por fotos reais do espaço"
+      ]
+    },
+    "fase_2_curto_prazo": {
+      "descricao": "Construção das bases do conteúdo humanizado",
+      "acoes": [
+        "Sessão fotográfica da equipe e espaço físico da Marroquina Divina Pele",
+        "Primeiros vídeos com Inês Rodrigues — apresentação e história",
+        "Implementar Método COCA no calendário editorial",
+        "Criar pauta a partir de conversas orgânicas de clientes (comentários, mensagens)"
+      ]
+    },
+    "fase_3_pos_rebranding": {
+      "descricao": "Consolidação com nova identidade visual (Semana 5)",
+      "acoes": [
+        "Aplicar novo visual em todos os templates de feed e stories",
+        "Atualizar foto de perfil e destaques com nova identidade",
+        "Lançar série de conteúdos de Inês como autoridade com novo branding",
+        "Campanha de recrutamento do Clube VIP com nova comunicação visual"
+      ]
+    }
+  },
+
+  "posts_fixados_recomendados": [
+    {
+      "post": "Técnica de cera marroquina — por que é mais confortável",
+      "objetivo": "Diferenciação e quebra de objeção (dor na depilação)",
+      "status": "Decidido na reunião — Luiz Fernando é responsável",
+      "formato": "Reel ou carrossel"
+    },
+    {
+      "post": "17 anos de história — fotos antigas e evolução da Marroquina Divina Pele",
+      "objetivo": "Autoridade e conexão emocional",
+      "status": "Decidido na reunião — Luiz Fernando é responsável",
+      "formato": "Carrossel com fotos reais da trajetória"
+    }
+  ],
+
+  "metricas_a_monitorar": {
+    "engajamento": "Taxa de engajamento por post (curtidas + comentários + salvamentos / alcance)",
+    "alcance_organico": "Crescimento no alcance de Reels humanizados vs posts de banco",
+    "conversao_clube_vip": "Novos membros do Clube VIP originados pelo Instagram",
+    "mensagens_inbox": "Volume de mensagens recebidas após posts de conexão e autoridade",
+    "salvamentos": "Posts com mais salvamentos indicam conteúdo de valor real — priorizar esses formatos"
+  }
+}

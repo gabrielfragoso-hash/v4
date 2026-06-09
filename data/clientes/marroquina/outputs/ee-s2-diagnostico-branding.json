@@ -1,0 +1,106 @@
+{
+  "summary": "Diagnóstico de branding da Marroquina Divina Pele realizado com base na reunião de Diagnóstico de Marketing de 08/06/2026. Identifica gaps críticos na identidade visual atual e registra a decisão de rebranding completo aprovada por Inês Rodrigues.",
+  "generated_at": "2026-06-08",
+  "cliente": "Marroquina Divina Pele",
+  "fundadora": "Inês Rodrigues",
+  "responsavel_v4": {
+    "account": "Julio César",
+    "designer": "Samira Barbosa",
+    "csm": "Matheus Xavier"
+  },
+
+  "percepcao_atual_da_marca": {
+    "posicionamento_percebido": "Espaço de depilação tradicional com 17 anos de mercado, ainda comunicado de forma datada e genérica",
+    "diferenciais_nao_comunicados": [
+      "Técnica exclusiva de cera marroquina com menor desconforto",
+      "17 anos de atuação contínua em Dourados/MS",
+      "Equipe treinada de forma uniforme e padronizada",
+      "Formação de profissionais — autoridade técnica no setor",
+      "Trajetória empreendedora da fundadora Inês Rodrigues"
+    ],
+    "percepcao_digital": "Marca com presença digital ativa mas identidade visual inconsistente e datada, que não transmite o nível de autoridade e especialização que a operação real possui",
+    "sentimento_do_mercado": "Reconhecimento local em Dourados por longevidade (17 anos), mas posicionamento confundível com salões comuns e espaços que oferecem depilação como serviço secundário"
+  },
+
+  "identidade_visual_atual": {
+    "logo": {
+      "problema_principal": "Legibilidade ruim em ambiente digital — logo não funciona bem em formatos reduzidos (feed, stories, ícone de perfil)",
+      "tipografia": "Datada — não reflete modernidade ou o universo de bem-estar/cuidado",
+      "silhueta": "Presente no logo atual; decisão tomada na reunião: pode ser removida — design aberto a novas possibilidades",
+      "adequacao_digital": "Insuficiente — prejudica a percepção de qualidade nos canais digitais onde a marca opera ativamente"
+    },
+    "paleta_de_cores": "Não avaliada formalmente na reunião, mas implicitamente incluída no escopo do rebranding completo",
+    "coerencia_visual": "Baixa — Instagram usa bancos de imagem excessivamente, sem identidade visual consistente aplicada aos criativos"
+  },
+
+  "gaps_identificados": [
+    {
+      "gap": "Logo com baixa legibilidade digital",
+      "impacto": "Alto — primeiro elemento de reconhecimento de marca, presente em todos os canais",
+      "urgencia": "Alta"
+    },
+    {
+      "gap": "Tipografia datada incompatível com posicionamento de autoridade e cuidado",
+      "impacto": "Alto — transmite mensagem oposta ao que a marca representa",
+      "urgencia": "Alta"
+    },
+    {
+      "gap": "17 anos de história não traduzidos em ativo de marca",
+      "impacto": "Alto — longevidade é diferencial competitivo não explorado",
+      "urgencia": "Média"
+    },
+    {
+      "gap": "Trajetória da fundadora Inês Rodrigues invisível na identidade da marca",
+      "impacto": "Alto — fundadora é o maior símbolo de autoridade e credibilidade",
+      "urgencia": "Média"
+    },
+    {
+      "gap": "Ausência de território visual ligado a bem-estar, segurança e acolhimento",
+      "impacto": "Médio — concorrentes do universo wellness comunicam esses valores com mais clareza",
+      "urgencia": "Média"
+    }
+  ],
+
+  "decisao_de_rebranding": {
+    "status": "APROVADO por Inês Rodrigues na reunião de 08/06/2026",
+    "escopo": "Rebranding completo — logo, tipografia, paleta, diretrizes de aplicação",
+    "silhueta_atual": "Pode ser removida — design aberto a novas possibilidades visuais",
+    "prazo_apresentacao": "Semana 5 do projeto",
+    "proximos_passos": [
+      "Samira Barbosa envia referências visuais para Inês via WhatsApp",
+      "Inês aprova direção visual antes do desenvolvimento da proposta",
+      "Apresentação formal das propostas de identidade nova na Semana 5"
+    ]
+  },
+
+  "direcionamentos_estrategicos_nova_identidade": {
+    "valores_a_comunicar": [
+      "Segurança — técnica exclusiva, profissionais treinados uniformemente",
+      "Confiança — 17 anos de mercado, referência em Dourados/MS",
+      "Acolhimento — experiência confortável, espaço para todas as mulheres",
+      "Autoridade — Inês como especialista formadora de profissionais"
+    ],
+    "universo_visual_referencia": "Wellness, cuidado feminino, beleza consciente — próximo de marcas como Depction, que mantêm identidade visual consistente e território de bem-estar",
+    "elementos_a_preservar": [
+      "Nome 'Marroquina Divina Pele' — marca já consolidada localmente",
+      "Referência à cera marroquina como técnica exclusiva"
+    ],
+    "elementos_a_renovar": [
+      "Logo — nova composição com foco em legibilidade digital",
+      "Tipografia — moderna, limpa, compatível com universo beleza/bem-estar",
+      "Silhueta atual — pode ser substituída ou removida",
+      "Paleta — alinhar com posicionamento de cuidado, conforto e autoridade"
+    ],
+    "aplicacoes_prioritarias": [
+      "Perfil do Instagram (foto de perfil, destaques, templates de feed)",
+      "Material para WhatsApp Business",
+      "Landing page (em desenvolvimento)",
+      "Novo site institucional"
+    ]
+  },
+
+  "contexto_critico": {
+    "historico_negativo_com_g4": "Inês Rodrigues tem experiência ruim com fornecedor anterior (G4 Educação) — exige entregas reais, tangíveis e suporte humano contínuo. O rebranding precisa gerar resultado perceptível, não apenas estético.",
+    "alinhamento_necessario": "Qualquer proposta visual deve ser validada com Inês antes da finalização — ela tem opinião clara sobre o que comunica ou não a essência da marca"
+  }
+}

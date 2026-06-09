@@ -1,0 +1,140 @@
+{
+  "summary": "Análise do site atual da Marroquina Divina Pele (marroquinadivinapele.com.br) com base na reunião de 08/06/2026. Documenta os problemas identificados, a decisão de desativação do site atual, a distinção estratégica entre Landing Page e Site Institucional, e os requisitos para o novo site.",
+  "generated_at": "2026-06-08",
+  "cliente": "Marroquina Divina Pele",
+  "url_atual": "marroquinadivinapele.com.br",
+  "decisao_tomada": "DESATIVAR site atual — manter domínio — desenvolver novo site institucional",
+  "account_responsavel": "Julio César",
+
+  "diagnostico_site_atual": {
+    "status": "Obsoleto — prejudicando conversão ativamente",
+    "problema_critico": "Site atual é o primeiro link exibido quando alguém pesquisa a Marroquina Divina Pele no Google — uma experiência ruim em primeira impressão afasta potenciais clientes antes mesmo de conhecerem a marca",
+    "problemas_identificados": [
+      {
+        "problema": "Conteúdo desatualizado",
+        "descricao": "Site não reflete a versão atual da Marroquina Divina Pele — serviços, fotos, informações e preços podem estar defasados",
+        "impacto": "Alto — cliente que acessa e encontra informação errada perde confiança antes de agendar"
+      },
+      {
+        "problema": "Primeiro resultado de busca com experiência ruim",
+        "descricao": "O site aparece como primeiro link na pesquisa orgânica do Google — jornada de descoberta da marca começa com um site que prejudica a percepção",
+        "impacto": "Crítico — afeta diretamente a taxa de conversão de novos clientes que pesquisam online"
+      },
+      {
+        "problema": "UX/UI inadequada",
+        "descricao": "Jornada de navegação com alto esforço cognitivo — usuário não encontra facilmente o que precisa para agendar ou saber mais",
+        "impacto": "Alto — aumenta a taxa de abandono"
+      },
+      {
+        "problema": "Identidade visual desalinhada",
+        "descricao": "Site usa identidade visual antiga que será substituída pelo rebranding — manter o site atual após Semana 5 criaria inconsistência de marca",
+        "impacto": "Médio — será automaticamente resolvido com novo site"
+      },
+      {
+        "problema": "Não comunica os 17 anos de autoridade da Marroquina",
+        "descricao": "Site atual não funciona como portfólio de credibilidade nem conta a história da marca",
+        "impacto": "Médio — oportunidade perdida de converter visitantes em clientes pela autoridade"
+      }
+    ],
+    "acao_imediata": {
+      "decisao": "Desativar site atual",
+      "dominio": "Manter domínio marroquinadivinapele.com.br — não perder autoridade de SEO acumulada",
+      "responsavel": "Julio César",
+      "prazo": "Imediato — antes que mais clientes tenham experiência negativa"
+    }
+  },
+
+  "distincao_estrategica": {
+    "landing_page": {
+      "definicao": "Página única com foco exclusivo em conversão — um objetivo, um CTA",
+      "quem_faz": "V4 Company — já incluso no escopo do projeto",
+      "objetivo_para_marroquina": "Capturar agendamentos e novos membros do Clube VIP via tráfego pago (Meta Ads)",
+      "caracteristicas": [
+        "Foco em um único serviço ou campanha",
+        "CTA claro (agendar / entrar no Clube VIP)",
+        "Prova social com depoimentos reais",
+        "Sem navegação que distraia o usuário do objetivo"
+      ],
+      "prazo": "Desenvolvida pela V4 em prazo menor — pode ser lançada antes do site institucional"
+    },
+    "site_institucional": {
+      "definicao": "Site completo que conta a história da marca, apresenta todos os serviços e constrói autoridade",
+      "quem_faz": "Fornecedor externo — Julio César vai buscar proposta comercial",
+      "objetivo_para_marroquina": "Ser a vitrine digital oficial da Marroquina Divina Pele para novos clientes que pesquisam a marca",
+      "caracteristicas": [
+        "História dos 17 anos da marca e da trajetória de Inês Rodrigues",
+        "Todos os serviços com descrição e benefícios",
+        "Equipe — humanização e credibilidade",
+        "Clube VIP — apresentação e benefícios",
+        "Biossegurança e diferenciais técnicos",
+        "Agendamento integrado"
+      ],
+      "prazo_desenvolvimento": "30 a 40 dias",
+      "prazo_proposta": "Julio César solicita orçamento — definido na reunião de 08/06/2026"
+    }
+  },
+
+  "requisitos_novo_site_institucional": {
+    "identidade_visual": "Aplicar novo branding completo (a ser entregue na Semana 5) — site só deve ser lançado após rebranding aprovado",
+    "ux_ui": {
+      "principio": "Redução de esforço cognitivo — jornada clara, menos cliques para agendamento",
+      "navegacao": "Simples e intuitiva — usuário encontra o que precisa em no máximo 2 cliques",
+      "dispositivos": "Mobile-first — maioria dos acessos virá por celular"
+    },
+    "secoes_obrigatorias": [
+      {
+        "secao": "Home",
+        "conteudo": "Proposta de valor clara — 'A técnica de cera marroquina mais confortável de Dourados, há 17 anos'"
+      },
+      {
+        "secao": "Nossa História",
+        "conteudo": "Trajetória de 17 anos, Inês Rodrigues, formação de profissionais, conquistas"
+      },
+      {
+        "secao": "Serviços",
+        "conteudo": "Todos os serviços com descrições claras, benefícios e diferencial da técnica exclusiva"
+      },
+      {
+        "secao": "Equipe",
+        "conteudo": "Fotos reais, treinamento uniforme, biossegurança"
+      },
+      {
+        "secao": "Clube VIP",
+        "conteudo": "Benefícios, como participar, depoimentos de membros atuais"
+      },
+      {
+        "secao": "Depoimentos",
+        "conteudo": "Prova social da base de 18.000 clientes — fotos e textos reais"
+      },
+      {
+        "secao": "Agendamento",
+        "conteudo": "CTA proeminente em todas as páginas — integração com WhatsApp Business"
+      }
+    ],
+    "seo": "Otimizar para buscas locais — 'depilação Dourados MS', 'cera marroquina Dourados', 'Marroquina Divina Pele'",
+    "integracao_whatsapp": "Botão de WhatsApp Business visível em todas as páginas — canal principal de atendimento da Marroquina"
+  },
+
+  "proximos_passos": [
+    {
+      "acao": "Desativar site atual",
+      "responsavel": "Julio César",
+      "prazo": "Imediato"
+    },
+    {
+      "acao": "Solicitar proposta comercial para desenvolvimento do novo site institucional",
+      "responsavel": "Julio César",
+      "prazo": "Esta semana"
+    },
+    {
+      "acao": "Landing page desenvolvida pela V4 para campanhas de tráfego pago",
+      "responsavel": "V4 Company (Julio César / equipe)",
+      "prazo": "A definir — prioridade sobre o site institucional para campanhas imediatas"
+    },
+    {
+      "acao": "Novo site institucional com nova identidade visual",
+      "responsavel": "Fornecedor externo + supervisão V4",
+      "prazo": "30-40 dias após aprovação comercial — aguardar rebranding (Semana 5)"
+    }
+  ]
+}

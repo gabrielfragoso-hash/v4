@@ -1,0 +1,107 @@
+{
+  "summary": "Diagnóstico dos criativos produzidos para o Instagram da Marroquina Divina Pele, com base na análise realizada na reunião de 08/06/2026. Identifica excesso de imagens de banco, ausência de humanização e ausência de identidade visual consistente nos conteúdos publicados.",
+  "generated_at": "2026-06-08",
+  "cliente": "Marroquina Divina Pele",
+  "canal_analisado": "Instagram (@marroquinadivinapele)",
+  "responsavel_conteudo_atual": "Luiz Fernando",
+  "responsavel_design_v4": "Samira Barbosa",
+
+  "situacao_atual_dos_criativos": {
+    "perfil_geral": "Feed orientado para venda direta — criativos focam em promoções, serviços e argumentos de conversão imediata",
+    "tipo_de_imagem_predominante": "Banco de imagens — fotografias genéricas de depilação que poderiam ser de qualquer espaço concorrente",
+    "presenca_de_fotos_reais": "Baixa — pouco uso de fotos reais da equipe, do espaço ou da fundadora Inês Rodrigues",
+    "identidade_visual_nos_criativos": "Inconsistente — sem padrão visual claro aplicado aos posts, ausência de sistema de templates coeso",
+    "humanizacao": "Quase inexistente — a equipe, os bastidores e a personalidade da marca não aparecem nos criativos",
+    "abordagem_de_copy": "Foco em técnica, dor, dúvida e desejo — abordagem que funciona para conversão mas não para construção de marca"
+  },
+
+  "problemas_identificados": [
+    {
+      "problema": "Excesso de imagens de banco de dados",
+      "descricao": "A maioria dos criativos utiliza fotos genéricas que não diferenciam a Marroquina Divina Pele de nenhum outro espaço de depilação no Brasil",
+      "impacto": "Alto — impede construção de identidade única e reconhecimento visual da marca",
+      "evidencia": "Identificado diretamente na análise do Instagram durante a reunião de 08/06/2026"
+    },
+    {
+      "problema": "Ausência de fotos reais da equipe e do espaço",
+      "descricao": "A equipe treinada uniformemente e o ambiente físico da Marroquina são diferenciais competitivos que nunca aparecem nos criativos",
+      "impacto": "Alto — clientes não conseguem criar conexão emocional com o espaço antes da primeira visita",
+      "evidencia": "Decisão na reunião: priorizar uso de fotos reais como ativo de diferenciação"
+    },
+    {
+      "problema": "Inês Rodrigues ausente dos criativos",
+      "descricao": "A fundadora, com 17 anos de trajetória e autoridade como formadora de profissionais, não aparece nos conteúdos visuais",
+      "impacto": "Alto — maior ativo de autoridade da marca sendo desperdiçado",
+      "evidencia": "Reunião definiu Inês como figura central na nova estratégia de conteúdo humanizado"
+    },
+    {
+      "problema": "Ausência de identidade visual consistente nos posts",
+      "descricao": "Posts não seguem um sistema visual coeso — cores, fontes e composições variam sem critério estratégico",
+      "impacto": "Médio — dificulta reconhecimento da marca no feed do usuário",
+      "evidencia": "Vinculado ao gap de branding identificado; será resolvido com o rebranding completo aprovado"
+    },
+    {
+      "problema": "Feed como vitrine de vendas — ausência de conteúdo de relacionamento",
+      "descricao": "Sem posts de bastidores, histórias da equipe ou momentos autênticos da operação",
+      "impacto": "Médio — perfil de baixo engajamento orgânico, funciona como catálogo mas não como comunidade",
+      "evidencia": "Descrito explicitamente na reunião como 'vitrine de vendas'"
+    }
+  ],
+
+  "oportunidades_identificadas": [
+    {
+      "oportunidade": "Fotos reais da equipe uniformizada",
+      "descricao": "A equipe com uniforme padronizado é um diferencial visual concreto — transmite profissionalismo e coesão que banco de imagens jamais entrega",
+      "acao": "Sessão fotográfica com equipe e espaço físico da Marroquina Divina Pele"
+    },
+    {
+      "oportunidade": "Bastidores do processo de cera marroquina",
+      "descricao": "Mostrar a técnica exclusiva em ação — procedimento, ambiente, cuidados — cria curiosidade e diferenciação",
+      "acao": "Vídeos curtos (Reels) de processo, preparação e pós-procedimento com equipe real"
+    },
+    {
+      "oportunidade": "Inês Rodrigues como rosto da marca",
+      "descricao": "17 anos de história, formação de profissionais e paixão pela técnica são materiais ricos para criativos de autoridade",
+      "acao": "Série de vídeos e fotos com Inês contando a história da Marroquina e demonstrando expertise"
+    },
+    {
+      "oportunidade": "Depoimentos reais de clientes da base de 18.000",
+      "descricao": "A base enorme de clientes é fonte de UGC e depoimentos autênticos — material de conversão muito mais eficiente que stock",
+      "acao": "Programa de coleta de depoimentos e repost de conteúdo espontâneo de clientes"
+    },
+    {
+      "oportunidade": "Conversas orgânicas entre clientes como pauta de criativo",
+      "descricao": "Dúvidas e comentários reais de clientes são a melhor fonte de pauta para criativos de dor/objeção",
+      "acao": "Luiz Fernando monitorar comentários e mensagens para extrair pautas de criativos autênticos"
+    }
+  ],
+
+  "diretrizes_para_novos_criativos": {
+    "proporcao_recomendada": {
+      "fotos_reais": "Mínimo 70% dos criativos com imagens reais da equipe, espaço e clientes",
+      "banco_de_imagens": "Máximo 30%, apenas quando contextualmente necessário e com identidade visual aplicada",
+      "videos_reels": "Aumentar frequência — Reels com processo, bastidores e Inês têm maior alcance orgânico"
+    },
+    "sistema_visual": "Aguardar rebranding completo (Semana 5) para aplicar nova identidade em todos os templates",
+    "posts_prioritarios_definidos_na_reuniao": [
+      {
+        "post": "História da marca com fotos antigas",
+        "objetivo": "Conexão emocional e autoridade — 17 anos de mercado contados visualmente",
+        "responsavel": "Luiz Fernando",
+        "prazo": "Imediato"
+      },
+      {
+        "post": "Vídeo de biossegurança e higienização",
+        "objetivo": "Quebrar objeção de segurança — mostrar cuidados reais da Marroquina Divina Pele",
+        "responsavel": "Luiz Fernando",
+        "prazo": "Imediato"
+      },
+      {
+        "post": "Post fixado sobre técnica confortável (cera marroquina)",
+        "objetivo": "Diferenciação — posicionar a técnica exclusiva como principal argumento de escolha",
+        "responsavel": "Luiz Fernando",
+        "prazo": "Imediato — fixar no perfil"
+      }
+    ]
+  }
+}

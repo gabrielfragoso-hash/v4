@@ -1,0 +1,107 @@
+{
+  "summary": "Benchmarking de criativos da Marroquina Divina Pele versus referências do setor de beleza, depilação e wellness. Analisa o que marcas de referência fazem diferente e extrai aprendizados aplicáveis à estratégia criativa da Marroquina.",
+  "generated_at": "2026-06-08",
+  "cliente": "Marroquina Divina Pele",
+  "objetivo": "Identificar padrões de criativos eficazes em marcas de referência do setor de beleza/wellness e traduzir esses aprendizados para a realidade da Marroquina Divina Pele em Dourados/MS",
+
+  "referencias_analisadas": [
+    {
+      "marca": "Depction",
+      "segmento": "Depilação / Estética corporal",
+      "por_que_e_referencia": "Citada diretamente na reunião de 08/06/2026 por Inês Rodrigues como referência visual e de posicionamento",
+      "diferenciais_nos_criativos": [
+        "Identidade visual consistente e facilmente reconhecível em qualquer post",
+        "Território de bem-estar claramente estabelecido — criativos transmitem leveza, cuidado e autocuidado",
+        "Paleta de cores coesa aplicada em todos os formatos (feed, stories, Reels)",
+        "Pouco uso de banco de imagens — predominância de produção própria e estética editorial",
+        "Copy que fala de experiência e benefício emocional, não apenas técnico"
+      ],
+      "aprendizados_para_marroquina": [
+        "Definir e aplicar identidade visual rígida após rebranding (Semana 5)",
+        "Criar território visual de bem-estar — cera marroquina como ritual de autocuidado, não apenas serviço",
+        "Reduzir radicalmente banco de imagens — a Depction constrói autoridade com produção própria"
+      ],
+      "o_que_nao_copiar": "Não replicar estética exata — a Marroquina Divina Pele tem 17 anos de história local que a Depction não tem; usar isso como diferencial único"
+    },
+    {
+      "marca": "Marcas wellness premium (referências do universo brasileiro de beleza)",
+      "segmento": "Beleza, bem-estar, cuidado feminino",
+      "diferenciais_nos_criativos": [
+        "Humanização constante — fundadoras e equipes aparecem como protagonistas dos criativos",
+        "UGC (User Generated Content) curado e repostado com identidade visual da marca",
+        "Reels de processo e bastidores com alta performance de alcance orgânico",
+        "Depoimentos e transformações reais como pilar criativo de conversão",
+        "Educação sobre o produto/serviço como conteúdo de valor — não apenas venda direta"
+      ],
+      "aprendizados_para_marroquina": [
+        "Inês Rodrigues deve aparecer regularmente nos criativos — fundadora é ativo de diferenciação",
+        "Criar série de Reels educativos sobre cera marroquina vs outras técnicas",
+        "Mapear clientes que compartilham experiências e incentivar UGC com hashtag própria",
+        "Série de depoimentos visuais com clientes da base de 18.000"
+      ]
+    },
+    {
+      "marca": "Concorrentes de depilação em cidades médias do Brasil",
+      "segmento": "Depilação local — cidades entre 100k e 300k habitantes",
+      "diferenciais_nos_criativos": [
+        "Marcas mais fortes usam fotos reais do espaço e equipe para criar pertencimento local",
+        "Promoções e campanhas sazonais com identidade visual consistente (não post genérico de banco)",
+        "Prova social local — clientes reconhecíveis pela comunidade"
+      ],
+      "aprendizados_para_marroquina": [
+        "Dourados/MS tem 230k habitantes — Inês e a equipe provavelmente são figuras conhecidas localmente; usar isso a favor",
+        "Criativos com elementos locais (referências à cidade, ao povo, à comunidade) geram mais engajamento em mercados regionais",
+        "Mostrar o espaço físico cria familiaridade antes da primeira visita — importante para conversão"
+      ]
+    }
+  ],
+
+  "comparativo_marroquina_vs_referencias": {
+    "identidade_visual_consistente": {
+      "marroquina_atual": "Ausente — sem sistema visual aplicado",
+      "referencias": "Alta — marcas fortes têm templates reconhecíveis",
+      "gap": "Crítico — será resolvido com rebranding (Semana 5)"
+    },
+    "uso_de_fotos_reais": {
+      "marroquina_atual": "Baixo — predominância de banco de imagens",
+      "referencias": "Alto — produção própria é padrão nas marcas de referência",
+      "gap": "Alto — ação imediata possível, independente do rebranding"
+    },
+    "presenca_da_fundadora_nos_criativos": {
+      "marroquina_atual": "Inexistente — Inês não aparece nos conteúdos",
+      "referencias": "Alta — fundadoras são protagonistas nas marcas de referência",
+      "gap": "Crítico — Inês tem 17 anos de história que nenhum concorrente tem"
+    },
+    "conteudo_educativo_sobre_tecnica": {
+      "marroquina_atual": "Presente mas técnico — foco em dor/dúvida/desejo",
+      "referencias": "Equilibrado — educação + experiência + emoção",
+      "gap": "Médio — ampliar ângulo emocional e de experiência"
+    },
+    "territorio_de_bem_estar": {
+      "marroquina_atual": "Ausente — feed percebido como vitrine de vendas",
+      "referencias": "Forte — Depction e similares comunicam autocuidado como valor",
+      "gap": "Alto — oportunidade de posicionamento único em Dourados"
+    }
+  },
+
+  "acoes_priorizadas": [
+    {
+      "acao": "Sessão fotográfica profissional da equipe, espaço e Inês Rodrigues",
+      "referencia_inspiradora": "Depction — produção própria de alta qualidade",
+      "impacto_esperado": "Alto — elimina o principal gap vs referências em curto prazo",
+      "prazo": "Antes da Semana 5 (para alimentar rebranding com material visual real)"
+    },
+    {
+      "acao": "Criar 3 Reels de bastidores da técnica de cera marroquina",
+      "referencia_inspiradora": "Marcas wellness — Reels de processo têm maior alcance orgânico",
+      "impacto_esperado": "Alto — diferenciação imediata e aumento de alcance",
+      "prazo": "Primeiras 2 semanas"
+    },
+    {
+      "acao": "Aplicar novo sistema visual (pós-rebranding) em todos os templates",
+      "referencia_inspiradora": "Depction — identidade visual consistente como reconhecimento",
+      "impacto_esperado": "Alto — uniforme e reconhecível em qualquer ponto de contato",
+      "prazo": "Semana 5 em diante"
+    }
+  ]
+}

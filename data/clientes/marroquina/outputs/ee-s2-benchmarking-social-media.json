@@ -1,0 +1,110 @@
+{
+  "summary": "Benchmarking de social media da Marroquina Divina Pele versus concorrentes e referências do setor de depilação e beleza — tanto em Dourados/MS quanto em âmbito nacional. Identifica padrões de sucesso aplicáveis à estratégia da Marroquina.",
+  "generated_at": "2026-06-08",
+  "cliente": "Marroquina Divina Pele",
+  "contexto": "Marroquina Divina Pele atua em Dourados/MS (230k habitantes) com 17 anos de mercado e base de 18.000 clientes. Benchmarking considera tanto o mercado local quanto referências nacionais do setor de beleza/depilação.",
+
+  "categorias_de_concorrentes": {
+    "concorrentes_diretos_locais": {
+      "descricao": "Outros espaços de depilação em Dourados/MS",
+      "perfil_geral_digital": "Maioria sem estratégia de social media consistente — posts esporádicos, sem identidade visual",
+      "ponto_forte_marroquina": "17 anos de mercado e base de 18.000 clientes já são vantagem competitiva brutal em comparação com concorrentes locais",
+      "risco": "Concorrentes que invistam em social media humanizado podem ganhar território que a Marroquina ainda não ocupa digitalmente"
+    },
+    "concorrentes_indiretos": {
+      "descricao": "Clínicas de laser/depilação definitiva e salões que oferecem depilação como serviço secundário",
+      "perfil_geral_digital": "Clínicas de laser tendem a ter social media mais profissional, com foco em tecnologia e resultado permanente",
+      "diferencial_marroquina": "Experiência de conforto, técnica exclusiva e relacionamento de 17 anos — o laser não tem isso",
+      "ameaca": "Se clientes migrarem para narrativa de 'definitivo = melhor', Marroquina precisa fortalecer argumento de experiência e conforto"
+    },
+    "referencias_nacionais": {
+      "descricao": "Marcas de depilação e beleza com forte presença digital no Brasil",
+      "exemplos": ["Depction", "Espaços de beleza premium em capitais", "Franquias de depilação a laser"]
+    }
+  },
+
+  "analise_comparativa_por_pilar": [
+    {
+      "pilar": "Humanização e presença da fundadora",
+      "marroquina_atual": "Ausente — Inês Rodrigues não aparece no Instagram",
+      "mercado_local_dourados": "Baixo — maioria dos concorrentes locais também não humaniza",
+      "referencias_nacionais": "Alto — fundadoras e equipes são protagonistas nas marcas de referência",
+      "oportunidade": "Ser a primeira marca de beleza em Dourados a humanizar de forma consistente é oportunidade de diferenciação local imediata",
+      "prioridade": "Crítica"
+    },
+    {
+      "pilar": "Consistência visual e branding",
+      "marroquina_atual": "Baixa — sem sistema visual coeso",
+      "mercado_local_dourados": "Muito baixo — padrão local é posts improvisados",
+      "referencias_nacionais": "Alto — Depction e similares têm identidade visual imediatamente reconhecível",
+      "oportunidade": "Após rebranding (Semana 5), Marroquina terá identidade visual superior a 100% dos concorrentes locais",
+      "prioridade": "Alta — dependente do rebranding aprovado"
+    },
+    {
+      "pilar": "Frequência e consistência de publicação",
+      "marroquina_atual": "Adequada — Luiz Fernando mantém calendário ativo",
+      "mercado_local_dourados": "Baixo — a maioria publica de forma irregular",
+      "referencias_nacionais": "Alto — publicação consistente com estratégia clara",
+      "oportunidade": "Frequência já existe; qualidade e estratégia precisam evoluir",
+      "prioridade": "Média — base já está construída"
+    },
+    {
+      "pilar": "Uso de Reels e vídeos de processo",
+      "marroquina_atual": "Baixo — predominância de posts estáticos",
+      "mercado_local_dourados": "Muito baixo",
+      "referencias_nacionais": "Alto — Reels de bastidores e processo são os formatos de maior alcance",
+      "oportunidade": "Criar série de Reels sobre técnica de cera marroquina captura audiência com custo zero de mídia",
+      "prioridade": "Alta"
+    },
+    {
+      "pilar": "Prova social e UGC",
+      "marroquina_atual": "Ausente — sem depoimentos ou repost de clientes",
+      "mercado_local_dourados": "Inexistente — nenhum concorrente local usa UGC estrategicamente",
+      "referencias_nacionais": "Alto — marcas fortes constroem comunidade com conteúdo de clientes",
+      "oportunidade": "Base de 18.000 clientes é ativo imenso — programa de UGC pode gerar conteúdo de alta conversão com baixo custo",
+      "prioridade": "Alta"
+    },
+    {
+      "pilar": "Conteúdo educativo sobre técnica",
+      "marroquina_atual": "Médio — Luiz Fernando já cria conteúdo de dor/dúvida/desejo",
+      "mercado_local_dourados": "Baixo",
+      "referencias_nacionais": "Alto — educação gera autoridade e alcance orgânico",
+      "oportunidade": "Aprofundar e ampliar — cera marroquina tem muito mais história para contar",
+      "prioridade": "Média — base existente, ampliar escopo"
+    }
+  ],
+
+  "posicionamento_sugerido": {
+    "statement": "A Marroquina Divina Pele deve se posicionar no Instagram como A referência de depilação em Dourados — não pela promoção mais barata, mas pela história mais longa, pela técnica mais confortável e pela equipe mais bem treinada da cidade",
+    "diferenciacoes_exclusivas": [
+      "17 anos em Dourados — nenhum concorrente local chega perto",
+      "Técnica de cera marroquina exclusiva e mais confortável — diferencial técnico real",
+      "Inês Rodrigues como formadora de profissionais — autoridade que extrapola Dourados",
+      "18.000 clientes — a maior comunidade de clientes de depilação da cidade"
+    ],
+    "territorio_de_conteudo": "Autocuidado, conforto, confiança e pertencimento — não apenas 'depilação mais barata'"
+  },
+
+  "acoes_recomendadas_com_base_no_benchmarking": [
+    {
+      "acao": "Lançar série 'Nos bastidores da Marroquina' — Reels semanais com equipe e espaço",
+      "inspiracao": "Referências nacionais de beleza com alto engajamento por humanização",
+      "impacto_esperado": "Aumento de alcance orgânico e construção de comunidade"
+    },
+    {
+      "acao": "Criar programa #MarroquinaFãs para incentivar UGC da base de 18.000",
+      "inspiracao": "Marcas de beleza que transformam clientes em embaixadores espontâneos",
+      "impacto_esperado": "Prova social de alta conversão e crescimento orgânico de seguidores"
+    },
+    {
+      "acao": "Posicionar Inês Rodrigues com série 'A história da cera marroquina em Dourados'",
+      "inspiracao": "Tendência de fundadoras como rosto e voz da marca — alto engajamento em beleza",
+      "impacto_esperado": "Autoridade local consolidada, diferenciação irreplicável pelos concorrentes"
+    },
+    {
+      "acao": "Campanha digital para Clube VIP — 53 para 100 membros",
+      "inspiracao": "Marcas com comunidades exclusivas usam Instagram como principal canal de recrutamento",
+      "impacto_esperado": "Duplicar base de membros do Clube VIP através de campanha de conteúdo + ads"
+    }
+  ]
+}
