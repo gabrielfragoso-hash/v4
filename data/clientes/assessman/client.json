@@ -222,7 +222,7 @@
     "integrations": null
   },
   "progress": {
-    "current_week": 4,
+    "current_week": 5,
     "skills": {
       "ee-s1-gc": {
         "status": "completed",
@@ -345,34 +345,34 @@
         "completed_at": "2026-06"
       },
       "ee-s4-estrategias-aquisicao": {
-        "status": "pending",
+        "status": "completed",
         "checkpoint": 0,
         "started_at": null,
-        "completed_at": null
+        "completed_at": "2026-06-09"
       },
       "ee-s4-estrategias-engajamento": {
-        "status": "pending",
+        "status": "completed",
         "checkpoint": 0,
         "started_at": null,
-        "completed_at": null
+        "completed_at": "2026-06-09"
       },
       "ee-s4-estrategias-monetizacao": {
-        "status": "pending",
+        "status": "completed",
         "checkpoint": 0,
         "started_at": null,
-        "completed_at": null
+        "completed_at": "2026-06-09"
       },
       "ee-s4-estrategias-retencao": {
-        "status": "pending",
+        "status": "completed",
         "checkpoint": 0,
         "started_at": null,
-        "completed_at": null
+        "completed_at": "2026-06-09"
       },
       "ee-s4-drawflow": {
-        "status": "pending",
+        "status": "completed",
         "checkpoint": 0,
         "started_at": null,
-        "completed_at": null
+        "completed_at": "2026-06-09"
       },
       "ee-s4-diagnostico-midia-paga": {
         "status": "completed",
@@ -466,6 +466,12 @@
       "skill": "ee-s2-diagnostico-midia",
       "checkpoint": 1,
       "decision": "Diagnóstico Comercial realizado — reunião 03/06 às 10h. Processo comercial, funil de aquisição dual B2B+B2C, objeções e plano de ação mapeados."
+    },
+    {
+      "ts": "2026-06-09T00:00:00Z",
+      "skill": "ee-s4-semana-completa",
+      "checkpoint": 0,
+      "decision": "Semana 4 finalizada: estratégias de aquisição, engajamento, monetização, retenção e drawflow gerados para Vaga Fácil."
     }
   ]
 }

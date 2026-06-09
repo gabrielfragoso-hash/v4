@@ -1,0 +1,88 @@
+{
+  "summary": "Vaga Fácil — 3 estratégias de monetização além do success fee padrão: vagas urgentes premium (empresa paga adiantado por prioridade), pacote de volume para plantas em construção (fee fixo por cotas de vagas), e Mapa Salarial como produto de dados independente. As 3 juntas podem aumentar receita por cliente em até 3x sem precisar crescer a base.",
+  "client": "assessman",
+  "skill_id": "ee-s4-estrategias-monetizacao",
+  "generated_at": "2026-06-09",
+
+  "contexto_estrategico": "O modelo atual de success fee (10-20% salário anual) é saudável mas lento — receita só entra quando a contratação é efetivada. Para uma plataforma pré-lançamento, a primeira receita recorrente e previsível é fundamental para financiar o crescimento. As estratégias abaixo combinam o success fee com modelos que geram receita antecipada.",
+
+  "modelo_atual": {
+    "nome": "Success Fee Padrão",
+    "descricao": "Empresa paga 10-20% do salário anual do candidato contratado",
+    "pros": ["Zero risco para a empresa", "Alta percepção de valor (só paga se funcionar)"],
+    "contras": ["Receita imprevisível", "Ciclo longo até receber", "Sem capital para reinvestir"],
+    "ticket_medio_estimado": "R$ 8.000-25.000 por contratação (técnico sênior a gerente técnico)"
+  },
+
+  "estrategias": [
+    {
+      "rank": 1,
+      "nome": "Vaga Urgente Premium",
+      "descricao": "Empresas que precisam preencher uma vaga em até 15 dias (vs. 30 dias padrão) pagam uma taxa de urgência adicional. A Vaga Fácil prioriza a vaga no topo do ranking, cura manualmente os candidatos e faz a curadoria ativa.",
+      "trigger": "Planta parada, gerente indo embora, projeto atrasado — empresas pagam para acelerar quando há dor aguda",
+      "modelo_preco": {
+        "success_fee_normal": "10-20% do salário anual (após contratação)",
+        "taxa_urgencia": "R$ 1.500-3.000 cobrada no início (não reembolsável)",
+        "prazo_garantido": "Apresentar 3 candidatos qualificados em até 7 dias corridos"
+      },
+      "o_que_muda_internamente": [
+        "Luis Binotto/equipe faz curadoria manual da vaga urgente",
+        "Push notification para candidatos compatíveis com bônus de engajamento",
+        "SLA de resposta de candidatos em 24h"
+      ],
+      "meta": "20% das vagas ativas são urgentes premium",
+      "receita_adicional": "R$ 1.500 x 20 vagas urgentes/mês = R$ 30.000/mês de receita antecipada",
+      "quando_lançar": "Após 10 vagas normais — para ter processo validado antes"
+    },
+    {
+      "rank": 2,
+      "nome": "Pacote Planta — Contratação em Volume",
+      "descricao": "Para as 5 plantas de celulose em construção que precisam contratar dezenas de técnicos, oferecer um pacote fechado com fee por cota. Empresa paga um valor fixo adiantado e recebe até X contratações. Fee menor por contratação, mas receita garantida.",
+      "publico_alvo": "Bracell, Suzano, CMPC, Arauco — cada uma precisando 50-250 técnicos nos próximos 12-24 meses",
+      "modelo_preco": {
+        "pacote_10": "10 contratações por R$ 60.000 (R$ 6.000/contratação — desconto 40% vs fee padrão)",
+        "pacote_25": "25 contratações por R$ 125.000 (R$ 5.000/contratação — desconto 50%)",
+        "pacote_50": "50 contratações por R$ 200.000 (R$ 4.000/contratação — desconto 60%)",
+        "pagamento": "50% no fechamento + 50% ao atingir 50% das contratações"
+      },
+      "argumento_venda": "Uma planta com 250 técnicos contratados pelo modelo padrão custaria R$ 2M+ em fees. O pacote de 250 sai por R$ 750.000 — economizando R$ 1,25M com previsibilidade total.",
+      "meta": "1 contrato de planta nos primeiros 90 dias",
+      "receita_potencial": "R$ 60.000-200.000 em um único fechamento",
+      "risco": "Precisar entregar volume sem base de candidatos ainda — exige parceria com SENAI antes de fechar"
+    },
+    {
+      "rank": 3,
+      "nome": "Mapa Salarial Industrial — Produto de Dados",
+      "descricao": "Com dados de vagas e candidatos acumulados na plataforma, a Vaga Fácil tem informação que ninguém mais tem: salários reais praticados no setor industrial por cargo, região e porte de empresa. Isso vale como produto independente.",
+      "publico_alvo": "RHs de médias/grandes indústrias, consultorias de RH, sindicatos, faculdades e escolas técnicas",
+      "modelo_preco": {
+        "plano_basico": "Mapa Salarial anual por cargo + região: R$ 1.200/ano por usuário",
+        "plano_empresa": "Acesso para equipe de RH (5 usuários): R$ 4.800/ano",
+        "relatorio_customizado": "Análise salarial de um cargo específico por empresa: R$ 3.000 por relatório"
+      },
+      "o_que_inclui": [
+        "Salário médio, mínimo e máximo por cargo (técnico, sênior, especialista)",
+        "Variação por região e porte de empresa",
+        "Tendência trimestral (subindo/descendo)",
+        "Escassez por cargo (quantos candidatos ativos para quantas vagas abertas)"
+      ],
+      "quando_lançar": "Após 6 meses de dados — precisa de volume mínimo para ser estatisticamente válido",
+      "receita_potencial": "50 assinaturas x R$ 1.200/ano = R$ 60.000/ano de receita recorrente",
+      "valor_estrategico": "Além da receita, cria um motivo para empresas ficarem conectadas à plataforma mesmo sem vagas abertas"
+    }
+  ],
+
+  "priorizacao": {
+    "lancamento": "Vaga Urgente Premium — pode ser lançado no mês 1, sem precisar de dados acumulados",
+    "mes_3": "Pacote Planta — quando tiver validação de entrega + primeiras plantas abordadas",
+    "mes_6": "Mapa Salarial — quando tiver base de dados suficiente"
+  },
+
+  "projecao_receita_12_meses": {
+    "success_fee_padrao": "R$ 480.000 (40 contratações x ticket médio R$ 12.000)",
+    "urgencias_premium": "R$ 90.000 (60 urgências x R$ 1.500)",
+    "pacote_planta": "R$ 185.000 (1 pacote médio)",
+    "mapa_salarial": "R$ 30.000 (primeiros 25 assinantes — a partir do mês 7)",
+    "total_projetado": "R$ 785.000 no primeiro ano (vs R$ 480.000 só com success fee)"
+  }
+}

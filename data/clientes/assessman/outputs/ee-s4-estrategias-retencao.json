@@ -1,0 +1,84 @@
+{
+  "summary": "Vaga Fácil — 3 estratégias de retenção: alertas inteligentes de vagas por especialidade (candidato ativo não sai), relacionamento pós-contratação com empresas (NPS + reativação em 6 meses), e programa de indicação candidato-a-candidato (retém e expande ao mesmo tempo). Em marketplace bilateral, reter candidatos na base é tão crítico quanto reter empresas.",
+  "client": "assessman",
+  "skill_id": "ee-s4-estrategias-retencao",
+  "generated_at": "2026-06-09",
+
+  "contexto_estrategico": "Em recrutamento, 'churn' tem dois lados: candidato que se emprega sai da base ativa (mas pode voltar em 2-3 anos) e empresa que preencheu todas as vagas some até a próxima rodada de contratação. A retenção aqui é sobre: 1) manter candidatos passivos engajados (nem todos vão trocar agora), 2) manter empresas conectadas entre ciclos de contratação.",
+
+  "estrategias": [
+    {
+      "rank": 1,
+      "nome": "Alertas Inteligentes — Oportunidades no Radar",
+      "tipo": "B2C — Candidatos",
+      "problema_que_resolve": "Candidato se cadastra, não encontra vaga imediata e some. Ou se emprega e nunca mais acessa. Perda de base qualificada que custou para adquirir.",
+      "descricao": "Sistema de alertas personalizados por cargo, região e pretensão salarial. Candidato configurou uma vez e recebe notificação quando aparecer uma vaga compatível — sem precisar entrar na plataforma toda semana.",
+      "tipos_de_alerta": [
+        "Nova vaga compatível com seu perfil (push + email)",
+        "Vaga compatível pagando acima da sua pretensão atual (urgência alta)",
+        "Empresa que você marcou como 'acompanhar' abriu vaga",
+        "Alerta de mercado: 'Salário médio do seu cargo subiu X% este mês'",
+        "Lembrete semestral: 'Atualize seu perfil para continuar aparecendo nas buscas'"
+      ],
+      "copy_alerta": "🏭 Nova vaga compatível: Técnico de Manutenção na Arauco (SC) — salário: R$ 6.800. Confidencial. Ver detalhes →",
+      "mecanica_retencao": "Candidatos que não estão buscando emprego agora ficam na base — quando o momento chegar (demitido, insatisfeito, salário defasado), a Vaga Fácil já é a primeira opção",
+      "segmentacao": {
+        "ativo_buscando": "Alerta imediato para toda nova vaga compatível",
+        "passivo_aberto": "Alerta semanal com resumo das melhores oportunidades",
+        "empregado_satisfeito": "Alerta mensal de mercado (salários, tendências) — mantém vínculo"
+      },
+      "meta": "< 5% de churn de candidatos por mês (benchmark: 15% sem sistema de alertas)",
+      "esforco_tech": "Médio — sistema de matching + notificação push/email"
+    },
+    {
+      "rank": 2,
+      "nome": "Ciclo de Relacionamento com Empresas",
+      "tipo": "B2B — Empresas",
+      "problema_que_resolve": "Empresa contrata um técnico, fica satisfeita, mas some da plataforma por 6-12 meses até precisar contratar de novo. Durante esse tempo, pode se esquecer da Vaga Fácil e usar outro método na próxima rodada.",
+      "descricao": "Programa estruturado de contato pós-contratação: NPS imediato, check-in em 90 dias, e reativação proativa quando há sinais de nova necessidade.",
+      "mecanica": [
+        "D+7 após contratação: NPS por email ('Como foi a experiência com a Vaga Fácil?')",
+        "D+30: email com case do candidato contratado ('Como está indo a integração?')",
+        "D+90: check-in de sucesso ('O Técnico João está entregando? Temos outros candidatos similares se precisar')",
+        "M+6: alerta proativo de mercado para o RH ('Alta rotatividade de técnicos de manutenção no seu setor — você tem vagas abertas?')",
+        "Aniversário da contratação: 'Faz 1 ano que você contratou via Vaga Fácil. Está satisfeito? Temos novidades.'"
+      ],
+      "gestor_de_conta": "Matheus Xavier (Sales Enablement/CSM) faz os contatos de D+30 e D+90 pessoalmente por WhatsApp",
+      "meta": "80% das empresas que contrataram voltam para a segunda contratação via plataforma",
+      "ltr_empresa": "Empresa que contrata 3x/ano gera R$ 36.000+ em fees anuais — vale investir no relacionamento"
+    },
+    {
+      "rank": 3,
+      "nome": "Programa MGM — Técnico Indica Técnico",
+      "tipo": "B2C — Candidatos",
+      "problema_que_resolve": "Aquisição de candidatos B2C via ads tem CAC crescente. Os melhores candidatos técnicos vêm por indicação — técnicos confiam em outros técnicos do setor.",
+      "descricao": "Member-Get-Member: candidato que indica outro candidato que se cadastra e é contratado recebe um benefício. Cria um canal de aquisição orgânico e retém quem indica (tem interesse em continuar na plataforma para resgatar o benefício).",
+      "modelo_incentivo": {
+        "indicacao_cadastro": "Candidato indicado se cadastra → indicador recebe 'Badge de Referência' no perfil (visibilidade)",
+        "indicacao_contratacao": "Candidato indicado é contratado via plataforma → indicador recebe R$ 200 via PIX",
+        "indicacao_empresa": "Candidato indica uma empresa que abre vagas na plataforma → R$ 500 por empresa ativa"
+      },
+      "mecanica": [
+        "Link de indicação único por candidato (rastreável)",
+        "Email automático: 'Indique um técnico que você conhece e ganhe R$ 200 quando ele for contratado'",
+        "Ranking público de candidatos com mais indicações (gamificação)"
+      ],
+      "viral_coefficient": "Meta: cada candidato indica 0.3 novos candidatos em média = 30% de crescimento orgânico",
+      "custo_real": "R$ 200 por contratação via MGM vs R$ 15+ de CAC via Google Ads — mas vem com validação social",
+      "meta": "15% das novas contratações originadas por indicação de outros candidatos no mês 3"
+    }
+  ],
+
+  "metricas_churn": {
+    "candidatos_ativos_meta": "< 5% de churn/mês na base ativa",
+    "reativacao_empresas": "> 80% das empresas contratam novamente via plataforma",
+    "mgm_rate": "> 15% das contratações por indicação no mês 3",
+    "nps_meta": "> 50 (benchmark HR Tech Brasil: 35)"
+  },
+
+  "alertas_de_churn": [
+    "Candidato sem login há 30 dias → email de reativação automático",
+    "Empresa sem atividade há 60 dias → contato manual do CSM",
+    "Candidato atualiza pretensão salarial → sinal de busca ativa — priorizar no matching"
+  ]
+}

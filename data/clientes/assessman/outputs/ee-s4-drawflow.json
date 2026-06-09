@@ -1,0 +1,200 @@
+{
+  "summary": "Vaga Fácil — Drawflow completo do funil bilateral B2B+B2C. O fluxo tem dois trilhos paralelos (candidatos e empresas) que convergem no momento do matching. O gargalo principal é o time-to-match: candidato sem perfil completo e empresa sem vagas ativas nunca se encontram. O desenho prioriza preencher os dois lados o mais rápido possível antes de tentar monetizar.",
+  "client": "assessman",
+  "skill_id": "ee-s4-drawflow",
+  "generated_at": "2026-06-09",
+
+  "visao_geral": "Marketplace bilateral industrial: dois funis paralelos (B2C candidatos + B2B empresas) que convergem no matching. Receita só ocorre na contratação efetivada. Todo o design do fluxo visa acelerar essa convergência.",
+
+  "trilho_candidatos": {
+    "titulo": "Trilho B2C — Candidato Técnico Industrial",
+    "etapas": [
+      {
+        "etapa": "1. Consciência",
+        "descricao": "Candidato descobre a Vaga Fácil",
+        "canais_entrada": ["Google Ads (busca: 'vagas técnico industrial')", "Indicação de colega técnico (MGM)", "Post LinkedIn/Instagram do Luis Binotto", "SENAI / Escola Técnica parceira"],
+        "mensagem_hook": "Trocar de emprego sem seu chefe saber. Recrutamento 100% confidencial.",
+        "acoes": ["Clica em anúncio", "Entra no perfil do Luis Binotto", "Recebe indicação de colega"]
+      },
+      {
+        "etapa": "2. Cadastro",
+        "descricao": "Primeiro acesso e criação de conta",
+        "passo_1": "Email + Cargo + Região (30 segundos — baixa fricção)",
+        "entrega_imediata": "Desbloqueio do Mapa Salarial: 'Técnico de Manutenção no RS: R$ 4.200 – R$ 8.500/mês'",
+        "objetivo": "Candidato sente valor imediato antes de completar o perfil",
+        "automacao": "Email de boas-vindas em 5 minutos com link para completar perfil"
+      },
+      {
+        "etapa": "3. Ativação — Perfil Completo",
+        "descricao": "Candidato preenche perfil o suficiente para entrar no matching",
+        "campos_obrigatorios": ["Cargo atual", "Anos de experiência", "Especialidade técnica (manutenção elétrica/mecânica/instrumentação)", "Pretensão salarial", "Disponibilidade para mudança"],
+        "campos_opcionais": ["Autoavaliação técnica (30 questões)", "Testes certificados", "Empresas onde trabalhou"],
+        "gatilho_matching": "Perfil >60% completo → candidato entra no pool ativo de matching",
+        "gamificacao": "Barra de progresso mostra: 'Seu perfil está X% completo. Candidatos acima de 80% recebem 4x mais propostas.'",
+        "prazo_meta": "7 dias após cadastro"
+      },
+      {
+        "etapa": "4. Matching",
+        "descricao": "Sistema cruza perfil do candidato com vagas ativas",
+        "como_funciona": "Algoritmo de compatibilidade por cargo + região + especialidade + pretensão salarial",
+        "experiencia_candidato": "Recebe alerta: 'Nova vaga compatível: Técnico de Instrumentação na Bracell SP — salário: R$ 7.200'",
+        "confidencialidade": "Candidato vê a vaga com empresa anônima ('Grande Indústria do Setor de Celulose em SP'). Só aceita ou rejeita.",
+        "opcoes": ["Aceitar participar → empresa recebe perfil completo", "Rejeitar → motivo registrado (melhora o algoritmo)", "Salvar para decidir depois"]
+      },
+      {
+        "etapa": "5. Processo Seletivo",
+        "descricao": "Candidato aceita participar — empresa recebe perfil revelado",
+        "fluxo": [
+          "Empresa recebe perfil completo + avaliações técnicas",
+          "Empresa agenda entrevista via plataforma",
+          "Candidato acompanha status em tempo real (etapa 1, 2, 3...)",
+          "Feedback obrigatório da empresa em 72h após entrevista"
+        ],
+        "suporte": "Matheus Xavier (CSM) disponível para candidatos que precisam de orientação"
+      },
+      {
+        "etapa": "6. Contratação",
+        "descricao": "Candidato aceita proposta e é contratado",
+        "acoes_plataforma": [
+          "Candidato confirma contratação na plataforma",
+          "Empresa confirma e informar salário final (necessário para calcular fee)",
+          "Vaga Fácil emite nota fiscal de success fee para a empresa",
+          "Candidato recebe badge 'Contratado via Vaga Fácil'"
+        ],
+        "pos_contratacao": "Candidato fica na base como 'empregado — não buscando ativo'. Recebe alertas passivos."
+      },
+      {
+        "etapa": "7. Reativação",
+        "descricao": "Candidato contratado pode voltar em 6-24 meses",
+        "triggers": ["2 anos após contratação: email de mercado", "Salário do cargo sobe >15%: alerta proativo", "Candidato abre o app novamente: reengajamento automático"],
+        "valor_base_passiva": "Candidato 'inativo' que volta e é contratado de novo = CAC zero"
+      }
+    ]
+  },
+
+  "trilho_empresas": {
+    "titulo": "Trilho B2B — Empresa Industrial",
+    "etapas": [
+      {
+        "etapa": "1. Consciência",
+        "descricao": "RH ou Gestor Técnico descobre a Vaga Fácil",
+        "canais_entrada": ["Abordagem direta Luis Binotto (ABM plantas de celulose)", "LinkedIn Ads (targeting HR industrial)", "Indicação de empresa que já usou", "Evento AbraMan / ABTCP"],
+        "mensagem_hook": "Acesso a candidatos técnicos que não estão no LinkedIn. Pré-qualificados. Confidenciais.",
+        "acoes": ["Aceita reunião de demo", "Pede mais informações"]
+      },
+      {
+        "etapa": "2. Qualificação e Cadastro",
+        "descricao": "Empresa se cadastra e publica primeira vaga",
+        "criterio_qualificacao": "Empresa industrial com necessidade de técnicos especializados + orçamento para success fee",
+        "onboarding": [
+          "Cadastro da empresa (15 minutos com Matheus Xavier)",
+          "Configuração do perfil da empresa (anonimato = escolha da empresa)",
+          "Publicação da primeira vaga (template guiado)",
+          "Configuração de alertas de candidatos compatíveis"
+        ],
+        "primeira_entrega": "Em 48h após publicar: 'Há X candidatos compatíveis com essa vaga em nossa base'"
+      },
+      {
+        "etapa": "3. Ativação — Primeiro Match",
+        "descricao": "Empresa recebe os primeiros perfis compatíveis",
+        "fluxo": [
+          "Vaga publicada → sistema faz matching",
+          "Empresa recebe lista de candidatos compatíveis (perfis anonimizados)",
+          "Empresa manifesta interesse em candidatos específicos",
+          "Candidatos são notificados e podem aceitar ou rejeitar"
+        ],
+        "tempo_meta": "3 candidatos compatíveis apresentados em até 5 dias úteis",
+        "urgencia_premium": "Para vagas urgentes: candidatos curados manualmente em 48h"
+      },
+      {
+        "etapa": "4. Processo Seletivo",
+        "descricao": "Empresa conduz entrevistas com candidatos que aceitaram",
+        "suporte_vf": ["Template de entrevista técnica (opcional)", "Dashboard de status por candidato", "CSM disponível se precisar de mais candidatos", "Feedback estruturado obrigatório"],
+        "sla_empresa": "Dar feedback ao candidato em até 72h após entrevista (contratual)"
+      },
+      {
+        "etapa": "5. Contratação e Pagamento",
+        "descricao": "Empresa confirma contratação e acerta o fee",
+        "fluxo_financeiro": [
+          "Empresa confirma contratação + informa salário",
+          "Vaga Fácil calcula fee (10-20% do salário anual)",
+          "Emissão de NF + prazo de pagamento: 30 dias",
+          "Vaga marcada como encerrada"
+        ]
+      },
+      {
+        "etapa": "6. Retenção e Expansão",
+        "descricao": "Empresa volta para novas contratações",
+        "fluxo": [
+          "D+7: NPS pós-contratação",
+          "D+30: check-in de satisfação (Matheus Xavier)",
+          "D+90: 'Como está o técnico contratado? Temos outros se precisar'",
+          "M+6: alerta proativo de mercado"
+        ],
+        "expansao": "Empresa satisfeita indica outros RHs do grupo → canal de B2B referral"
+      }
+    ]
+  },
+
+  "convergencia_matching": {
+    "titulo": "Ponto de Convergência — O Matching",
+    "como_funciona": "O algoritmo cruza automaticamente candidatos ativos com vagas ativas por: cargo + especialidade + região + pretensão salarial x orçamento da vaga",
+    "confidencialidade": {
+      "candidato": "Empresa aparece como anônima até candidato aceitar participar",
+      "empresa": "Candidato aparece com cargo, anos de experiência e certificações — sem nome/foto até aceite"
+    },
+    "tempo_medio_match": "24-48h entre publicação da vaga e apresentação de 3+ candidatos compatíveis",
+    "gargalo_principal": "Base de candidatos precede o volume de vagas — escalar B2C antes de escalar B2B"
+  },
+
+  "automacoes_criticas": [
+    {
+      "gatilho": "Candidato cadastra",
+      "acao": "Email boas-vindas + Mapa Salarial desbloqueado + link para completar perfil"
+    },
+    {
+      "gatilho": "Perfil atinge 60%",
+      "acao": "Candidato entra no pool de matching ativo — matching roda imediatamente"
+    },
+    {
+      "gatilho": "Vaga publicada",
+      "acao": "Matching automático roda e notifica candidatos compatíveis"
+    },
+    {
+      "gatilho": "Candidato sem login há 21 dias",
+      "acao": "Email: 'X novas vagas compatíveis com seu perfil esta semana'"
+    },
+    {
+      "gatilho": "Empresa sem atividade há 45 dias",
+      "acao": "WhatsApp do CSM: 'Oi [nome], vi que tem vagas abertas no setor. Posso ajudar?'"
+    },
+    {
+      "gatilho": "Contratação confirmada",
+      "acao": "NF emitida automaticamente + sequência de NPS + badge candidato"
+    }
+  ],
+
+  "stack_tecnologico_recomendado": {
+    "plataforma_core": "Bubble.io ou Next.js custom (plataforma em desenvolvimento)",
+    "crm_empresas": "Kommo (funil de B2B, pipeline de vagas)",
+    "email_marketing": "Brevo (candidatos) + Kommo (empresas)",
+    "push_notifications": "OneSignal (gratuito até 10k subscribers)",
+    "analytics": "Google Analytics 4 + Hotjar (UX da plataforma)",
+    "pagamentos": "Stripe (invoice + link de pagamento para success fee)"
+  },
+
+  "metricas_do_funil": {
+    "candidatos": {
+      "cadastro_para_perfil_ativo": ">60% em 7 dias",
+      "perfil_ativo_para_match": "<48h",
+      "match_para_aceite": ">40% dos candidatos notificados aceitam participar",
+      "aceite_para_contratacao": ">15%"
+    },
+    "empresas": {
+      "demo_para_cadastro": ">70%",
+      "cadastro_para_vaga_publicada": "<48h",
+      "vaga_para_primeiro_match": "<5 dias",
+      "processo_para_contratacao": "~21 dias (meta)"
+    }
+  }
+}

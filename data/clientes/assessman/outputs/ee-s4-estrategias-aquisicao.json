@@ -1,0 +1,94 @@
+{
+  "summary": "Vaga Fácil — 3 estratégias de aquisição paralelas: ABM direto nas plantas de celulose (B2B de alta conversão), Google Ads confidencialidade (B2C de menor CAC) e canal multiplicador via SENAI/AbraMan (B2C de escala). Sequência recomendada: ABM primeiro para validar o modelo com empresas pagantes, depois ativar B2C quando houver vagas para mostrar.",
+  "client": "assessman",
+  "skill_id": "ee-s4-estrategias-aquisicao",
+  "generated_at": "2026-06-09",
+
+  "contexto_estrategico": "Vaga Fácil é um marketplace bilateral em pré-lançamento. O risco principal é ativar B2B e B2C ao mesmo tempo sem produto validado. A sequência correta: 1) conquistar primeiras 5-10 empresas pagantes via ABM, 2) usar essas vagas como prova social para atrair candidatos, 3) com candidatos na base, escalar o B2C.",
+
+  "estrategias": [
+    {
+      "rank": 1,
+      "nome": "ABM — Plantas de Celulose em Construção",
+      "tipo": "B2B",
+      "descricao": "Account-Based Marketing direto nas 5 grandes plantas industriais em construção no Brasil. Cada planta precisa ~250 operadores e ~250 mantenedores nos próximos 12-24 meses. Esse é o maior pipeline de demanda imediata do setor.",
+      "publico_alvo": "Gerentes de RH e Diretores Técnicos de: Bracell SP, Suzano Ribas, Arauco (futuro), CMPC e Cenibra. Decisores: Gerente de RH (primeiro contato) + Diretor Industrial (aprovação).",
+      "canais": ["LinkedIn Sales Navigator", "Abordagem direta via networking Luis Binotto", "Email personalizado", "Eventos AbraMan"],
+      "mensagem_chave": "Você vai precisar contratar 250+ técnicos nos próximos 18 meses. Os melhores estão empregados e não aparecem no LinkedIn. A Vaga Fácil dá acesso a eles — com confidencialidade real.",
+      "mecanica": [
+        "Identificar os 20 decisores-alvo via LinkedIn Sales Navigator",
+        "Luis Binotto faz warm intro via sua rede C-level (30+ anos setor papel/celulose)",
+        "Demo personalizada da plataforma com a dor específica de cada planta",
+        "Proposta: piloto com 3 vagas — empresa só paga se contratar"
+      ],
+      "meta_30_dias": "5 empresas em piloto ativo com pelo menos 1 vaga publicada cada",
+      "investimento": "R$ 0 (networking) + R$ 500/mês LinkedIn Sales Navigator",
+      "cac_estimado": "R$ 200-500 por empresa (custo de tempo do fundador)",
+      "prazo": "Semana 1-2 do go-to-market",
+      "dependencias": ["Plataforma funcional com publicação de vagas", "Apresentação comercial pronta"]
+    },
+    {
+      "rank": 2,
+      "nome": "Google Ads — Busca Ativa por Emprego Industrial",
+      "tipo": "B2C",
+      "descricao": "Capturar candidatos técnicos que estão ativamente pesquisando oportunidades no Google. Esse público já tem intenção de troca — só precisa encontrar uma plataforma que garanta confidencialidade.",
+      "publico_alvo": "Técnicos e operadores industriais (manutenção, papel/celulose, petroquímica) empregados mas insatisfeitos. Faixa 25-45 anos. Buscam 'vagas técnicas confidenciais', 'emprego manutenção industrial', 'vagas operador caldeiraria'.",
+      "canais": ["Google Ads — Search (palavras-chave de cargo + região)", "Google Ads — Display em sites técnicos industriais"],
+      "palavras_chave_foco": [
+        "vagas técnico de manutenção",
+        "emprego operador industrial",
+        "vagas setor papel celulose",
+        "vaga eletricista industrial",
+        "emprego técnico instrumentação",
+        "recrutamento industrial confidencial"
+      ],
+      "mensagem_chave": "Trocar de emprego sem seu chefe saber. Vaga Fácil — recrutamento 100% confidencial para técnicos industriais.",
+      "mecanica": [
+        "Campanha Search com intenção de troca (termos: 'vagas + cargo + industrial')",
+        "LP dedicada com promessa de confidencialidade no hero",
+        "Cadastro em 2 passos: email + cargo (sem expor nome ainda)",
+        "Sequência de email onboarding com valor imediato: 'Veja quanto o mercado paga para o seu cargo'"
+      ],
+      "meta_30_dias": "500 cadastros de candidatos qualificados",
+      "investimento": "R$ 3.000/mês (parte do budget de R$ 8k)",
+      "cac_estimado": "R$ 6 por cadastro (benchmark Google Ads HR Tech Brasil)",
+      "prazo": "Semana 3-4 (após ter vagas ativas para mostrar)",
+      "dependencias": ["Pelo menos 3-5 vagas ativas na plataforma", "Landing page de candidatos no ar"]
+    },
+    {
+      "rank": 3,
+      "nome": "Canal Multiplicador — SENAI e Associações",
+      "tipo": "B2C + B2B",
+      "descricao": "Parcerias com SENAI, AbraMan e ABTCP como canais de distribuição. Eles têm acesso direto aos candidatos técnicos (alunos e egressos) e às empresas do setor. A Vaga Fácil entra como plataforma oficial de empregabilidade.",
+      "publico_alvo": "SENAI (principal parceiro — cursos técnicos industriais), AbraMan (Associação Brasileira de Manutenção), ABTCP (papel e celulose), Escolas Técnicas Federais.",
+      "canais": ["Proposta de parceria formal", "Co-marketing com newsletter das associações", "Palestras gratuitas de Luis Binotto para alunos"],
+      "mensagem_chave_parceiros": "Aumente a taxa de empregabilidade dos seus alunos/associados com a única plataforma de recrutamento industrial com confidencialidade real. Taxa de sucesso = receita compartilhada.",
+      "mecanica": [
+        "Luis Binotto usa rede AbraMan para chegar nos gestores (ele já é ativo na associação)",
+        "Proposta de partnership: Vaga Fácil paga R$ 500 por contratação que veio via canal",
+        "Integração de banner/link no portal do SENAI como parceiro oficial",
+        "Palestra mensal gratuita: 'Como técnicos industriais se posicionam no mercado'"
+      ],
+      "meta_30_dias": "2 parcerias assinadas, 200 candidatos vindos de canal parceiro",
+      "investimento": "R$ 0 inicial + comissão por sucesso",
+      "cac_estimado": "R$ 500 por candidato contratado via canal (só paga se virar receita)",
+      "prazo": "Semana 2-4",
+      "dependencias": ["Material de apresentação para parceiros", "Acordo de comissão definido"]
+    }
+  ],
+
+  "sequencia_recomendada": {
+    "semana_1_2": "Ativar ABM nas plantas de celulose — Luis faz os contatos, meta: 5 empresas em piloto",
+    "semana_3_4": "Com vagas ativas, ligar Google Ads B2C + iniciar abordagem SENAI/AbraMan",
+    "mes_2": "Avaliar CAC por canal e dobrar investimento no que performar melhor",
+    "decisao_critica": "NÃO escalar Google Ads antes de ter vagas publicadas — candidato que se cadastra e não vê vagas abandona e não volta"
+  },
+
+  "kpis": {
+    "empresas_cadastradas": "Meta: 10 em 30 dias | 30 em 60 dias",
+    "vagas_ativas": "Meta: 20 vagas em 30 dias",
+    "candidatos_cadastrados": "Meta: 500 em 30 dias | 2.000 em 60 dias",
+    "cac_b2b": "< R$ 1.000 por empresa",
+    "cac_b2c": "< R$ 15 por candidato"
+  }
+}

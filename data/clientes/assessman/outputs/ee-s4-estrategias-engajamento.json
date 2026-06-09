@@ -1,0 +1,89 @@
+{
+  "summary": "Vaga Fácil — 3 estratégias de engajamento: onboarding gamificado para candidatos completarem perfil (ativa o matching), newsletter semanal de mercado industrial (cria hábito de retorno), e autoridade técnica via conteúdo do Luis Binotto (constrói confiança pré-contratação). Engajamento aqui é crítico porque o match só acontece com perfis completos.",
+  "client": "assessman",
+  "skill_id": "ee-s4-estrategias-engajamento",
+  "generated_at": "2026-06-09",
+
+  "contexto_estrategico": "O maior risco de engajamento da Vaga Fácil é o candidato se cadastrar e não completar o perfil — sem perfil completo, o matching não funciona. Para empresas, o risco é publicar uma vaga e não receber candidatos qualificados na velocidade esperada. As 3 estratégias atacam esses dois problemas.",
+
+  "estrategias": [
+    {
+      "rank": 1,
+      "nome": "Onboarding Gamificado — Perfil com Progresso Visível",
+      "tipo": "B2C — Candidatos",
+      "problema_que_resolve": "Candidatos se cadastram mas não completam o perfil. Sem perfil completo, não aparecem para empresas. Plataforma parece vazia.",
+      "descricao": "Barra de progresso do perfil + desbloqueio de features por etapa concluída. Cada passo completado mostra um benefício concreto que o candidato recebe.",
+      "mecanica": [
+        "Cadastro (email + cargo): desbloqueio imediato do 'Mapa Salarial do Setor' — candidato vê quanto o mercado paga para seu cargo",
+        "Autoavaliação técnica (30 perguntas): desbloqueio de 'Ranking de Compatibilidade' com vagas abertas",
+        "Adição de experiências (3+ cargos): status 'Candidato Verificado' — badge no perfil",
+        "Testes técnicos (1+ certificado): acesso a vagas exclusivas marcadas como 'Altamente Qualificado'",
+        "Upload de foto: +40% de chance de ser contactado (mostrar dado no app)"
+      ],
+      "copy_engajamento": "Seu perfil está 30% completo. Candidatos com perfil acima de 80% recebem 4x mais propostas. Complete em 5 minutos →",
+      "canais": ["Push notification (app)", "Email sequencial D+1, D+3, D+7", "In-app tooltip"],
+      "meta": "70% dos candidatos cadastrados com perfil >80% completo em 7 dias",
+      "esforco_tech": "Médio — barra de progresso + desbloqueio condicional de features"
+    },
+    {
+      "rank": 2,
+      "nome": "Newsletter Semanal — Mercado Industrial em 5 Minutos",
+      "tipo": "B2C + B2B",
+      "problema_que_resolve": "Candidatos cadastram e esquecem a plataforma. Empresas publicam vagas e não voltam a olhar o dashboard. Sem hábito de retorno, a plataforma some da cabeça.",
+      "descricao": "Newsletter semanal às terças-feiras com dados exclusivos do mercado industrial. Para candidatos: salários, oportunidades, dicas. Para empresas: índice de escassez por cargo, tempo médio de preenchimento por região.",
+      "conteudo_candidatos": [
+        "Top 3 vagas abertas na semana (com salário estimado)",
+        "Salário médio: 'Técnico de Manutenção no RS está pagando R$ X esta semana'",
+        "Conteúdo curto: 'Como negociar salário no setor industrial'",
+        "Curiosidade: 'A nova planta da Bracell vai abrir X vagas — veja os cargos'"
+      ],
+      "conteudo_empresas": [
+        "Índice de candidatos qualificados disponíveis por cargo (exclusivo)",
+        "Tempo médio de preenchimento de vagas técnicas no Brasil",
+        "Alerta: 'Há 3 candidatos compatíveis com a sua vaga de Técnico de Instrumentação'",
+        "Dica de RH: como escrever descritivos que atraem técnicos industriais"
+      ],
+      "copy_assunto": [
+        "📊 Técnico de Manutenção no RS: salário médio subiu 8% — dados exclusivos Vaga Fácil",
+        "⚠️ 47 técnicos de instrumentação procurando emprego em SP esta semana",
+        "🏭 A Bracell vai abrir 180 vagas. Candidatos: posicione-se agora."
+      ],
+      "frequencia": "Semanal — toda terça-feira às 7h",
+      "meta": "Taxa de abertura >35% (benchmark email B2C: 20%)",
+      "ferramenta": "Brevo (ex-Sendinblue) — gratuito até 300 emails/dia"
+    },
+    {
+      "rank": 3,
+      "nome": "Autoridade Técnica — Conteúdo do Luis Binotto",
+      "tipo": "B2B + B2C",
+      "problema_que_resolve": "Zero brand awareness. Plataforma desconhecida. Por que um técnico industrial ou um gerente de RH confiaria em uma plataforma nova?",
+      "descricao": "Luis Binotto (VP Global ex-Andritz, 30+ anos de setor) posta conteúdo de autoridade sobre carreira industrial e mercado de trabalho técnico. Ele é a prova social viva da plataforma.",
+      "canais_primarios": ["LinkedIn (principal — decisores B2B)", "Instagram (candidatos B2C)"],
+      "linha_editorial": [
+        "Série: 'O que o mercado de celulose vai contratar nos próximos 2 anos' (LinkedIn)",
+        "Post semanal: salário médio de um cargo técnico específico (dados Vaga Fácil)",
+        "Stories: bastidores da construção da plataforma — jornada de lançamento",
+        "Artigos: 'Por que os melhores técnicos não aparecem no LinkedIn'",
+        "Depoimentos: primeiros candidatos e empresas usando a plataforma"
+      ],
+      "frequencia": "3 posts/semana no LinkedIn + 5 stories/semana no Instagram",
+      "copy_perfil_linkedin": "Fundador da Vaga Fácil — plataforma de recrutamento industrial confidencial. Ex-VP Global Andritz. Conectando técnicos com oportunidades que não aparecem em lugar nenhum.",
+      "meta": "5.000 seguidores LinkedIn em 90 dias | 2.000 Instagram em 90 dias",
+      "esforco": "Alto no início (Luis gravar/escrever) — pode reduzir com ghostwriter após 30 dias"
+    }
+  ],
+
+  "prioridade_lancamento": {
+    "dia_1": "Ativar onboarding gamificado na plataforma",
+    "semana_1": "Luis posta daily no LinkedIn sobre o lançamento",
+    "semana_2": "Primeira newsletter vai para lista inicial (contatos do Luis + early signups)",
+    "mes_2": "Newsletter já tem dados próprios da plataforma para usar"
+  },
+
+  "kpis": {
+    "perfil_completo_pct": ">70% dos candidatos com perfil >80% em 7 dias do cadastro",
+    "newsletter_open_rate": ">35%",
+    "linkedin_reach": ">500 impressões por post nas primeiras 4 semanas",
+    "retencao_candidatos": ">60% voltam à plataforma na semana 2 após cadastro"
+  }
+}
