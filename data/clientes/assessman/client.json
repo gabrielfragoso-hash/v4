@@ -7,7 +7,12 @@
     "workspace_id": null,
     "created_at": "2026-05-22",
     "founded_at": null,
-    "modulo_vendas": false
+    "modulo_vendas": false,
+    "portal_access": {
+      "user": "assessman",
+      "password": "v4-rxqzt5",
+      "created_at": "2026-06-11"
+    }
   },
   "briefing": {
     "identification": {

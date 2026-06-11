@@ -6,7 +6,12 @@
     "cnpj": "13.590.541/0001-69",
     "workspace_id": null,
     "created_at": "2026-06-02",
-    "modulo_vendas": false
+    "modulo_vendas": false,
+    "portal_access": {
+      "user": "marroquina",
+      "password": "v4-wm2zrb",
+      "created_at": "2026-06-11"
+    }
   },
   "briefing": {
     "identification": {
