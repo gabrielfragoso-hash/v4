@@ -1,6 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// Portal do cliente tem login próprio (cookie por cliente) — não exige o Basic Auth interno
+const PORTAL_PATH = /^\/clientes\/[^/]+\/portal(\/.*)?$/;
+
 export function proxy(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  if (PORTAL_PATH.test(pathname)) {
+    return NextResponse.next();
+  }
+
   const authHeader = request.headers.get("authorization");
 
   if (!authHeader || !authHeader.startsWith("Basic ")) {

@@ -1,180 +1,328 @@
 import fs from "fs/promises";
 import path from "path";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { cookies } from "next/headers";
 import { getStagesForClient } from "@/lib/workflow";
-import { ApprovalPanel } from "@/components/ApprovalPanel";
-import { ArrowLeft, TrendingUp, TrendingDown, AlertTriangle, Zap, Target, BarChart3, MessageSquare, Search, Smartphone, CheckCircle2, Clock } from "lucide-react";
-
-async function getApprovals(slug: string): Promise<Record<string, { status: "approved" | "needs_changes"; comment: string; approvedBy: string; approvedAt: string }>> {
-  try {
-    const url = process.env.UPSTASH_REDIS_REST_URL;
-    const token = process.env.UPSTASH_REDIS_REST_TOKEN;
-    if (!url || !token) return {};
-    // Lazy import to avoid build errors when env vars not set
-    const { Redis } = await import("@upstash/redis");
-    const redis = new Redis({ url, token });
-    const { redis: redisLib, allApprovalsKey, approvalKey } = await import("@/lib/redis");
-    void redisLib; // eslint
-    const ids = await redis.smembers(allApprovalsKey(slug));
-    if (!ids.length) return {};
-    const entries = await Promise.all(
-      ids.map(async (id) => {
-        const data = await redis.get(approvalKey(slug, id));
-        return [id, data] as const;
-      })
-    );
-    return Object.fromEntries(entries.filter(([, v]) => v != null)) as Record<string, { status: "approved" | "needs_changes"; comment: string; approvedBy: string; approvedAt: string }>;
-  } catch {
-    return {};
-  }
-}
+import { verifySessionToken, PORTAL_COOKIE } from "@/lib/portal-auth";
+import { LoginGate } from "./LoginGate";
+import { logoutPortal } from "./actions";
+import { CheckCircle2, Clock, Lock, Calendar, Mail, LogOut, Sparkles } from "lucide-react";
 
 const CLIENTES_DIR = process.env.CLIENTES_DIR ?? path.join(process.cwd(), "data/clientes");
 
-async function readOutput(slug: string, name: string) {
-  try {
-    const raw = await fs.readFile(path.join(CLIENTES_DIR, slug, "outputs", `${name}.json`), "utf-8");
-    return JSON.parse(raw);
-  } catch {
-    return null;
-  }
-}
-
-// ── Sub-components (server-safe, no state) ──────────────────────────────────
-
-function Section({ id, label, children }: { id: string; label: string; children: React.ReactNode }) {
-  return (
-    <section id={id} className="space-y-4 scroll-mt-20">
-      <div className="flex items-center gap-3">
-        <div className="h-px flex-1" style={{ background: "var(--color-border)" }} />
-        <span className="text-[10px] font-black uppercase tracking-widest px-3"
-          style={{ color: "var(--color-primary)" }}>
-          {label}
-        </span>
-        <div className="h-px flex-1" style={{ background: "var(--color-border)" }} />
-      </div>
-      {children}
-    </section>
-  );
-}
-
-function Card({ children, accent = false }: { children: React.ReactNode; accent?: boolean }) {
-  return (
-    <div className="rounded-xl p-5" style={{
-      background: "var(--color-surface)",
-      border: `1px solid ${accent ? "rgba(228,10,20,0.35)" : "var(--color-border)"}`,
-      boxShadow: accent ? "0 0 24px rgba(228,10,20,0.08)" : "none",
-    }}>
-      {children}
-    </div>
-  );
-}
-
-function ScoreBar({ label, score, benchmark, max = 100 }: { label: string; score: number; benchmark?: number; max?: number }) {
-  const pct = (score / max) * 100;
-  const color = score >= 60 ? "#4ade80" : score >= 35 ? "#facc15" : "#e40a14";
-  return (
-    <div className="space-y-1.5">
-      <div className="flex justify-between items-center">
-        <span className="text-xs font-semibold" style={{ color: "var(--color-text)" }}>{label}</span>
-        <div className="flex items-center gap-2">
-          {benchmark !== undefined && (
-            <span className="text-[10px]" style={{ color: "var(--color-text-muted)" }}>setor {benchmark}</span>
-          )}
-          <span className="text-sm font-black" style={{ color }}>{score}/100</span>
-        </div>
-      </div>
-      <div className="relative h-2 rounded-full overflow-hidden" style={{ background: "var(--color-border)" }}>
-        <div className="h-full rounded-full transition-all" style={{
-          width: `${pct}%`,
-          background: color,
-          boxShadow: `0 0 8px ${color}88`,
-        }} />
-        {benchmark !== undefined && (
-          <div className="absolute top-0 h-full w-0.5" style={{
-            left: `${(benchmark / max) * 100}%`,
-            background: "rgba(255,255,255,0.3)",
-          }} />
-        )}
-      </div>
-    </div>
-  );
-}
-
-function Tag({ children, type = "neutral" }: { children: React.ReactNode; type?: "positive" | "negative" | "neutral" | "opportunity" }) {
-  const styles = {
-    positive: { bg: "rgba(74,222,128,0.1)", color: "#4ade80", border: "rgba(74,222,128,0.2)" },
-    negative: { bg: "rgba(228,10,20,0.1)", color: "#e40a14", border: "rgba(228,10,20,0.2)" },
-    opportunity: { bg: "rgba(250,204,21,0.1)", color: "#facc15", border: "rgba(250,204,21,0.2)" },
-    neutral: { bg: "var(--color-surface-elevated)", color: "var(--color-text-muted)", border: "var(--color-border)" },
-  };
-  const s = styles[type];
-  return (
-    <span className="inline-block text-[11px] font-semibold px-2.5 py-1 rounded-lg"
-      style={{ background: s.bg, color: s.color, border: `1px solid ${s.border}` }}>
-      {children}
-    </span>
-  );
-}
-
-function QuadrantCard({ title, icon, items, type }: {
-  title: string;
-  icon: React.ReactNode;
-  items: { titulo: string; descricao?: string; implicacao?: string; risco?: string; como_capturar?: string; protecao?: string }[];
-  type: "positive" | "negative" | "opportunity" | "neutral";
-}) {
-  const colors = {
-    positive: { accent: "#4ade80", bg: "rgba(74,222,128,0.04)" },
-    negative: { accent: "#e40a14", bg: "rgba(228,10,20,0.04)" },
-    opportunity: { accent: "#facc15", bg: "rgba(250,204,21,0.04)" },
-    neutral: { accent: "#a0a0a0", bg: "rgba(160,160,160,0.04)" },
-  };
-  const c = colors[type];
-  return (
-    <div className="rounded-xl overflow-hidden" style={{
-      background: c.bg,
-      border: `1px solid ${c.accent}33`,
-    }}>
-      <div className="px-4 py-3 flex items-center gap-2" style={{ borderBottom: `1px solid ${c.accent}22` }}>
-        <span style={{ color: c.accent }}>{icon}</span>
-        <span className="text-sm font-black uppercase tracking-wide" style={{ color: c.accent }}>{title}</span>
-        <span className="ml-auto text-xs font-bold" style={{ color: c.accent }}>{items.length}</span>
-      </div>
-      <div className="divide-y" style={{ borderColor: `${c.accent}15` }}>
-        {items.map((item, i) => (
-          <div key={i} className="px-4 py-3 space-y-1">
-            <p className="text-sm font-semibold leading-snug" style={{ color: "var(--color-text)" }}>{item.titulo}</p>
-            {(item.descricao) && (
-              <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-muted)" }}>{item.descricao}</p>
-            )}
-            {(item.implicacao || item.risco || item.como_capturar || item.protecao) && (
-              <p className="text-[11px] leading-relaxed" style={{ color: c.accent }}>
-                → {item.implicacao ?? item.risco ?? item.como_capturar ?? item.protecao}
-              </p>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-const canalIcon: Record<string, React.ReactNode> = {
-  "Site / Landing Page": <Smartphone size={13} />,
-  "Instagram": <MessageSquare size={13} />,
-  "Anúncios Meta Ads": <Target size={13} />,
-  "Google Meu Negócio": <Search size={13} />,
-  "WhatsApp Business": <MessageSquare size={13} />,
+// ── Light premium theme (V4 brand) ──────────────────────────────────────────
+const T = {
+  bg: "#f5f5f6",
+  surface: "#ffffff",
+  border: "#e7e7ea",
+  text: "#18181b",
+  muted: "#5d5d63",
+  subtle: "#9b9ba1",
+  primary: "#e40a14",
+  primarySoft: "rgba(228,10,20,0.06)",
+  success: "#16a34a",
+  successSoft: "rgba(22,163,74,0.08)",
+  warning: "#b45309",
+  dark: "#0c0c0d",
+  cardShadow: "0 1px 2px rgba(16,16,20,0.04), 0 12px 32px rgba(16,16,20,0.06)",
 };
 
-// ── Page ────────────────────────────────────────────────────────────────────
+// ── Load all outputs from disk ───────────────────────────────────────────────
+async function loadOutputs(slug: string): Promise<Record<string, Record<string, unknown>>> {
+  const dir = path.join(CLIENTES_DIR, slug, "outputs");
+  const outputs: Record<string, Record<string, unknown>> = {};
+  try {
+    const files = await fs.readdir(dir);
+    await Promise.all(
+      files.filter(f => f.endsWith(".json")).map(async (f) => {
+        try {
+          const raw = await fs.readFile(path.join(dir, f), "utf-8");
+          outputs[f.replace(".json", "")] = JSON.parse(raw);
+        } catch { /* skip */ }
+      })
+    );
+  } catch { /* no outputs dir */ }
+  return outputs;
+}
 
-export default async function PortalPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+// ── Friendly skill names (client-facing) ────────────────────────────────────
+const SKILL_LABELS: Record<string, string> = {
+  "ee-s1-gc": "Reunião de Alinhamento",
+  "ee-s1-kickoff": "Kickoff do Projeto",
+  "ee-s2-diagnostico-branding": "Diagnóstico de Branding",
+  "ee-s2-diagnostico-criativos": "Diagnóstico de Criativos",
+  "ee-s2-benchmarking-criativos": "Benchmarking de Criativos",
+  "ee-s2-diagnostico-social-media": "Diagnóstico de Social Media",
+  "ee-s2-benchmarking-social-media": "Benchmarking de Social Media",
+  "ee-s2-analise-site": "Análise do Site / Landing Page",
+  "ee-s2-benchmarking-site": "Benchmarking do Site",
+  "ee-s3-cliente-oculto": "Cliente Oculto",
+  "ee-s3-estrutura-topologica": "Estrutura Comercial",
+  "ee-s3-escopo-comercial": "Escopo Comercial",
+  "ee-s3-jornada-cliente": "Jornada do Cliente",
+  "ee-s3-metricas-comercial": "Métricas Comerciais",
+  "ee-s3-stack-ferramentas": "Stack de Ferramentas",
+  "ee-s4-analise-submercados": "Análise de Submercados",
+  "ee-s4-tam-sam-som": "Dimensionamento de Mercado",
+  "ee-s4-swot": "Análise SWOT",
+  "ee-s4-comparacao-concorrentes": "Comparação com Concorrentes",
+  "ee-s4-posicionamento-puv": "Posicionamento e PUV",
+  "ee-s4-estrategias-aquisicao": "Estratégias de Aquisição",
+  "ee-s4-estrategias-engajamento": "Estratégias de Engajamento",
+  "ee-s4-estrategias-monetizacao": "Estratégias de Monetização",
+  "ee-s4-estrategias-retencao": "Estratégias de Retenção",
+  "ee-s4-drawflow": "Mapeamento do Funil",
+  "ee-s4-diagnostico-midia-paga": "Diagnóstico de Mídia Paga",
+  "ee-s5-identidade-visual": "Manual de Identidade Visual",
+  "ee-s5-manual-copy": "Manual de Copy",
+  "ee-s5-criativos": "Criativos (2 Estáticos + 1 Carrossel)",
+  "ee-s5-landing-page": "Landing Page",
+  "ee-s5-proximos-passos": "Próximos Passos",
+  "ee-s5-feedback": "Coleta de Feedback",
+  "ee-s5-proposta-comercial": "Proposta Comercial",
+  // Legacy
+  "ee-s1-diagnostico-maturidade": "Diagnóstico de Maturidade Digital",
+  "ee-s1-persona-icp": "ICP & Persona",
+  "ee-s1-swot": "Análise SWOT",
+  "ee-s1-auditoria-comunicacao": "Auditoria de Comunicação",
+  "ee-s2-diagnostico-comercial": "Diagnóstico Comercial",
+};
+
+// ── Generic output content renderer (light theme) ───────────────────────────
+function renderOutputContent(output: Record<string, unknown>, skillId: string) {
+  const items: { label: string; content: React.ReactNode }[] = [];
+
+  const context = output.contexto_estrategico as string | undefined;
+  if (context) {
+    items.push({
+      label: "Contexto estratégico",
+      content: <p className="text-[13px] leading-relaxed" style={{ color: T.muted }}>{context}</p>,
+    });
+  }
+
+  // Estratégias (array)
+  const estrategias = output.estrategias as Array<{ rank?: number; nome?: string; descricao?: string; tipo?: string; problema_que_resolve?: string }> | undefined;
+  if (Array.isArray(estrategias) && estrategias.length) {
+    items.push({
+      label: "Estratégias",
+      content: (
+        <div className="space-y-3">
+          {estrategias.map((e, i) => (
+            <div key={i} className="flex gap-3 items-start">
+              <span
+                className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-black"
+                style={{ background: T.primarySoft, color: T.primary }}
+              >
+                {e.rank ?? i + 1}
+              </span>
+              <div className="min-w-0">
+                <p className="text-sm font-bold" style={{ color: T.text }}>
+                  {e.nome}
+                  {e.tipo && (
+                    <span className="ml-2 text-[10px] font-semibold px-1.5 py-0.5 rounded align-middle" style={{ background: "#f0f0f2", color: T.muted }}>
+                      {e.tipo}
+                    </span>
+                  )}
+                </p>
+                {e.descricao && <p className="text-[13px] mt-1 leading-relaxed" style={{ color: T.muted }}>{e.descricao}</p>}
+                {e.problema_que_resolve && (
+                  <p className="text-xs mt-1.5 font-medium" style={{ color: T.warning }}>→ Resolve: {e.problema_que_resolve}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      ),
+    });
+  }
+
+  // Gaps identificados
+  const gaps = output.gaps_identificados as Array<{ titulo?: string; descricao?: string; impacto?: string } | string> | undefined;
+  if (Array.isArray(gaps) && gaps.length) {
+    items.push({
+      label: `Pontos de melhoria identificados (${gaps.length})`,
+      content: (
+        <div className="space-y-2.5">
+          {gaps.map((g, i) => (
+            <div key={i} className="flex gap-2.5">
+              <span className="shrink-0 w-1.5 h-1.5 rounded-full" style={{ background: T.primary, marginTop: 7 }} />
+              <div className="min-w-0">
+                {typeof g === "string"
+                  ? <p className="text-[13px] leading-relaxed" style={{ color: T.muted }}>{g}</p>
+                  : <>
+                    {g.titulo && <p className="text-[13px] font-bold" style={{ color: T.text }}>{g.titulo}</p>}
+                    {g.descricao && <p className="text-[13px] leading-relaxed mt-0.5" style={{ color: T.muted }}>{g.descricao}</p>}
+                    {g.impacto && <p className="text-xs mt-1 font-medium" style={{ color: T.primary }}>Impacto: {g.impacto}</p>}
+                  </>
+                }
+              </div>
+            </div>
+          ))}
+        </div>
+      ),
+    });
+  }
+
+  // Decisão (any field starting with "decisao")
+  const decisionKey = Object.keys(output).find(k => k.startsWith("decisao"));
+  if (decisionKey) {
+    const dec = output[decisionKey] as Record<string, unknown> | string | undefined;
+    if (dec) {
+      const status = typeof dec === "object" ? (dec.status as string | undefined) : dec as string;
+      const escopo = typeof dec === "object" ? (dec.escopo as string | undefined) : undefined;
+      items.push({
+        label: "Decisão tomada",
+        content: (
+          <div className="rounded-xl px-4 py-3" style={{ background: T.successSoft, border: `1px solid rgba(22,163,74,0.18)` }}>
+            {status && <p className="text-[13px] font-bold" style={{ color: T.success }}>{status}</p>}
+            {escopo && <p className="text-[13px] mt-1 leading-relaxed" style={{ color: T.muted }}>{escopo}</p>}
+          </div>
+        ),
+      });
+    }
+  }
+
+  // Próximos passos / sequência
+  const proximos = (output.proximos_passos ?? output.sequencia_recomendada) as Record<string, string> | string[] | undefined;
+  if (proximos && typeof proximos === "object") {
+    const entries = Array.isArray(proximos) ? proximos.map((v, i) => [`${i + 1}`, v]) : Object.entries(proximos);
+    if (entries.length) {
+      items.push({
+        label: "Próximas ações",
+        content: (
+          <div className="space-y-1.5">
+            {entries.slice(0, 4).map(([k, v]) => (
+              <div key={k} className="flex gap-2 text-[13px]" style={{ color: T.muted }}>
+                <span className="font-bold" style={{ color: T.success }}>→</span>
+                <span>{typeof v === "string" ? v : JSON.stringify(v)}</span>
+              </div>
+            ))}
+          </div>
+        ),
+      });
+    }
+  }
+
+  // KPIs / metas
+  const kpis = output.kpis as Record<string, string> | undefined;
+  if (kpis && typeof kpis === "object" && !Array.isArray(kpis)) {
+    const kvEntries = Object.entries(kpis).slice(0, 4);
+    if (kvEntries.length) {
+      items.push({
+        label: "Metas",
+        content: (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {kvEntries.map(([k, v]) => (
+              <div key={k} className="rounded-xl px-3.5 py-3" style={{ background: "#fafafa", border: `1px solid ${T.border}` }}>
+                <p className="text-[10px] uppercase tracking-wider font-bold" style={{ color: T.subtle }}>{k.replace(/_/g, " ")}</p>
+                <p className="text-[13px] font-semibold mt-1" style={{ color: T.text }}>{v}</p>
+              </div>
+            ))}
+          </div>
+        ),
+      });
+    }
+  }
+
+  // Perfil atual (social media)
+  const perfil = output.perfil_atual_do_canal as Record<string, string> | undefined;
+  if (perfil && typeof perfil === "object") {
+    items.push({
+      label: "Perfil atual",
+      content: (
+        <div className="space-y-1.5">
+          {Object.entries(perfil).slice(0, 4).map(([k, v]) => (
+            <div key={k} className="flex gap-2 text-[13px]">
+              <span className="font-bold shrink-0 capitalize" style={{ color: T.subtle }}>{k.replace(/_/g, " ")}:</span>
+              <span style={{ color: T.muted }}>{v}</span>
+            </div>
+          ))}
+        </div>
+      ),
+    });
+  }
+
+  // Legacy: Maturidade scores
+  if (skillId === "ee-s1-diagnostico-maturidade" && output.scores) {
+    const scores = output.scores as Record<string, { score: number; classification: string }>;
+    items.push({
+      label: "Scores por pilar",
+      content: (
+        <div className="space-y-2.5">
+          {(["midia_paga", "criativos", "cro", "crm", "seo"] as const).map(k => {
+            const s = scores[k];
+            if (!s) return null;
+            const color = s.score >= 60 ? T.success : s.score >= 35 ? T.warning : T.primary;
+            return (
+              <div key={k} className="space-y-1">
+                <div className="flex justify-between text-[13px]">
+                  <span style={{ color: T.muted }}>{k.replace("_", " ").replace(/\b\w/g, l => l.toUpperCase())}</span>
+                  <span className="font-bold" style={{ color }}>{s.score}/100</span>
+                </div>
+                <div className="h-2 rounded-full" style={{ background: "#ededef" }}>
+                  <div className="h-full rounded-full" style={{ width: `${s.score}%`, background: color }} />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      ),
+    });
+  }
+
+  // Legacy: SWOT quadrants
+  if ((skillId === "ee-s1-swot" || skillId === "ee-s4-swot") && output.forcas) {
+    const quadrants = [
+      { key: "forcas", label: "Forças", color: T.success, bg: "rgba(22,163,74,0.06)" },
+      { key: "fraquezas", label: "Fraquezas", color: T.primary, bg: "rgba(228,10,20,0.05)" },
+      { key: "oportunidades", label: "Oportunidades", color: T.warning, bg: "rgba(180,83,9,0.06)" },
+      { key: "ameacas", label: "Ameaças", color: "#52525b", bg: "#f4f4f5" },
+    ];
+    items.push({
+      label: "Matriz SWOT",
+      content: (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          {quadrants.map(({ key, label, color, bg }) => {
+            const arr = output[key] as Array<{ titulo: string }> | undefined;
+            return (
+              <div key={key} className="rounded-xl p-3.5" style={{ background: bg, border: `1px solid ${T.border}` }}>
+                <p className="text-[10px] font-black uppercase tracking-wider mb-2" style={{ color }}>{label}</p>
+                <div className="space-y-1.5">
+                  {(arr ?? []).slice(0, 3).map((item, i) => (
+                    <p key={i} className="text-xs leading-snug" style={{ color: T.muted }}>· {item.titulo}</p>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      ),
+    });
+  }
+
+  // Legacy: Persona
+  if (skillId === "ee-s1-persona-icp" && output.persona) {
+    const persona = output.persona as Record<string, string>;
+    items.push({
+      label: "Persona",
+      content: (
+        <div className="rounded-xl p-4" style={{ background: T.primarySoft, border: "1px solid rgba(228,10,20,0.12)" }}>
+          <p className="text-sm font-black" style={{ color: T.text }}>{persona.nome}</p>
+          {persona.frase_citacao && (
+            <blockquote className="mt-2 pl-3 text-[13px] italic leading-relaxed" style={{ color: T.muted, borderLeft: `3px solid ${T.primary}` }}>
+              &ldquo;{persona.frase_citacao}&rdquo;
+            </blockquote>
+          )}
+        </div>
+      ),
+    });
+  }
+
+  return items;
+}
+
+// ── Page ─────────────────────────────────────────────────────────────────────
+export default async function PortalPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
   let clientData: Record<string, unknown>;
@@ -185,643 +333,377 @@ export default async function PortalPage({
     notFound();
   }
 
-  const [diagnostico, persona, swot, auditoria, diagComercial] = await Promise.all([
-    readOutput(slug, "ee-s1-diagnostico-maturidade"),
-    readOutput(slug, "ee-s1-persona-icp"),
-    readOutput(slug, "ee-s1-swot"),
-    readOutput(slug, "ee-s1-auditoria-comunicacao"),
-    readOutput(slug, "ee-s2-diagnostico-comercial"),
-  ]);
-
-  const moduloVendas = (clientData.meta as Record<string, unknown>)?.modulo_vendas === true;
+  const meta = (clientData.meta as Record<string, unknown>) ?? {};
   const b = (clientData.briefing as Record<string, unknown>) ?? {};
   const id = (b.identification as Record<string, unknown>) ?? {};
+  const name = (id.name as string) ?? (meta.name as string) ?? slug;
+
+  // ── Auth gate ──
+  const cookieStore = await cookies();
+  const token = cookieStore.get(PORTAL_COOKIE)?.value;
+  if (!verifySessionToken(token, slug)) {
+    return <LoginGate slug={slug} clientName={name} />;
+  }
+
+  const outputs = await loadOutputs(slug);
   const progress = (clientData.progress as Record<string, unknown>) ?? {};
   const rawSkills = (progress.skills as Record<string, Record<string, unknown>>) ?? {};
-  const name = (id.name as string) ?? slug;
+  const moduloVendas = meta.modulo_vendas === true;
+  const currentWeek = (progress.current_week as number) ?? 1;
 
-  // Timeline stages filtered by modulo_vendas
-  const timelineStages = getStagesForClient(moduloVendas);
-  // Determine which client weeks are "done" vs active vs pending
-  const stageStatus = timelineStages.map((stage) => {
+  const stages = getStagesForClient(moduloVendas);
+
+  const stageStatuses = stages.map(stage => {
     const total = stage.skills.length;
     const done = stage.skills.filter(s => rawSkills[s.id]?.status === "completed").length;
-    if (done === total && total > 0) return "done";
-    if (done > 0) return "active";
-    return "pending";
+    if (done === total && total > 0) return "done" as const;
+    if (done > 0) return "active" as const;
+    return "pending" as const;
   });
 
-  const approvals = await getApprovals(slug);
+  const doneCount = stageStatuses.filter(s => s === "done").length;
+  const totalDeliverables = Object.keys(outputs).length;
 
-  const completedAt = new Date("2026-05-29").toLocaleDateString("pt-BR", {
-    day: "2-digit", month: "long", year: "numeric",
-  });
+  const startDate = (meta.created_at as string) ?? (b.objectives as Record<string, string>)?.v4_start;
+  const daysIn = startDate ? Math.max(1, Math.floor((Date.now() - new Date(startDate).getTime()) / 86400000)) : null;
 
-  const navItems = [
-    { id: "diagnostico", label: "Maturidade" },
-    { id: "persona", label: "ICP & Persona" },
-    { id: "swot", label: "SWOT" },
-    { id: "auditoria", label: "Auditoria" },
-    { id: "comercial", label: "Comercial" },
-  ].filter(n =>
-    (n.id === "diagnostico" && diagnostico) ||
-    (n.id === "persona" && persona) ||
-    (n.id === "swot" && swot) ||
-    (n.id === "auditoria" && auditoria) ||
-    (n.id === "comercial" && diagComercial)
-  );
+  const activeStageIdx = stageStatuses.findIndex(s => s === "active");
+  const activeStage = activeStageIdx >= 0 ? stages[activeStageIdx] : stages[Math.min(doneCount, stages.length - 1)];
 
   return (
-    <main className="min-h-screen" style={{ background: "var(--color-bg)" }}>
-      {/* Top bar */}
-      <header className="sticky top-0 z-20" style={{
-        background: "rgba(5,5,5,0.9)",
-        borderBottom: "1px solid var(--color-border)",
-        backdropFilter: "blur(12px)",
-      }}>
-        <div className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-3">
-          <Link href={`/clientes/${slug}`} style={{ color: "var(--color-text-muted)" }}>
-            <ArrowLeft size={15} />
-          </Link>
-          <div className="w-5 h-5 flex items-center justify-center font-black text-[9px] shrink-0"
-            style={{ background: "var(--color-primary)", color: "#fff", clipPath: "polygon(10% 0%,100% 0%,90% 100%,0% 100%)" }}>
+    <main className="min-h-screen" style={{ background: T.bg, color: T.text }}>
+      {/* ── Dark brand header ── */}
+      <header className="sticky top-0 z-20" style={{ background: "rgba(12,12,13,0.96)", backdropFilter: "blur(12px)" }}>
+        <div className="max-w-3xl mx-auto px-5 py-3.5 flex items-center gap-3">
+          <div
+            className="w-7 h-7 flex items-center justify-center font-black text-[10px] shrink-0"
+            style={{ background: T.primary, color: "#fff", clipPath: "polygon(10% 0%,100% 0%,90% 100%,0% 100%)" }}
+          >
             V4
           </div>
-          <span className="text-xs font-bold truncate" style={{ color: "var(--color-text)" }}>{name}</span>
-          <span className="text-[10px] px-2 py-0.5 rounded font-semibold ml-1"
-            style={{ background: "rgba(228,10,20,0.12)", color: "var(--color-primary)", border: "1px solid rgba(228,10,20,0.25)" }}>
-            Semana 1
+          <div className="min-w-0">
+            <p className="text-white text-[13px] font-bold leading-tight truncate">{name}</p>
+            <p className="text-[10px] leading-tight" style={{ color: "rgba(255,255,255,0.45)" }}>Portal de acompanhamento</p>
+          </div>
+          <span
+            className="ml-auto shrink-0 text-[10px] px-2.5 py-1 rounded-full font-bold"
+            style={{ background: "rgba(228,10,20,0.18)", color: "#ff6b72", border: "1px solid rgba(228,10,20,0.3)" }}
+          >
+            Semana {currentWeek} de 5
           </span>
-          <nav className="ml-auto hidden sm:flex items-center gap-1">
-            {navItems.map(n => (
-              <a key={n.id} href={`#${n.id}`}
-                className="text-[10px] font-semibold px-2.5 py-1 rounded transition-colors"
-                style={{ color: "var(--color-text-muted)" }}>
-                {n.label}
-              </a>
-            ))}
-          </nav>
+          <form action={logoutPortal.bind(null, slug)}>
+            <button
+              type="submit"
+              title="Sair"
+              className="shrink-0 p-1.5 rounded-lg transition-opacity hover:opacity-70"
+              style={{ color: "rgba(255,255,255,0.45)" }}
+            >
+              <LogOut size={14} />
+            </button>
+          </form>
         </div>
       </header>
 
-      <div className="max-w-3xl mx-auto px-4 py-10 space-y-14">
+      <div className="max-w-3xl mx-auto px-5 py-10 space-y-10">
 
-        {/* Hero */}
-        <div className="space-y-3 text-center">
-          <p className="text-[10px] font-black uppercase tracking-widest" style={{ color: "var(--color-primary)" }}>
-            Processo de Estruturação — 45 dias
-          </p>
-          <h1 className="text-3xl font-black leading-tight" style={{ color: "var(--color-text)" }}>
-            As Etapas do Processo
-          </h1>
-          <p className="text-sm max-w-lg mx-auto" style={{ color: "var(--color-text-muted)" }}>
-            Acompanhe em tempo real o que já foi entregue e o que vem a seguir.
-          </p>
+        {/* ── Hero ── */}
+        <div className="space-y-6">
+          <div>
+            <p className="text-[11px] font-black uppercase tracking-[0.18em]" style={{ color: T.primary }}>
+              Processo de Estruturação · 45 dias
+            </p>
+            <h1 className="text-[28px] font-black mt-1.5 leading-tight" style={{ color: T.text }}>
+              Olá, {name.split(" ")[0]} 👋
+            </h1>
+            <p className="text-[15px] mt-2 leading-relaxed max-w-xl" style={{ color: T.muted }}>
+              Este é o seu espaço para acompanhar tudo que estamos construindo juntos.
+              Cada entregável aparece aqui assim que fica pronto.
+            </p>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-3">
+            {[
+              { value: `${doneCount}/${stages.length}`, label: "Semanas concluídas", color: T.success },
+              { value: String(totalDeliverables), label: "Entregáveis prontos", color: T.primary },
+              { value: daysIn ? `Dia ${daysIn}` : "—", label: "Do projeto", color: T.warning },
+            ].map(({ value, label, color }) => (
+              <div
+                key={label}
+                className="rounded-2xl p-4 sm:p-5 text-center"
+                style={{ background: T.surface, boxShadow: T.cardShadow }}
+              >
+                <p className="text-2xl sm:text-[28px] font-black" style={{ color }}>{value}</p>
+                <p className="text-[10px] sm:text-[11px] mt-1 leading-tight font-medium" style={{ color: T.subtle }}>{label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Where we are now */}
+          <div
+            className="rounded-2xl p-5 flex items-start gap-4"
+            style={{ background: "linear-gradient(135deg, #18181b 0%, #2a0508 100%)", boxShadow: T.cardShadow }}
+          >
+            <div className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(228,10,20,0.2)" }}>
+              <Sparkles size={18} style={{ color: "#ff6b72" }} />
+            </div>
+            <div className="min-w-0">
+              <p className="text-[10px] font-black uppercase tracking-[0.15em]" style={{ color: "rgba(255,255,255,0.5)" }}>
+                Onde estamos agora
+              </p>
+              <p className="text-white text-[15px] font-bold mt-0.5">
+                {activeStage.clientWeek} — {activeStage.clientTitle}
+              </p>
+              <p className="text-[13px] mt-1 leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
+                {activeStage.objective}
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* Timeline */}
-        <div className="rounded-xl p-5 overflow-x-auto" style={{
-          background: "var(--color-surface)",
-          border: "1px solid var(--color-border)",
-        }}>
-          {/* Steps */}
-          <div className="flex items-start gap-0 min-w-max mx-auto">
-            {timelineStages.map((stage, i) => {
-              const status = stageStatus[i];
-              const isLast = i === timelineStages.length - 1;
-              const color = status === "done" ? "#4ade80" : status === "active" ? "#e40a14" : "#2a2a2a";
-              const textColor = status === "done" ? "#4ade80" : status === "active" ? "#e40a14" : "#4a4a4a";
+        {/* ── Timeline ── */}
+        <div className="rounded-2xl p-6" style={{ background: T.surface, boxShadow: T.cardShadow }}>
+          <p className="text-[11px] font-black uppercase tracking-[0.15em] mb-5" style={{ color: T.subtle }}>
+            Jornada das 5 semanas
+          </p>
+          <div className="flex items-start overflow-x-auto pb-1 scrollbar-hide">
+            {stages.map((stage, i) => {
+              const status = stageStatuses[i];
+              const isLast = i === stages.length - 1;
               return (
-                <div key={stage.id} className="flex items-center">
-                  <div className="flex flex-col items-center gap-2" style={{ width: "120px" }}>
-                    {/* Label above */}
-                    <p className="text-[10px] font-semibold text-center leading-tight px-1"
-                      style={{ color: textColor, minHeight: "28px" }}>
+                <div key={stage.id} className="flex items-center shrink-0">
+                  <div className="flex flex-col items-center gap-2" style={{ width: 112 }}>
+                    <div
+                      className="w-9 h-9 rounded-full flex items-center justify-center font-black text-[12px]"
+                      style={{
+                        background: status === "done" ? T.success : status === "active" ? T.primary : "#ededef",
+                        color: status === "pending" ? "#b0b0b6" : "#fff",
+                        boxShadow: status === "active" ? "0 4px 16px rgba(228,10,20,0.35)" : "none",
+                      }}
+                    >
+                      {status === "done" ? <CheckCircle2 size={16} /> : i + 1}
+                    </div>
+                    <p
+                      className="text-[10px] font-bold text-center leading-tight px-1"
+                      style={{ color: status === "done" ? T.success : status === "active" ? T.primary : T.subtle }}
+                    >
                       {stage.clientTitle}
                     </p>
-                    {/* Badge */}
-                    <div className="px-3 py-1.5 rounded font-black text-xs text-center w-full"
-                      style={{
-                        background: status === "done" ? "rgba(74,222,128,0.12)" : status === "active" ? "var(--color-primary)" : "var(--color-surface-elevated)",
-                        color: status === "done" ? "#4ade80" : status === "active" ? "#fff" : "#4a4a4a",
-                        border: `1px solid ${color}44`,
-                        boxShadow: status === "active" ? "0 0 12px rgba(228,10,20,0.4)" : "none",
-                      }}>
-                      {stage.clientWeek}
-                    </div>
-                    {/* Status icon */}
-                    <div className="flex items-center justify-center">
-                      {status === "done"
-                        ? <CheckCircle2 size={14} style={{ color: "#4ade80" }} />
-                        : status === "active"
-                        ? <Clock size={14} style={{ color: "#e40a14" }} />
-                        : <div className="w-3.5 h-3.5 rounded-full" style={{ border: "1.5px solid #2a2a2a" }} />
-                      }
-                    </div>
+                    <p className="text-[9px] font-medium" style={{ color: "#c0c0c6" }}>{stage.clientWeek}</p>
                   </div>
-                  {/* Connector line */}
                   {!isLast && (
-                    <div className="h-px w-6 shrink-0 mb-10"
-                      style={{ background: stageStatus[i + 1] === "pending" ? "#2a2a2a" : "#e40a1444" }} />
+                    <div
+                      className="h-0.5 w-5 shrink-0 rounded-full"
+                      style={{ background: stageStatuses[i] === "done" ? T.success : "#e4e4e7", marginBottom: 44 }}
+                    />
                   )}
                 </div>
               );
             })}
           </div>
-
-          {/* Progress bar */}
-          <div className="mt-4 pt-4" style={{ borderTop: "1px solid var(--color-border)" }}>
-            <div className="flex justify-between text-[10px] mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+          <div className="mt-5 pt-4" style={{ borderTop: `1px solid ${T.border}` }}>
+            <div className="flex justify-between text-[11px] mb-1.5 font-medium" style={{ color: T.subtle }}>
               <span>Início</span>
-              <span className="font-bold" style={{ color: "var(--color-primary)" }}>
-                {stageStatus.filter(s => s === "done").length} de {timelineStages.length} etapas concluídas
-              </span>
+              <span className="font-bold" style={{ color: T.primary }}>{Math.round((doneCount / stages.length) * 100)}% concluído</span>
               <span>45 dias</span>
             </div>
-            <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "var(--color-border)" }}>
-              <div className="h-full rounded-full transition-all"
-                style={{
-                  width: `${(stageStatus.filter(s => s === "done").length / timelineStages.length) * 100}%`,
-                  background: "var(--color-primary)",
-                  boxShadow: "0 0 8px rgba(228,10,20,0.6)",
-                }} />
+            <div className="h-2 rounded-full overflow-hidden" style={{ background: "#ededef" }}>
+              <div
+                className="h-full rounded-full transition-all"
+                style={{ width: `${(doneCount / stages.length) * 100}%`, background: `linear-gradient(90deg, ${T.primary}, #ff4d55)` }}
+              />
             </div>
           </div>
         </div>
 
-        {/* Section divider */}
-        <div className="flex items-center gap-3">
-          <div className="h-px flex-1" style={{ background: "var(--color-border)" }} />
-          <span className="text-[10px] font-black uppercase tracking-widest px-3"
-            style={{ color: "var(--color-text-muted)" }}>
-            Entregáveis da Semana 2 — Diagnóstico de Marketing
-          </span>
-          <div className="h-px flex-1" style={{ background: "var(--color-border)" }} />
-        </div>
-        <p className="text-xs text-center -mt-2" style={{ color: "#3a3a3a" }}>Gerado em {completedAt}</p>
+        {/* ── Stages + Deliverables ── */}
+        {stages.map((stage, stageIdx) => {
+          const status = stageStatuses[stageIdx];
+          const stageOutputs = stage.skills.filter(sk => outputs[sk.id]);
+          const stageCompleted = stage.skills.filter(sk => rawSkills[sk.id]?.status === "completed");
 
-        {/* ── DIAGNÓSTICO ──────────────────────────────────────── */}
-        {diagnostico && (
-          <Section id="diagnostico" label="01 — Diagnóstico de Maturidade Digital">
-            <Card accent>
-              <div className="flex items-start gap-4 mb-5">
-                <div className="text-center shrink-0">
-                  <p className="text-5xl font-black" style={{ color: "var(--color-primary)" }}>
-                    {diagnostico.scores?.geral?.score}
-                  </p>
-                  <p className="text-xs font-bold" style={{ color: "var(--color-text-muted)" }}>/100</p>
-                  <p className="text-[10px] font-black uppercase mt-1" style={{ color: "var(--color-primary)" }}>
-                    {diagnostico.scores?.geral?.classification}
-                  </p>
+          // Future stage with nothing yet — locked preview
+          if (status === "pending" && stageOutputs.length === 0) {
+            return (
+              <div
+                key={stage.id}
+                className="rounded-2xl p-5"
+                style={{ background: "#fbfbfc", border: `1.5px dashed ${T.border}` }}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="shrink-0 w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "#f0f0f2" }}>
+                    <Lock size={14} style={{ color: "#b0b0b6" }} />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-black uppercase tracking-wider" style={{ color: "#b0b0b6" }}>{stage.clientWeek}</p>
+                    <p className="text-sm font-bold" style={{ color: "#8a8a90" }}>{stage.clientTitle}</p>
+                  </div>
+                  <span className="ml-auto shrink-0 text-[10px] px-2.5 py-1 rounded-full font-bold" style={{ background: "#f0f0f2", color: "#9b9ba1" }}>
+                    Em breve
+                  </span>
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-black text-base mb-1" style={{ color: "var(--color-text)" }}>Score Geral</h3>
-                  <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-muted)" }}>
-                    {diagnostico.executive_summary?.paragraph_1}
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-3">
-                {[
-                  { key: "midia_paga", label: "Mídia Paga" },
-                  { key: "criativos", label: "Criativos" },
-                  { key: "cro", label: "CRO" },
-                  { key: "crm", label: "CRM" },
-                  { key: "seo", label: "SEO" },
-                ].map(({ key, label }) => (
-                  <ScoreBar
-                    key={key}
-                    label={label}
-                    score={diagnostico.scores?.[key]?.score ?? 0}
-                    benchmark={diagnostico.benchmark?.pilares?.[key]?.setor}
-                  />
-                ))}
-              </div>
-              <p className="text-[10px] mt-3" style={{ color: "#3a3a3a" }}>
-                A linha vertical indica a média do setor. {diagnostico.benchmark?.most_critical_gap}
-              </p>
-            </Card>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <Card>
-                <p className="text-[10px] font-black uppercase tracking-wider mb-3" style={{ color: "#facc15" }}>
-                  Os 2 gaps que custam mais agora
-                </p>
-                <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-muted)" }}>
-                  {diagnostico.executive_summary?.paragraph_2}
-                </p>
-              </Card>
-              <Card>
-                <p className="text-[10px] font-black uppercase tracking-wider mb-3" style={{ color: "#4ade80" }}>
-                  O que precisa ser acelerado
-                </p>
-                <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-muted)" }}>
-                  {diagnostico.executive_summary?.paragraph_3}
-                </p>
-              </Card>
-            </div>
-
-            <Card>
-              <p className="text-[10px] font-black uppercase tracking-wider mb-3" style={{ color: "var(--color-text-muted)" }}>
-                Prioridades de ação
-              </p>
-              <div className="space-y-3">
-                {diagnostico.priorities?.slice(0, 5).map((p: { rank: number; action: string; why: string; effort: string }) => (
-                  <div key={p.rank} className="flex gap-3">
-                    <span className="text-sm font-black shrink-0 w-5" style={{ color: "var(--color-primary)" }}>
-                      {p.rank}
+                <div className="flex flex-wrap gap-1.5 mt-3.5 pl-12">
+                  {stage.skills.slice(0, 5).map(sk => (
+                    <span key={sk.id} className="text-[10px] px-2 py-1 rounded-lg font-medium" style={{ background: "#f4f4f5", color: "#a0a0a6" }}>
+                      {SKILL_LABELS[sk.id] ?? sk.name}
                     </span>
-                    <div>
-                      <p className="text-sm font-semibold" style={{ color: "var(--color-text)" }}>{p.action}</p>
-                      <p className="text-xs mt-0.5" style={{ color: "var(--color-text-muted)" }}>{p.why}</p>
-                      <Tag type={p.effort === "baixo" ? "positive" : p.effort === "médio" ? "opportunity" : "neutral"}>
-                        esforço {p.effort}
-                      </Tag>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
-            <ApprovalPanel slug={slug} skillId="ee-s1-diagnostico-maturidade" skillName="Diagnóstico de Maturidade" existingApproval={approvals["ee-s1-diagnostico-maturidade"] ?? null} />
-          </Section>
-        )}
-
-        {/* ── PERSONA & ICP ─────────────────────────────────────── */}
-        {persona && (
-          <Section id="persona" label="02 — ICP & Persona">
-            <Card accent>
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl shrink-0"
-                  style={{ background: "rgba(228,10,20,0.1)", border: "1px solid rgba(228,10,20,0.2)" }}>
-                  👩
-                </div>
-                <div>
-                  <h3 className="font-black text-lg" style={{ color: "var(--color-text)" }}>
-                    {persona.persona?.nome}
-                  </h3>
-                  <p className="text-xs mt-0.5" style={{ color: "var(--color-text-muted)" }}>
-                    {persona.icp_primario?.demografico?.faixa_etaria} · {persona.icp_primario?.demografico?.profissao}
-                  </p>
-                  <p className="text-xs mt-1" style={{ color: "var(--color-text-muted)" }}>
-                    Renda {persona.icp_primario?.demografico?.renda} · {persona.icp_primario?.demografico?.localizacao?.split("—")[0]}
-                  </p>
+                  ))}
+                  {stage.skills.length > 5 && (
+                    <span className="text-[10px] px-1 py-1 font-medium" style={{ color: "#b0b0b6" }}>+{stage.skills.length - 5} mais</span>
+                  )}
                 </div>
               </div>
-              <blockquote className="mt-4 pl-3 italic text-sm leading-relaxed"
-                style={{ color: "var(--color-text)", borderLeft: "3px solid var(--color-primary)" }}>
-                "{persona.persona?.frase_citacao}"
-              </blockquote>
-              <p className="text-xs mt-3 leading-relaxed" style={{ color: "var(--color-text-muted)" }}>
-                {persona.persona?.historia}
-              </p>
-            </Card>
+            );
+          }
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {[
-                { label: "Job Funcional", text: persona.icp_primario?.jtbd?.funcional },
-                { label: "Job Emocional", text: persona.icp_primario?.jtbd?.emocional },
-                { label: "Job Social", text: persona.icp_primario?.jtbd?.social },
-              ].map(({ label, text }) => (
-                <Card key={label}>
-                  <p className="text-[10px] font-black uppercase tracking-wider mb-2" style={{ color: "var(--color-primary)" }}>
-                    {label}
-                  </p>
-                  <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-muted)" }}>{text}</p>
-                </Card>
-              ))}
-            </div>
+          return (
+            <section key={stage.id} className="space-y-4">
+              {/* Stage header */}
+              <div className="flex items-center gap-3 pt-2">
+                {status === "done"
+                  ? <CheckCircle2 size={16} style={{ color: T.success, flexShrink: 0 }} />
+                  : <Clock size={16} style={{ color: T.primary, flexShrink: 0 }} />}
+                <h2 className="text-[15px] font-black" style={{ color: T.text }}>
+                  {stage.clientWeek} — {stage.clientTitle}
+                </h2>
+                <span
+                  className="ml-auto shrink-0 text-[10px] px-2.5 py-1 rounded-full font-bold"
+                  style={{
+                    background: status === "done" ? T.successSoft : T.primarySoft,
+                    color: status === "done" ? T.success : T.primary,
+                  }}
+                >
+                  {status === "done" ? "Concluída" : "Em andamento"}
+                </span>
+              </div>
 
-            <Card>
-              <p className="text-[10px] font-black uppercase tracking-wider mb-3" style={{ color: "var(--color-text-muted)" }}>
-                Dores reais — em ordem de intensidade
-              </p>
-              <div className="space-y-3">
-                {persona.icp_primario?.dores?.map((d: { rank: number; dor: string; insight: string }) => (
-                  <div key={d.rank} className="flex gap-3">
-                    <span className="text-sm font-black shrink-0" style={{ color: "var(--color-primary)" }}>
-                      {d.rank}
+              {/* Completed skills without output file — pills */}
+              {stageCompleted.filter(sk => !outputs[sk.id]).length > 0 && (
+                <div className="flex flex-wrap gap-1.5">
+                  {stageCompleted.filter(sk => !outputs[sk.id]).map(sk => (
+                    <span
+                      key={sk.id}
+                      className="flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded-full font-semibold"
+                      style={{ background: T.successSoft, color: T.success }}
+                    >
+                      <CheckCircle2 size={10} /> {SKILL_LABELS[sk.id] ?? sk.name}
                     </span>
-                    <div>
-                      <p className="text-sm font-semibold" style={{ color: "var(--color-text)" }}>{d.dor}</p>
-                      <p className="text-xs mt-0.5" style={{ color: "var(--color-text-muted)" }}>{d.insight}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
-
-            <Card accent>
-              <p className="text-[10px] font-black uppercase tracking-wider mb-2" style={{ color: "var(--color-primary)" }}>
-                Mensagem-chave aprovada
-              </p>
-              <p className="text-2xl font-black leading-tight" style={{ color: "var(--color-text)" }}>
-                "{persona.mensagens_chave?.mensagem_aprovada}"
-              </p>
-              <p className="text-xs mt-3" style={{ color: "var(--color-text-muted)" }}>
-                {persona.mensagens_chave?.opcoes?.find((o: { escolhida?: boolean; justificativa?: string }) => o.escolhida)?.justificativa ?? persona.mensagens_chave?.justificativa_escolha}
-              </p>
-            </Card>
-            <ApprovalPanel slug={slug} skillId="ee-s1-persona-icp" skillName="ICP & Persona" existingApproval={approvals["ee-s1-persona-icp"] ?? null} />
-          </Section>
-        )}
-
-        {/* ── SWOT ──────────────────────────────────────────────── */}
-        {swot && (
-          <Section id="swot" label="03 — Matriz SWOT">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <QuadrantCard
-                title="Forças"
-                icon={<TrendingUp size={14} />}
-                items={swot.forcas ?? []}
-                type="positive"
-              />
-              <QuadrantCard
-                title="Fraquezas"
-                icon={<TrendingDown size={14} />}
-                items={swot.fraquezas ?? []}
-                type="negative"
-              />
-              <QuadrantCard
-                title="Oportunidades"
-                icon={<Zap size={14} />}
-                items={swot.oportunidades ?? []}
-                type="opportunity"
-              />
-              <QuadrantCard
-                title="Ameaças"
-                icon={<AlertTriangle size={14} />}
-                items={swot.ameacas ?? []}
-                type="neutral"
-              />
-            </div>
-
-            <Card accent>
-              <p className="text-[10px] font-black uppercase tracking-wider mb-3" style={{ color: "var(--color-primary)" }}>
-                Síntese estratégica — 90 dias
-              </p>
-              <div className="space-y-3">
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-wider mb-1" style={{ color: "#4ade80" }}>Alavancagem</p>
-                  <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-muted)" }}>{swot.sintese?.alavancagem}</p>
+                  ))}
                 </div>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-wider mb-1" style={{ color: "#e40a14" }}>Proteção</p>
-                  <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-muted)" }}>{swot.sintese?.protecao}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-wider mb-1" style={{ color: "#facc15" }}>Estratégia recomendada</p>
-                  <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-muted)" }}>{swot.sintese?.estrategia_90_dias}</p>
-                </div>
-              </div>
-            </Card>
+              )}
 
-            <Card>
-              <p className="text-[10px] font-black uppercase tracking-wider mb-3" style={{ color: "var(--color-text-muted)" }}>
-                Ações prioritárias
-              </p>
-              <div className="space-y-3">
-                {swot.acoes_prioritarias?.map((a: { rank: number; acao: string; base_swot: string; impacto: string; prazo: string }) => (
-                  <div key={a.rank} className="flex gap-3 items-start">
-                    <span className="text-sm font-black shrink-0 w-5" style={{ color: "var(--color-primary)" }}>{a.rank}</span>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold" style={{ color: "var(--color-text)" }}>{a.acao}</p>
-                      <p className="text-xs mt-0.5" style={{ color: "var(--color-text-muted)" }}>{a.base_swot}</p>
-                    </div>
-                    <div className="flex gap-1.5 shrink-0">
-                      <Tag type={a.impacto === "alto" ? "positive" : "neutral"}>{a.impacto}</Tag>
-                      <Tag type="neutral">{a.prazo}</Tag>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
-            <ApprovalPanel slug={slug} skillId="ee-s1-swot" skillName="Matriz SWOT" existingApproval={approvals["ee-s1-swot"] ?? null} />
-          </Section>
-        )}
+              {/* Output cards */}
+              {stageOutputs.map((skill, idx) => {
+                const output = outputs[skill.id];
+                const summary = output.summary as string | undefined;
+                const contentItems = renderOutputContent(output, skill.id);
+                const label = SKILL_LABELS[skill.id] ?? skill.name;
+                const num = String(idx + 1).padStart(2, "0");
 
-        {/* ── AUDITORIA ─────────────────────────────────────────── */}
-        {auditoria && (
-          <Section id="auditoria" label="04 — Auditoria de Comunicação">
-            {/* Channel scores */}
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
-              {auditoria.canais?.map((canal: { canal: string; score: number; classificacao: string }) => {
-                const color = canal.score >= 60 ? "#4ade80" : canal.score >= 35 ? "#facc15" : "#e40a14";
-                const shortName = canal.canal.replace("/ Landing Page", "").replace("Business", "").replace("Meta Ads", "").trim();
                 return (
-                  <div key={canal.canal} className="rounded-xl p-3 text-center" style={{
-                    background: "var(--color-surface)",
-                    border: "1px solid var(--color-border)",
-                  }}>
-                    <div style={{ color: "var(--color-text-muted)" }} className="flex justify-center mb-1">
-                      {canalIcon[canal.canal] ?? <BarChart3 size={13} />}
+                  <div key={skill.id} className="rounded-2xl overflow-hidden" style={{ background: T.surface, boxShadow: T.cardShadow }}>
+                    {/* Card header */}
+                    <div className="px-6 py-5" style={{ borderBottom: `1px solid ${T.border}` }}>
+                      <div className="flex items-start gap-3.5">
+                        <span
+                          className="text-[11px] font-black shrink-0 w-8 h-8 rounded-xl flex items-center justify-center"
+                          style={{ background: T.primarySoft, color: T.primary }}
+                        >
+                          {num}
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-black text-[15px] leading-snug" style={{ color: T.text }}>{label}</p>
+                          {typeof output.generated_at === "string" && (
+                            <p className="flex items-center gap-1.5 text-[11px] mt-1 font-medium" style={{ color: T.subtle }}>
+                              <Calendar size={10} />
+                              Entregue em {new Date(output.generated_at).toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" })}
+                            </p>
+                          )}
+                        </div>
+                        <span
+                          className="shrink-0 flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-full"
+                          style={{ background: T.successSoft, color: T.success }}
+                        >
+                          <CheckCircle2 size={10} /> Pronto
+                        </span>
+                      </div>
                     </div>
-                    <p className="text-xl font-black" style={{ color }}>{canal.score}</p>
-                    <p className="text-[9px] font-bold mt-0.5 leading-tight" style={{ color: "var(--color-text-muted)" }}>{shortName}</p>
-                    <p className="text-[9px] mt-0.5" style={{ color }}>{canal.classificacao}</p>
+
+                    {/* Summary */}
+                    {summary && (
+                      <div className="px-6 py-5" style={{ background: "#fbfbfc", borderBottom: contentItems.length ? `1px solid ${T.border}` : "none" }}>
+                        <p className="text-[13px] leading-relaxed" style={{ color: T.muted }}>{summary}</p>
+                      </div>
+                    )}
+
+                    {/* Content sections */}
+                    {contentItems.map(({ label: lbl, content }, ci) => (
+                      <div key={lbl} className="px-6 py-5" style={{ borderTop: ci > 0 ? `1px solid ${T.border}` : "none" }}>
+                        <p className="text-[10px] font-black uppercase tracking-[0.15em] mb-3.5" style={{ color: T.subtle }}>{lbl}</p>
+                        {content}
+                      </div>
+                    ))}
                   </div>
                 );
               })}
+
+              {/* Active stage progress note */}
+              {status === "active" && (
+                <div
+                  className="rounded-2xl px-5 py-4 flex items-center gap-3.5"
+                  style={{ background: T.primarySoft, border: "1px solid rgba(228,10,20,0.12)" }}
+                >
+                  <Clock size={15} style={{ color: T.primary, flexShrink: 0 }} />
+                  <div className="min-w-0">
+                    <p className="text-[13px] font-bold" style={{ color: T.primary }}>Nosso time está trabalhando nesta etapa</p>
+                    <p className="text-xs mt-0.5" style={{ color: T.muted }}>
+                      {stageCompleted.length} de {stage.skills.length} entregáveis concluídos — os próximos aparecem aqui automaticamente.
+                    </p>
+                  </div>
+                </div>
+              )}
+            </section>
+          );
+        })}
+
+        {/* ── Contact card ── */}
+        <div
+          className="rounded-2xl p-6 sm:p-7"
+          style={{ background: "linear-gradient(135deg, #0c0c0d 0%, #1c1c1f 60%, #2a0508 100%)", boxShadow: T.cardShadow }}
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center gap-5">
+            <div className="flex-1">
+              <p className="text-[10px] font-black uppercase tracking-[0.18em]" style={{ color: "rgba(255,255,255,0.45)" }}>
+                Dúvidas ou sugestões?
+              </p>
+              <p className="text-white text-lg font-black mt-1">Fale com seu estrategista</p>
+              <p className="text-[13px] mt-1 leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+                Estamos acompanhando seu projeto de perto. Qualquer ajuste que quiser nos entregáveis, é só chamar.
+              </p>
             </div>
+            <a
+              href="mailto:gabriel.fragoso@v4company.com"
+              className="shrink-0 inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-black text-white transition-opacity hover:opacity-90"
+              style={{ background: T.primary, boxShadow: "0 6px 20px rgba(228,10,20,0.4)" }}
+            >
+              <Mail size={15} /> Enviar mensagem
+            </a>
+          </div>
+        </div>
 
-            {/* Top 3 problems */}
-            <Card>
-              <p className="text-[10px] font-black uppercase tracking-wider mb-4" style={{ color: "var(--color-primary)" }}>
-                Top 3 problemas que mais custam conversão agora
-              </p>
-              <div className="space-y-5">
-                {[
-                  auditoria.resumo_executivo?.problema_1,
-                  auditoria.resumo_executivo?.problema_2,
-                  auditoria.resumo_executivo?.problema_3,
-                ].filter(Boolean).map((p: { titulo: string; evidencia: string; acao: string }, i: number) => (
-                  <div key={i} className="flex gap-3">
-                    <span className="text-sm font-black shrink-0 w-5" style={{ color: "var(--color-primary)" }}>{i + 1}</span>
-                    <div>
-                      <p className="text-sm font-bold" style={{ color: "var(--color-text)" }}>{p.titulo}</p>
-                      <p className="text-xs mt-1 leading-relaxed" style={{ color: "var(--color-text-muted)" }}>{p.evidencia}</p>
-                      <p className="text-xs mt-1.5 font-semibold" style={{ color: "#4ade80" }}>→ {p.acao}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
-
-            {/* Quick wins */}
-            <Card>
-              <p className="text-[10px] font-black uppercase tracking-wider mb-4" style={{ color: "#4ade80" }}>
-                Quick wins — implementar esta semana
-              </p>
-              <div className="space-y-4">
-                {auditoria.quick_wins?.map((qw: { rank: number; acao: string; canal: string; tempo_estimado: string; impacto: string; quem_faz: string }) => (
-                  <div key={qw.rank} className="flex gap-3">
-                    <div className="w-5 h-5 rounded flex items-center justify-center text-[10px] font-black shrink-0 mt-0.5"
-                      style={{ background: "rgba(74,222,128,0.15)", color: "#4ade80" }}>
-                      {qw.rank}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-bold" style={{ color: "var(--color-text)" }}>{qw.acao}</p>
-                      <div className="flex flex-wrap gap-1.5 mt-1.5">
-                        <Tag type="neutral">{qw.canal}</Tag>
-                        <Tag type="positive">{qw.tempo_estimado}</Tag>
-                        <Tag type="neutral">{qw.quem_faz}</Tag>
-                      </div>
-                      <p className="text-xs mt-1.5" style={{ color: "var(--color-text-muted)" }}>{qw.impacto}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
-            <ApprovalPanel slug={slug} skillId="ee-s1-auditoria-comunicacao" skillName="Auditoria de Comunicação" existingApproval={approvals["ee-s1-auditoria-comunicacao"] ?? null} />
-          </Section>
-        )}
-
-        {/* ── DIAGNÓSTICO COMERCIAL ─────────────────────────────── */}
-        {diagComercial && (
-          <Section id="comercial" label="05 — Diagnóstico Comercial">
-
-            {/* Modelo comercial */}
-            <Card accent>
-              <p className="text-[10px] font-black uppercase tracking-wider mb-3" style={{ color: "var(--color-primary)" }}>
-                Proposta de valor
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  { label: "Para candidatos", text: diagComercial.modelo_comercial?.proposta_de_valor?.para_candidatos },
-                  { label: "Para empresas", text: diagComercial.modelo_comercial?.proposta_de_valor?.para_empresas },
-                ].map(({ label, text }) => (
-                  <div key={label}>
-                    <p className="text-[10px] font-bold uppercase tracking-wider mb-1" style={{ color: "var(--color-text-muted)" }}>{label}</p>
-                    <p className="text-xs leading-relaxed" style={{ color: "var(--color-text)" }}>{text}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-4 pt-3" style={{ borderTop: "1px solid var(--color-border)" }}>
-                <p className="text-[10px] font-bold uppercase tracking-wider mb-1" style={{ color: "var(--color-primary)" }}>Diferencial único</p>
-                <p className="text-sm font-semibold" style={{ color: "var(--color-text)" }}>{diagComercial.modelo_comercial?.proposta_de_valor?.diferencial_unico}</p>
-              </div>
-            </Card>
-
-            {/* Funil dual */}
-            {diagComercial.diagnostico_funil_duplo && (
-              <Card>
-                <p className="text-[10px] font-black uppercase tracking-wider mb-1" style={{ color: "#facc15" }}>
-                  Estratégia go-to-market — funil duplo B2B+B2C
-                </p>
-                <p className="text-xs mb-4 leading-relaxed" style={{ color: "var(--color-text-muted)" }}>
-                  {diagComercial.diagnostico_funil_duplo.desafio_central}
-                </p>
-                <div className="space-y-3">
-                  {diagComercial.diagnostico_funil_duplo.sequencia?.map((fase: { fase: string; foco: string; acao: string; meta: string; custo?: string }) => (
-                    <div key={fase.fase} className="flex gap-3">
-                      <div className="shrink-0 w-6 h-6 rounded flex items-center justify-center text-[10px] font-black"
-                        style={{ background: "rgba(250,204,21,0.12)", color: "#facc15", border: "1px solid rgba(250,204,21,0.25)" }}>
-                        {fase.fase.split("—")[0].replace("Fase","").replace(" ","").trim().charAt(0)}
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <p className="text-sm font-bold" style={{ color: "var(--color-text)" }}>{fase.fase}</p>
-                          <Tag type="opportunity">foco: {fase.foco}</Tag>
-                        </div>
-                        <p className="text-xs mt-1 leading-relaxed" style={{ color: "var(--color-text-muted)" }}>{fase.acao}</p>
-                        <p className="text-xs mt-1 font-semibold" style={{ color: "#4ade80" }}>Meta: {fase.meta}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </Card>
-            )}
-
-            {/* Objeções */}
-            {diagComercial.objecoes_e_respostas?.length > 0 && (
-              <Card>
-                <p className="text-[10px] font-black uppercase tracking-wider mb-4" style={{ color: "var(--color-text-muted)" }}>
-                  Objeções e respostas prontas
-                </p>
-                <div className="space-y-4">
-                  {diagComercial.objecoes_e_respostas.map((o: { objecao: string; resposta: string; gatilho: string }, i: number) => (
-                    <div key={i} className="rounded-lg p-3" style={{ background: "var(--color-surface-elevated)", border: "1px solid var(--color-border)" }}>
-                      <p className="text-xs font-bold mb-1" style={{ color: "#facc15" }}>❝ {o.objecao}</p>
-                      <p className="text-xs leading-relaxed" style={{ color: "var(--color-text)" }}>{o.resposta}</p>
-                      <p className="text-[11px] mt-1.5 font-semibold" style={{ color: "var(--color-primary)" }}>→ {o.gatilho}</p>
-                    </div>
-                  ))}
-                </div>
-              </Card>
-            )}
-
-            {/* Ações prioritárias reunião */}
-            {diagComercial.acoes_prioritarias_reuniao_hoje?.length > 0 && (
-              <Card accent>
-                <p className="text-[10px] font-black uppercase tracking-wider mb-4" style={{ color: "var(--color-primary)" }}>
-                  Ações para decidir hoje
-                </p>
-                <div className="space-y-3">
-                  {diagComercial.acoes_prioritarias_reuniao_hoje.map((a: { rank: number; acao: string; justificativa: string; responsavel: string; prazo: string }) => (
-                    <div key={a.rank} className="flex gap-3">
-                      <span className="text-sm font-black shrink-0 w-5" style={{ color: "var(--color-primary)" }}>{a.rank}</span>
-                      <div className="flex-1">
-                        <p className="text-sm font-bold" style={{ color: "var(--color-text)" }}>{a.acao}</p>
-                        <p className="text-xs mt-0.5 leading-relaxed" style={{ color: "var(--color-text-muted)" }}>{a.justificativa}</p>
-                        <div className="flex gap-1.5 mt-1.5 flex-wrap">
-                          <Tag type="neutral">{a.responsavel}</Tag>
-                          <Tag type={a.prazo === "Decisão hoje" ? "negative" : "neutral"}>{a.prazo}</Tag>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </Card>
-            )}
-
-            {/* Perguntas para reunião */}
-            {diagComercial.perguntas_para_reuniao?.length > 0 && (
-              <Card>
-                <p className="text-[10px] font-black uppercase tracking-wider mb-3" style={{ color: "#4ade80" }}>
-                  Perguntas-chave para a reunião
-                </p>
-                <div className="space-y-2">
-                  {diagComercial.perguntas_para_reuniao.map((q: string, i: number) => (
-                    <div key={i} className="flex gap-2">
-                      <span className="text-xs shrink-0 font-bold" style={{ color: "#4ade80" }}>{i + 1}.</span>
-                      <p className="text-xs leading-relaxed" style={{ color: "var(--color-text)" }}>{q}</p>
-                    </div>
-                  ))}
-                </div>
-              </Card>
-            )}
-
-            {/* Janela estratégica */}
-            {diagComercial.oportunidade_imediata && (
-              <Card accent>
-                <p className="text-[10px] font-black uppercase tracking-wider mb-2" style={{ color: "var(--color-primary)" }}>
-                  ⚡ Janela estratégica imediata
-                </p>
-                <p className="text-sm font-bold leading-snug" style={{ color: "var(--color-text)" }}>
-                  {diagComercial.oportunidade_imediata.descricao}
-                </p>
-                <p className="text-xs mt-2 leading-relaxed" style={{ color: "var(--color-text-muted)" }}>
-                  {diagComercial.oportunidade_imediata.conexao_luis}
-                </p>
-                <p className="text-xs mt-2 font-semibold" style={{ color: "var(--color-primary)" }}>
-                  {diagComercial.oportunidade_imediata.janela}
-                </p>
-              </Card>
-            )}
-            <ApprovalPanel slug={slug} skillId="ee-s2-diagnostico-comercial" skillName="Diagnóstico Comercial" existingApproval={approvals["ee-s2-diagnostico-comercial"] ?? null} />
-          </Section>
-        )}
-
-        {/* Footer */}
-        <div className="text-center space-y-2 pb-6">
+        {/* ── Footer ── */}
+        <div className="text-center space-y-2.5 pt-2 pb-6">
           <div className="flex items-center justify-center gap-2">
-            <div className="w-5 h-5 flex items-center justify-center font-black text-[9px]"
-              style={{ background: "var(--color-primary)", color: "#fff", clipPath: "polygon(10% 0%,100% 0%,90% 100%,0% 100%)" }}>
+            <div
+              className="w-5 h-5 flex items-center justify-center font-black text-[8px]"
+              style={{ background: T.primary, color: "#fff", clipPath: "polygon(10% 0%,100% 0%,90% 100%,0% 100%)" }}
+            >
               V4
             </div>
-            <span className="text-xs font-bold" style={{ color: "var(--color-text-muted)" }}>V4 Estruturação IA</span>
+            <span className="text-xs font-bold" style={{ color: T.muted }}>V4 Company</span>
           </div>
-          <p className="text-[10px]" style={{ color: "#2a2a2a" }}>
-            {name} · Semana 1 · {completedAt}
+          <p className="text-[10px] font-medium" style={{ color: "#c0c0c6" }}>
+            {name} · Processo de Estruturação · 45 dias
           </p>
         </div>
 
