@@ -52,12 +52,12 @@ done
 echo ""
 echo "📦 Commitando..."
 cd "$(dirname "$0")/.."
-git add data/
+git add data/ .github/
 git diff --cached --quiet && echo "  Nada novo para commitar." || git commit -m "sync: atualiza dados dos clientes $(date +'%Y-%m-%d %H:%M')"
 
 echo ""
-echo "🚀 Deploy no Vercel..."
-vercel --prod --yes
+echo "📤 Publicando no GitHub (v4oxicore/v4)..."
+git push v4oxicore main && echo "  ✅ Push OK — GitHub Actions vai deployar automaticamente."
 
 echo ""
-echo "✅ Pronto!"
+echo "✅ Pronto! Deploy em andamento via GitHub Actions."
